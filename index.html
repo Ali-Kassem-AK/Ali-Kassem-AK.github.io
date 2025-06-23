@@ -355,7 +355,10 @@
                     exp_title: "Experience",
                     edu_title: "Education",
                     contact_title: "Get In Touch",
-                    contact_desc: "I'm always open to discussing new projects, creative ideas, or opportunities.\nFeel free to reach out!",
+                   contact_desc: [
+                                    "I'm always open to discussing new projects, creative ideas, or opportunities.",
+                                    "Feel free to reach out!"
+                                ],,
                     footer_copy: "© 2025 Ali Kassem. All rights reserved.",
                     modal_view_code: "View Code on GitHub",
                     language_select_label: "Language"
@@ -507,24 +510,32 @@
             let scrollObserver;
 
             // --- TRANSLATION & RENDERING LOGIC ---
-            function setLanguage(lang) {
-                if (!translations[lang]) return;
-                currentLang = lang;
-                document.documentElement.lang = lang;
-                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+           function setLanguage(lang) {
+    if (!translations[lang]) return;
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
 
-                document.querySelectorAll('[data-translate]').forEach(el => {
-                    const key = el.dataset.translate;
-                    if (translations[lang][key]) {
-                        el.textContent = translations[lang][key];
-                    }
-                });
-
-                renderProjects();
-                renderExperienceAndEducation();
-                initTypingEffect();
-                initScrollReveal(); 
+    document.querySelectorAll('[data-translate]').forEach(el => {
+        const key = el.dataset.translate;
+        if (translations[lang][key]) {
+            
+            // --- THIS IS THE FIX ---
+            // If the key is 'contact_desc', render it as HTML.
+            // Otherwise, render it as plain text.
+            if (key === 'contact_desc') {
+                el.innerHTML = translations[lang][key]; 
+            } else {
+                el.textContent = translations[lang][key];
             }
+        }
+    });
+
+    renderProjects();
+    renderExperienceAndEducation();
+    initTypingEffect();
+    initScrollReveal(); 
+}
 
             // --- UI INITIALIZATION FUNCTIONS ---
             function initLanguageSelector() {
