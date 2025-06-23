@@ -355,11 +355,7 @@
                     exp_title: "Experience",
                     edu_title: "Education",
                     contact_title: "Get In Touch",
-                   contact_desc: {
-                    isHtml: true, 
-                    value: "I'm always open to discussing new projects, creative ideas, or opportunities.<br><b>Feel free to reach out!</b>"
-                },
-
+                    contact_desc: "I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out!",
                     footer_copy: "© 2025 Ali Kassem. All rights reserved.",
                     modal_view_code: "View Code on GitHub",
                     language_select_label: "Language"
@@ -387,9 +383,7 @@
                     exp_title: "الخبرة",
                     edu_title: "التعليم",
                     contact_title: "تواصل معي",
-                    contact_desc: {
-                            isHtml: true,
-                            value: "أنا دائما منفتح لمناقشة المشاريع الجديدة أو الأفكار الإبداعية أو الفرص.<br><b>لا تتردد في التواصل!</b>"},
+                    contact_desc: "أنا دائما منفتح لمناقشة المشاريع الجديدة أو الأفكار الإبداعية أو الفرص. لا تتردد في التواصل!",
                     footer_copy: "© 2025 علي قاسم. جميع الحقوق محفوظة.",
                     modal_view_code: "عرض الكود على GitHub",
                     language_select_label: "اللغة"
@@ -417,7 +411,7 @@
                     exp_title: "経験",
                     edu_title: "学歴",
                     contact_title: "お問い合わせ",
-                    contact_desc: "新しいプロジェクト、創造的なアイデア、または機会についての議論をいつでも歓迎します。お気軽にご連絡ください！",
+                    contact_desc: "新しいプロジェクト、創造的なアイデア、または機会についての議論をいつでも歓迎します。 お気軽にご連絡ください！",
                     footer_copy: "© 2025 アリ・カセム. 全著作権所有.",
                     modal_view_code: "GitHubでコードを見る",
                     language_select_label: "言語"
@@ -513,37 +507,24 @@
             let scrollObserver;
 
             // --- TRANSLATION & RENDERING LOGIC ---
-           function setLanguage(lang) {
+            function setLanguage(lang) {
                 if (!translations[lang]) return;
                 currentLang = lang;
                 document.documentElement.lang = lang;
                 document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-            
+
                 document.querySelectorAll('[data-translate]').forEach(el => {
                     const key = el.dataset.translate;
-                    const entry = translations[lang][key];
-                    
-                    if (entry) {
-                        // Case 1: Entry is an array (for simple line breaks)
-                        if (Array.isArray(entry)) {
-                            el.innerHTML = entry.join('<br>');
-                        } 
-                        // Case 2: Entry is an object with our special "isHtml" flag
-                        else if (typeof entry === 'object' && entry.isHtml) {
-                            el.innerHTML = entry.value;
-                        } 
-                        // Case 3: Entry is just a plain string
-                        else {
-                            el.textContent = entry;
-                        }
+                    if (translations[lang][key]) {
+                        el.textContent = translations[lang][key];
                     }
                 });
-            
+
                 renderProjects();
                 renderExperienceAndEducation();
                 initTypingEffect();
                 initScrollReveal(); 
-             }
+            }
 
             // --- UI INITIALIZATION FUNCTIONS ---
             function initLanguageSelector() {
