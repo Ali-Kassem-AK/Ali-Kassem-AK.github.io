@@ -298,9 +298,9 @@
                     <!-- Education -->
                     <div>
                         <h3 class="text-2xl font-bold text-white mb-8 reveal-element border-b-2 border-blue-500/50 pb-3" data-translate="edu_title">Education</h3>
-                         <div id="education-container" class="space-y-8">
-                            <!-- Education items dynamically inserted here -->
-                        </div>
+                          <div id="education-container" class="space-y-8">
+                             <!-- Education items dynamically inserted here -->
+                          </div>
                     </div>
                 </div>
             </div>
@@ -355,7 +355,7 @@
                     exp_title: "Experience",
                     edu_title: "Education",
                     contact_title: "Get In Touch",
-                    contact_desc: "I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out!",
+                    contact_desc: "I'm always open to discussing new projects, creative ideas, or opportunities.<br><br>  Feel free to reach out!",
                     footer_copy: "© 2025 Ali Kassem. All rights reserved.",
                     modal_view_code: "View Code on GitHub",
                     language_select_label: "Language"
@@ -383,7 +383,7 @@
                     exp_title: "الخبرة",
                     edu_title: "التعليم",
                     contact_title: "تواصل معي",
-                    contact_desc: "أنا دائما منفتح لمناقشة المشاريع الجديدة أو الأفكار الإبداعية أو الفرص. لا تتردد في التواصل!",
+                    contact_desc: "أنا دائما منفتح لمناقشة المشاريع الجديدة أو الأفكار الإبداعية أو الفرص.<br> <br> لا تتردد في التواصل!",
                     footer_copy: "© 2025 علي قاسم. جميع الحقوق محفوظة.",
                     modal_view_code: "عرض الكود على GitHub",
                     language_select_label: "اللغة"
@@ -411,7 +411,7 @@
                     exp_title: "経験",
                     edu_title: "学歴",
                     contact_title: "お問い合わせ",
-                    contact_desc: "新しいプロジェクト、創造的なアイデア、または機会についての議論をいつでも歓迎します。 お気軽にご連絡ください！",
+                    contact_desc: "新しいプロジェクト、創造的なアイデア、または機会についての議論をいつでも歓迎します。<br><br>  お気軽にご連絡ください！",
                     footer_copy: "© 2025 アリ・カセム. 全著作権所有.",
                     modal_view_code: "GitHubでコードを見る",
                     language_select_label: "言語"
@@ -516,7 +516,12 @@
                 document.querySelectorAll('[data-translate]').forEach(el => {
                     const key = el.dataset.translate;
                     if (translations[lang][key]) {
-                        el.textContent = translations[lang][key];
+                        // Use innerHTML to render the <br> tag
+                        if (key === 'contact_desc') {
+                             el.innerHTML = translations[lang][key];
+                        } else {
+                             el.textContent = translations[lang][key];
+                        }
                     }
                 });
 
@@ -534,8 +539,8 @@
                 const hidePanel = () => langPanel.classList.remove('active');
                 const showPanel = () => {
                     const buttonRect = langButton.getBoundingClientRect();
-                    langPanel.style.top = ${buttonRect.bottom + 8}px; 
-                    langPanel.style.left = ${buttonRect.right - langPanel.offsetWidth}px; 
+                    langPanel.style.top = `${buttonRect.bottom + 8}px`; 
+                    langPanel.style.left = `${buttonRect.right - langPanel.offsetWidth}px`; 
                     langPanel.classList.add('active');
                 };
                 langButton.addEventListener('click', (e) => {
@@ -575,7 +580,7 @@
                         this.size = Math.random() * 15 + 5;
                         this.speedX = Math.random() * 0.4 - 0.2;
                         this.speedY = Math.random() * -1 - 0.2;
-                        this.color = rgba(59, 130, 246, ${Math.random() * 0.4 + 0.1});
+                        this.color = `rgba(59, 130, 246, ${Math.random() * 0.4 + 0.1})`;
                         this.rotation = Math.random() * Math.PI * 2;
                         this.rotationSpeed = (Math.random() - 0.5) * 0.02;
                     }
@@ -620,7 +625,7 @@
                 const container = document.getElementById('projects-container');
                 if (!container) return;
                 container.innerHTML = projectsData.map(project => {
-                    const tagsHTML = project.tags.map(tag => <span class="tag">${tag}</span>).join('');
+                    const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
                     const buttonHTML = project.longDescription[currentLang] !== 'none' ? `
                         <button onclick="openModal('${project.id}')" class="text-blue-400 hover:text-blue-300 font-semibold self-start text-left mt-auto pt-4 group transition-colors">
                             ${translations[currentLang].view_details} <i class="fas fa-arrow-right ml-1 transform transition-transform duration-300 group-hover:translate-x-1"></i>
@@ -656,15 +661,15 @@
                 `).join('');
                 
                 eduContainer.innerHTML = educationData.map(item => `
-                     <div class="reveal-element flex">
-                         <div class="mr-6 flex-shrink-0"><i class="fas ${item.icon} text-blue-400 text-2xl mt-1"></i></div>
-                         <div>
-                             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-                                 <p class="font-semibold text-white text-lg">${item.title[currentLang]} <span class="text-gray-400 font-normal">${item.date[currentLang]}</span></p>
-                                 <p class="text-blue-300 text-base flex-shrink-0 sm:ml-4">${item.location[currentLang]}</p>
+                       <div class="reveal-element flex">
+                             <div class="mr-6 flex-shrink-0"><i class="fas ${item.icon} text-blue-400 text-2xl mt-1"></i></div>
+                             <div>
+                                   <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                                         <p class="font-semibold text-white text-lg">${item.title[currentLang]} <span class="text-gray-400 font-normal">${item.date[currentLang]}</span></p>
+                                         <p class="text-blue-300 text-base flex-shrink-0 sm:ml-4">${item.location[currentLang]}</p>
+                                   </div>
                              </div>
-                         </div>
-                     </div>
+                       </div>
                 `).join('');
             }
 
@@ -677,7 +682,7 @@
                         <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-4xl leading-none transition-transform duration-200 hover:scale-125" aria-label="Close modal">&times;</button>
                         <img src="${p.imageUrl}" alt="Project Image" class="w-full h-64 object-cover rounded-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Image+Error';">
                         <h3 class="text-3xl font-bold text-white mb-2">${p.title[currentLang]}</h3>
-                        <div class="mb-4 flex flex-wrap gap-2">${p.tags.map(tag => <span class="tag">${tag}</span>).join('')}</div>
+                        <div class="mb-4 flex flex-wrap gap-2">${p.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
                         <p class="text-gray-300 mb-6">${p.longDescription[currentLang]}</p>
                         ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">
                             ${translations[currentLang].modal_view_code} <i class="fab fa-github ml-2"></i>
@@ -755,7 +760,7 @@
                         index++;
                         typeTimeout = setTimeout(type, 100);
                     } else {
-                        cursorEl.style.display = 'none';
+                        cursorEl.style.display = 'none'; 
                     }
                 }
                 typeTimeout = setTimeout(type, 500);
@@ -790,10 +795,10 @@
                 const observer = new IntersectionObserver(entries => {
                     entries.forEach(entry => {
                         const id = entry.target.getAttribute('id');
-                        const navLink = document.querySelector(#desktop-nav a[href="#${id}"]);
-                        if (entry.isIntersecting) {
+                        const navLink = document.querySelector(`#desktop-nav a[href="#${id}"]`);
+                        if (entry.isIntersecting && navLink) {
                             navLinks.forEach(link => link.classList.remove('active'));
-                            if(navLink) navLink.classList.add('active');
+                            navLink.classList.add('active');
                         }
                     });
                 }, { rootMargin: '-40% 0px -55% 0px' });
@@ -803,19 +808,29 @@
 
             function initInteractiveCards() {
                 document.body.addEventListener('mousemove', e => {
-                    if (!e.target.matches('.interactive-card')) {
-                         document.querySelectorAll('.interactive-card').forEach(card => {
-                            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
-                         });
-                         return;
-                    }
-                    const card = e.target;
+                    // Find the closest card ancestor
+                    const card = e.target.closest('.interactive-card');
+                    
+                    // Reset all cards if not hovering over one
+                    document.querySelectorAll('.interactive-card').forEach(c => {
+                        if (c !== card) {
+                           c.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+                        }
+                    });
+
+                    if (!card) return;
+
                     const { left, top, width, height } = card.getBoundingClientRect();
                     const x = e.clientX - left;
                     const y = e.clientY - top;
                     const rotateX = -7 * ((y - height / 2) / height);
                     const rotateY = 7 * ((x - width / 2) / width);
-                    card.style.transform = perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.04);
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.04)`;
+                });
+                 document.body.addEventListener('mouseleave', () => {
+                     document.querySelectorAll('.interactive-card').forEach(card => {
+                        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+                     });
                 });
             }
             
