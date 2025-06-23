@@ -513,7 +513,7 @@
             let scrollObserver;
 
             // --- TRANSLATION & RENDERING LOGIC ---
-            function setLanguage(lang) {
+           function setLanguage(lang) {
                 if (!translations[lang]) return;
                 currentLang = lang;
                 document.documentElement.lang = lang;
@@ -521,16 +521,20 @@
             
                 document.querySelectorAll('[data-translate]').forEach(el => {
                     const key = el.dataset.translate;
-                    const value = translations[lang][key];
+                    const entry = translations[lang][key];
                     
-                    if (value) {
-                        // Check if the value is an array
-                        if (Array.isArray(value)) {
-                            // If it's an array, join it with <br> and use innerHTML
-                            el.innerHTML = value.join('<br>');
-                        } else {
-                            // Otherwise, just set the text content
-                            el.textContent = value;
+                    if (entry) {
+                        // Case 1: Entry is an array (for simple line breaks)
+                        if (Array.isArray(entry)) {
+                            el.innerHTML = entry.join('<br>');
+                        } 
+                        // Case 2: Entry is an object with our special "isHtml" flag
+                        else if (typeof entry === 'object' && entry.isHtml) {
+                            el.innerHTML = entry.value;
+                        } 
+                        // Case 3: Entry is just a plain string
+                        else {
+                            el.textContent = entry;
                         }
                     }
                 });
@@ -539,7 +543,7 @@
                 renderExperienceAndEducation();
                 initTypingEffect();
                 initScrollReveal(); 
-        }
+             }
 
             // --- UI INITIALIZATION FUNCTIONS ---
             function initLanguageSelector() {
