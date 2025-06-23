@@ -355,10 +355,11 @@
                     exp_title: "Experience",
                     edu_title: "Education",
                     contact_title: "Get In Touch",
-                   contact_desc: [
-                                    "I'm always open to discussing new projects, creative ideas, or opportunities.",
-                                    "Feel free to reach out!"
-                                ],,
+                   contact_desc: {
+                    isHtml: true, 
+                    value: "I'm always open to discussing new projects, creative ideas, or opportunities.<br><b>Feel free to reach out!</b>"
+                },
+
                     footer_copy: "© 2025 Ali Kassem. All rights reserved.",
                     modal_view_code: "View Code on GitHub",
                     language_select_label: "Language"
@@ -386,7 +387,9 @@
                     exp_title: "الخبرة",
                     edu_title: "التعليم",
                     contact_title: "تواصل معي",
-                    contact_desc: "أنا دائما منفتح لمناقشة المشاريع الجديدة أو الأفكار الإبداعية أو الفرص.<br> لا تتردد في التواصل!",
+                    contact_desc: {
+                            isHtml: true,
+                            value: "أنا دائما منفتح لمناقشة المشاريع الجديدة أو الأفكار الإبداعية أو الفرص.<br><b>لا تتردد في التواصل!</b>"
                     footer_copy: "© 2025 علي قاسم. جميع الحقوق محفوظة.",
                     modal_view_code: "عرض الكود على GitHub",
                     language_select_label: "اللغة"
@@ -414,7 +417,7 @@
                     exp_title: "経験",
                     edu_title: "学歴",
                     contact_title: "お問い合わせ",
-                    contact_desc: "新しいプロジェクト、創造的なアイデア、または機会についての議論をいつでも歓迎します。<br> お気軽にご連絡ください！",
+                    contact_desc: "新しいプロジェクト、創造的なアイデア、または機会についての議論をいつでも歓迎します。お気軽にご連絡ください！",
                     footer_copy: "© 2025 アリ・カセム. 全著作権所有.",
                     modal_view_code: "GitHubでコードを見る",
                     language_select_label: "言語"
@@ -510,32 +513,33 @@
             let scrollObserver;
 
             // --- TRANSLATION & RENDERING LOGIC ---
-           function setLanguage(lang) {
-    if (!translations[lang]) return;
-    currentLang = lang;
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-
-    document.querySelectorAll('[data-translate]').forEach(el => {
-        const key = el.dataset.translate;
-        if (translations[lang][key]) {
+            function setLanguage(lang) {
+                if (!translations[lang]) return;
+                currentLang = lang;
+                document.documentElement.lang = lang;
+                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
             
-            // --- THIS IS THE FIX ---
-            // If the key is 'contact_desc', render it as HTML.
-            // Otherwise, render it as plain text.
-            if (key === 'contact_desc') {
-                el.innerHTML = translations[lang][key]; 
-            } else {
-                el.textContent = translations[lang][key];
-            }
+                document.querySelectorAll('[data-translate]').forEach(el => {
+                    const key = el.dataset.translate;
+                    const value = translations[lang][key];
+                    
+                    if (value) {
+                        // Check if the value is an array
+                        if (Array.isArray(value)) {
+                            // If it's an array, join it with <br> and use innerHTML
+                            el.innerHTML = value.join('<br>');
+                        } else {
+                            // Otherwise, just set the text content
+                            el.textContent = value;
+                        }
+                    }
+                });
+            
+                renderProjects();
+                renderExperienceAndEducation();
+                initTypingEffect();
+                initScrollReveal(); 
         }
-    });
-
-    renderProjects();
-    renderExperienceAndEducation();
-    initTypingEffect();
-    initScrollReveal(); 
-}
 
             // --- UI INITIALIZATION FUNCTIONS ---
             function initLanguageSelector() {
@@ -545,8 +549,8 @@
                 const hidePanel = () => langPanel.classList.remove('active');
                 const showPanel = () => {
                     const buttonRect = langButton.getBoundingClientRect();
-                    langPanel.style.top = `${buttonRect.bottom + 8}px`; 
-                    langPanel.style.left = `${buttonRect.right - langPanel.offsetWidth}px`; 
+                    langPanel.style.top = ${buttonRect.bottom + 8}px; 
+                    langPanel.style.left = ${buttonRect.right - langPanel.offsetWidth}px; 
                     langPanel.classList.add('active');
                 };
                 langButton.addEventListener('click', (e) => {
@@ -586,7 +590,7 @@
                         this.size = Math.random() * 15 + 5;
                         this.speedX = Math.random() * 0.4 - 0.2;
                         this.speedY = Math.random() * -1 - 0.2;
-                        this.color = `rgba(59, 130, 246, ${Math.random() * 0.4 + 0.1})`;
+                        this.color = rgba(59, 130, 246, ${Math.random() * 0.4 + 0.1});
                         this.rotation = Math.random() * Math.PI * 2;
                         this.rotationSpeed = (Math.random() - 0.5) * 0.02;
                     }
@@ -631,7 +635,7 @@
                 const container = document.getElementById('projects-container');
                 if (!container) return;
                 container.innerHTML = projectsData.map(project => {
-                    const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+                    const tagsHTML = project.tags.map(tag => <span class="tag">${tag}</span>).join('');
                     const buttonHTML = project.longDescription[currentLang] !== 'none' ? `
                         <button onclick="openModal('${project.id}')" class="text-blue-400 hover:text-blue-300 font-semibold self-start text-left mt-auto pt-4 group transition-colors">
                             ${translations[currentLang].view_details} <i class="fas fa-arrow-right ml-1 transform transition-transform duration-300 group-hover:translate-x-1"></i>
@@ -688,7 +692,7 @@
                         <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-4xl leading-none transition-transform duration-200 hover:scale-125" aria-label="Close modal">&times;</button>
                         <img src="${p.imageUrl}" alt="Project Image" class="w-full h-64 object-cover rounded-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Image+Error';">
                         <h3 class="text-3xl font-bold text-white mb-2">${p.title[currentLang]}</h3>
-                        <div class="mb-4 flex flex-wrap gap-2">${p.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+                        <div class="mb-4 flex flex-wrap gap-2">${p.tags.map(tag => <span class="tag">${tag}</span>).join('')}</div>
                         <p class="text-gray-300 mb-6">${p.longDescription[currentLang]}</p>
                         ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">
                             ${translations[currentLang].modal_view_code} <i class="fab fa-github ml-2"></i>
@@ -801,7 +805,7 @@
                 const observer = new IntersectionObserver(entries => {
                     entries.forEach(entry => {
                         const id = entry.target.getAttribute('id');
-                        const navLink = document.querySelector(`#desktop-nav a[href="#${id}"]`);
+                        const navLink = document.querySelector(#desktop-nav a[href="#${id}"]);
                         if (entry.isIntersecting) {
                             navLinks.forEach(link => link.classList.remove('active'));
                             if(navLink) navLink.classList.add('active');
@@ -826,7 +830,7 @@
                     const y = e.clientY - top;
                     const rotateX = -7 * ((y - height / 2) / height);
                     const rotateY = 7 * ((x - width / 2) / width);
-                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.04)`;
+                    card.style.transform = perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.04);
                 });
             }
             
