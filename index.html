@@ -301,6 +301,13 @@
                              <!-- Education items dynamically inserted here -->
                           </div>
                     </div>
+                    <!-- Certifications -->
+                    <div class="mt-12">
+                        <h3 class="text-2xl font-bold text-white mb-8 reveal-element border-b-2 border-blue-500/50 pb-3" data-translate="cert_title">Licenses & Certifications</h3>
+                          <div id="certifications-container" class="space-y-8">
+                             <!-- Certification items dynamically inserted here -->
+                          </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -351,6 +358,7 @@
                     exp_edu_title: "Experience & Education",
                     exp_title: "Experience",
                     edu_title: "Education",
+                    cert_title: "Licenses & Certifications",
                     contact_title: "Get In Touch",
                     contact_desc: "I'm always open to discussing new projects, creative ideas, or opportunities.<br><br>  <strong>Feel free to reach out!</strong>",
                     footer_copy: "© 2025 Ali Kassem. All rights reserved.",
@@ -379,6 +387,7 @@
                     exp_edu_title: "الخبرة والتعليم",
                     exp_title: "الخبرة",
                     edu_title: "التعليم",
+                    cert_title: "التراخيص والشهادات",
                     contact_title: "تواصل معي",
                     contact_desc: "أنا دائما منفتح لمناقشة المشاريع الجديدة أو الأفكار الإبداعية أو الفرص.<br> <br> <strong>لا تتردد في التواصل!</strong>",
                     footer_copy: "© 2025 علي قاسم. جميع الحقوق محفوظة.",
@@ -407,6 +416,7 @@
                     exp_edu_title: "経験と学歴",
                     exp_title: "経験",
                     edu_title: "学歴",
+                    cert_title: "ライセンスと認定証",
                     contact_title: "お問い合わせ",
                     contact_desc: "新しいプロジェクト、創造的なアイデア、または機会についての議論をいつでも歓迎します。<br><br> <strong> お気軽にご連絡ください！</strong>",
                     footer_copy: "© 2025 アリ・カセム. 全著作権所有.",
@@ -432,7 +442,7 @@
                     },
                     longDescription: {
                         en: "Designed and engineered a fully-featured, multi-modal AI conversational platform from scratch, focusing on high availability, fault tolerance, and a $0 operating cost architecture. Features cascading redundancy via a custom n8n microservices backend, live bi-directional WebSocket voice streaming with custom jitter buffers, clever DevOps hacks to maintain 24/7 uptime on HuggingFace, and a highly optimized React/TypeScript frontend utilizing IndexedDB to bypass Firebase storage limits.",
-                        ar: "صممت وطورت منصة محادثة ذكاء اصطناعي متكاملة من الصفر مع التركيز على التوافر العالي وتحمل الأخطاء وتكلفة تشغيل 0 دولار. تتميز المنصة ببنية خدمات مصغرة (Microservices) باستخدام n8n لتوجيه المهام وتجاوز الأعطال تلقائياً، بالإضافة إلى دعم البث الصوتي المباشر عبر WebSockets. كما قمت بتطوير واجهة مستخدم متطورة باستخدام React و TypeScript مع توظيف تقنية IndexedDB لتخطي قيود التخزين السحابي في Firebase.",
+                        ar: "صممت وطورت منصة مح محادثة ذكاء اصطناعي متكاملة من الصفر مع التركيز على التوافر العالي وتحمل الأخطاء وتكلفة تشغيل 0 دولار. تتميز المنصة ببنية خدمات مصغرة (Microservices) باستخدام n8n لتوجيه المهام وتجاوز الأعطال تلقائياً، بالإضافة إلى دعم البث الصوتي المباشر عبر WebSockets. كما قمت بتطوير واجهة مستخدم متطورة باستخدام React و TypeScript مع توظيف تقنية IndexedDB لتخطي قيود التخزين السحابي في Firebase.",
                         ja: "高可用性、フォールトトレランス、および運用コスト0ドルのアーキテクチャに重点を置き、完全に機能するマルチモーダルAI対話プラットフォームをゼロから設計および開発しました。カスタムn8nマイクロサービスバックエンドによるカスケード冗長性、カスタムジッターバッファを備えたライブ双方向WebSocket音声ストリーミング、HuggingFaceで24時間365日の稼働時間を維持するための巧妙なDevOpsハック、およびFirebaseストレージの制限を回避するためにIndexedDBを利用する高度に最適化されたReact/TypeScriptフロントエンドを備えています。"
                     },
                     tags: ["System Architecture", "n8n", "Microservices", "WebSockets", "DevOps", "Fault Tolerance"], 
@@ -528,6 +538,35 @@
                     title: { en: 'English Conversation Advanced 3', ar: 'محادثة إنجليزية متقدمة 3', ja: '英会話上級3' },
                     date: { en: '(2022 - 2023)', ar: '(2022 - 2023)', ja: '(2022年 - 2023年)' },
                     location: { en: 'American Institute', ar: 'المعهد الأمريكي', ja: 'アメリカンインスティテュート' }
+                }
+            ];
+
+            const certificationsData = [
+                { 
+                    icon: 'fa-award',
+                    title: { en: 'HCIA-AI V4.0 Course (Colombia Training Program)', ar: 'دورة HCIA-AI V4.0 (برنامج تدريب كولومبيا)', ja: 'HCIA-AI V4.0 コース (コロンビア研修プログラム)' },
+                    date: { en: '(Dec 2025)', ar: '(ديسمبر 2025)', ja: '(2025年 12月)' },
+                    location: { en: 'Huawei ICT Academy', ar: 'أكاديمية هواوي', ja: 'Huawei ICT Academy' },
+                    description: { en: 'Credential ID: ICT20251226005707', ar: 'معرف الاعتماد: ICT20251226005707', ja: '資格ID: ICT20251226005707' }
+                },
+                { 
+                    icon: 'fa-robot',
+                    title: { en: 'Introduction to machine learning concepts', ar: 'مقدمة في مفاهيم تعلم الآلة', ja: '機械学習の概念入門' },
+                    date: { en: '(Dec 2025)', ar: '(ديسمبر 2025)', ja: '(2025年 12月)' },
+                    location: { en: 'Microsoft', ar: 'مايكروسوفت', ja: 'マイクロソフト' }
+                },
+                { 
+                    icon: 'fa-brain',
+                    title: { en: 'Introduction to AI concepts', ar: 'مقدمة في مفاهيم الذكاء الاصطناعي', ja: 'AIの概念入門' },
+                    date: { en: '(Dec 2025)', ar: '(ديسمبر 2025)', ja: '(2025年 12月)' },
+                    location: { en: 'Microsoft', ar: 'مايكروسوفت', ja: 'マイクロソフト' }
+                },
+                { 
+                    icon: 'fa-certificate',
+                    title: { en: 'English Conversation Advanced 3', ar: 'محادثة إنجليزية متقدمة 3', ja: '英会話上級3' },
+                    date: { en: '(Jan 2023)', ar: '(يناير 2023)', ja: '(2023年 1月)' },
+                    location: { en: 'American Institute', ar: 'المعهد الأمريكي', ja: 'アメリカンインスティテュート' },
+                    description: { en: 'Credential ID: 102855', ar: 'معرف الاعتماد: 102855', ja: '資格ID: 102855' }
                 }
             ];
             
@@ -680,6 +719,7 @@
             function renderExperienceAndEducation() {
                 const expContainer = document.getElementById('experience-container');
                 const eduContainer = document.getElementById('education-container');
+                const certContainer = document.getElementById('certifications-container');
                 if(!expContainer || !eduContainer) return;
 
                 expContainer.innerHTML = experienceData.map(item => `
@@ -706,6 +746,21 @@
                              </div>
                        </div>
                 `).join('');
+
+                if (certContainer) {
+                    certContainer.innerHTML = certificationsData.map(item => `
+                       <div class="reveal-element flex">
+                             <div class="mr-6 flex-shrink-0"><i class="fas ${item.icon} text-blue-400 text-2xl mt-1"></i></div>
+                             <div>
+                                   <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
+                                         <p class="font-semibold text-white text-lg">${item.title[currentLang]} <span class="text-gray-400 font-normal">${item.date[currentLang]}</span></p>
+                                         <p class="text-blue-300 text-base flex-shrink-0 sm:ml-4">${item.location[currentLang]}</p>
+                                   </div>
+                                   ${item.description ? `<p class="text-gray-400 text-sm">${item.description[currentLang]}</p>` : ''}
+                             </div>
+                       </div>
+                    `).join('');
+                }
             }
 
             window.openModal = (id) => {
