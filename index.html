@@ -155,7 +155,6 @@
         a[aria-label="Email"]:hover { color: #3b82f6; }
         a[aria-label="LinkedIn"]:hover { color: #0A66C2; }
         a[aria-label="GitHub"]:hover { color: #FFFFFF; }
-/*         a[aria-label="YouTube"]:hover { color: #FF0000; } */
 
         /* Language Panel Styles */
         #language-panel {
@@ -184,15 +183,16 @@
         [dir="rtl"] .ml-1 { margin-left: 0; margin-right: 0.25rem; }
         [dir="rtl"] .ml-2 { margin-left: 0; margin-right: 0.5rem; }
         [dir="rtl"] .ml-4 { margin-left: 0; margin-right: 1rem; }
-        [dir="rtl"] .sm\\:ml-4 { margin-left: 0 !important; margin-right: 1rem !important; }
+        [dir="rtl"] .sm\:ml-4 { margin-left: 0 !important; margin-right: 1rem !important; }
         [dir="rtl"] .ml-6 { margin-left: 0; margin-right: 1.5rem; }
+        [dir="rtl"] .mr-2 { margin-right: 0; margin-left: 0.5rem; }
         [dir="rtl"] .mr-6 { margin-right: 0; margin-left: 1.5rem; }
 
         /* Flip icons and transforms for RTL */
         [dir="rtl"] .fa-arrow-right:before {
             content: "\f060"; /* Font Awesome unicode for fa-arrow-left */
         }
-        [dir="rtl"] .group:hover .group-hover\\:translate-x-1 {
+        [dir="rtl"] .group:hover .group-hover\:translate-x-1 {
             transform: translateX(-0.25rem);
         }
         /* --- End Enhanced RTL Support --- */
@@ -240,7 +240,7 @@
         </div>
     </header>
 
-    <!-- Language Selector Panel (Floats below the header) -->
+    <!-- Language Selector Panel -->
     <div id="language-panel" class="fixed z-10 glass-effect rounded-lg shadow-xl py-2 w-40 text-sm">
         <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-gray-700/50 transition-colors" data-lang="en">English</a>
         <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-gray-700/50 transition-colors" data-lang="ar">Arabic</a>
@@ -316,7 +316,6 @@
                 <a href="mailto:ali.kassem.contact@gmail.com" class="text-3xl text-gray-400 contact-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 <a href="https://www.linkedin.com/in/ali-kassem-7224bb244/" target="_blank" rel="noopener noreferrer" class="text-3xl text-gray-400 contact-icon" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/Ali-Kassem-AK" target="_blank" rel="noopener noreferrer" class="text-3xl text-gray-400 contact-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
-<!--                 <a href="https://www.youtube.com/@complexity_in_Arabic" target="_blank" rel="noopener noreferrer" class="text-3xl text-gray-400 contact-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a> -->
             </div>
              <p class="mt-10 text-gray-500 text-sm reveal-element" data-translate="footer_copy">&copy; 2025 Ali Kassem. All rights reserved.</p>
         </div>
@@ -341,14 +340,14 @@
                     nav_contact: "Contact",
                     hero_name: "Ali Kassem",
                     hero_subtitle: "Computer Science Student",
-                    hero_bio: "A Computer Science student at E-JUST specializing in AI and software development. I use my skills in Python, Machine learning and Deep learning to build innovative tech solutions and solve real-world problems.",
+                    hero_bio: "A Computer Science student at E-JUST specializing in AI and software development. I use my skills in Python, Full-Stack Architecture, and Deep learning to build innovative, high-availability tech solutions and solve real-world problems.",
                     skills_title: "My Skillset",
-                    skill_cat_1: "Programming", skill_desc_1: "Python (Object-Oriented Programming)",
-                    skill_cat_2: "AI & Data Science", skill_desc_2: "Machine learning, Deep Learning, Image Classification, LLM Integration",
-                    skill_cat_3: "Software & Tools", skill_desc_3: "Git, GitHub, VS Code, Llama.cpp, Google Colab",
-                    skill_cat_4: "Professional Skills", skill_desc_4: "Project Management, Problem Solving, Error Analysis",
+                    skill_cat_1: "Programming", skill_desc_1: "Python (OOP), TypeScript, JavaScript",
+                    skill_cat_2: "AI & Data Science", skill_desc_2: "Machine learning, LLM Integration, Multi-Modal Routing, Image Classification",
+                    skill_cat_3: "Software & Tools", skill_desc_3: "React, Tailwind CSS, n8n, Firebase, Git",
+                    skill_cat_4: "Professional Skills", skill_desc_4: "Systems Architecture, DevOps, Fault Tolerance, Problem Solving",
                     skill_cat_5: "Languages", skill_desc_5: "Arabic (Native), English (Advanced), Japanese (Basics)",
-                    skill_cat_6: "Emerging Tech", skill_desc_6: "Familiar with Quantum Computing Applications in AI",
+                    skill_cat_6: "Emerging Tech", skill_desc_6: "Real-Time WebSockets (PCM Audio), IndexedDB storage hacks",
                     projects_title: "Projects",
                     view_details: "View Details",
                     exp_edu_title: "Experience & Education",
@@ -358,6 +357,7 @@
                     contact_desc: "I'm always open to discussing new projects, creative ideas, or opportunities.<br><br>  <strong>Feel free to reach out!</strong>",
                     footer_copy: "© 2025 Ali Kassem. All rights reserved.",
                     modal_view_code: "View Code on GitHub",
+                    modal_view_live: "View Live App",
                     language_select_label: "Language"
                 },
                 ar: {
@@ -368,15 +368,15 @@
                     nav_experience: "الخبرة والتعليم",
                     nav_contact: "تواصل معي",
                     hero_name: "علي قاسم",
-                    hero_subtitle: "طالب علوم حاسوب",
-                    hero_bio: "طالب علوم حاسوب في الجامعة المصرية اليابانية للعلوم والتكنولوجيا، متخصص في الذكاء الاصطناعي وتطوير البرمجيات. أستخدم مهاراتي في بايثون والتعلم الآلي والتعلم العميق لبناء حلول تقنية مبتكرة وحل مشاكل العالم الحقيقي.",
+                    hero_subtitle: "طالب علوم حاسوب ومهندس أنظمة ذكاء اصطناعي",
+                    hero_bio: "طالب علوم حاسوب في الجامعة المصرية اليابانية للعلوم والتكنولوجيا، متخصص في الذكاء الاصطناعي وتطوير البرمجيات. أستخدم مهاراتي في بايثون وبناء الأنظمة المتكاملة لبناء حلول تقنية عالية التوافر وحل مشاكل العالم الحقيقي.",
                     skills_title: "مجموعة مهاراتي",
-                    skill_cat_1: "البرمجة", skill_desc_1: "بايثون (البرمجة كائنية التوجه)",
-                    skill_cat_2: "الذكاء الاصطناعي وعلوم البيانات", skill_desc_2: "تعلم الآلة، التعلم العميق، تصنيف الصور، تكامل نماذج اللغة الكبيرة",
-                    skill_cat_3: "البرامج والأدوات", skill_desc_3: "Git، GitHub، VS Code، Llama.cpp، Google Colab",
-                    skill_cat_4: "المهارات المهنية", skill_desc_4: "إدارة المشاريع، حل المشكلات، تحليل الأخطاء",
+                    skill_cat_1: "البرمجة", skill_desc_1: "بايثون (OOP), TypeScript, JavaScript",
+                    skill_cat_2: "الذكاء الاصطناعي وعلوم البيانات", skill_desc_2: "تعلم الآلة، تكامل النماذج اللغوية (LLM)، وتوجيه المهام المتعددة",
+                    skill_cat_3: "البرامج والأدوات", skill_desc_3: "React, Tailwind CSS, n8n, Firebase, Git",
+                    skill_cat_4: "المهارات المهنية", skill_desc_4: "هندسة الأنظمة، عمليات التطوير (DevOps)، تجاوز الأعطال، حل المشكلات",
                     skill_cat_5: "اللغات", skill_desc_5: "العربية (لغة أم)، الإنجليزية (متقدم)، اليابانية (أساسيات)",
-                    skill_cat_6: "التقنيات الناشئة", skill_desc_6: "على دراية بتطبيقات الحوسبة الكمومية في الذكاء الاصطناعي",
+                    skill_cat_6: "التقنيات الناشئة", skill_desc_6: "البث الصوتي المباشر (WebSockets)، واستغلال IndexedDB",
                     projects_title: "مشاريعي",
                     view_details: "عرض التفاصيل",
                     exp_edu_title: "الخبرة والتعليم",
@@ -386,6 +386,7 @@
                     contact_desc: "أنا دائما منفتح لمناقشة المشاريع الجديدة أو الأفكار الإبداعية أو الفرص.<br> <br> <strong>لا تتردد في التواصل!</strong>",
                     footer_copy: "© 2025 علي قاسم. جميع الحقوق محفوظة.",
                     modal_view_code: "عرض الكود على GitHub",
+                    modal_view_live: "عرض التطبيق المباشر",
                     language_select_label: "اللغة"
                 },
                 ja: {
@@ -396,15 +397,15 @@
                     nav_experience: "経験と学歴",
                     nav_contact: "連絡先",
                     hero_name: "アリ・カセム",
-                    hero_subtitle: "コンピューターサイエンスの学生",
-                    hero_bio: "E-JUSTのコンピューターサイエンスを専攻する学生で、AIとソフトウェア開発を専門としています。Python、機械学習、深層学習のスキルを活かして、革新的な技術ソリューションを構築し、現実世界の問題を解決します。",
+                    hero_subtitle: "コンピューターサイエンスの学生・AIシステムアーキテクト",
+                    hero_bio: "E-JUSTのコンピューターサイエンスを専攻する学生で、AIとソフトウェア開発を専門としています。Python、フルスタック開発、深層学習のスキルを活かして、革新的で高可用性の技術ソリューションを構築し、現実世界の問題を解決します。",
                     skills_title: "私のスキルセット",
-                    skill_cat_1: "プログラミング", skill_desc_1: "Python (オブジェクト指向プログラミング)",
-                    skill_cat_2: "AI & データサイエンス", skill_desc_2: "機械学習、深層学習、画像分類、LLM統合",
-                    skill_cat_3: "ソフトウェア & ツール", skill_desc_3: "Git、GitHub、VS Code、Llama.cpp、Google Colab",
-                    skill_cat_4: "プロフェッショナルスキル", skill_desc_4: "プロジェクト管理、問題解決、エラー分析",
+                    skill_cat_1: "プログラミング", skill_desc_1: "Python (OOP), TypeScript, JavaScript",
+                    skill_cat_2: "AI & データサイエンス", skill_desc_2: "機械学習、LLM統合、マルチモーダルルーティング",
+                    skill_cat_3: "ソフトウェア & ツール", skill_desc_3: "React, Tailwind CSS, n8n, Firebase, Git",
+                    skill_cat_4: "プロフェッショナルスキル", skill_desc_4: "システムアーキテクチャ、DevOps、フォールトトレランス",
                     skill_cat_5: "言語", skill_desc_5: "アラビア語 (ネイティブ)、英語 (上級)、日本語 (基礎)",
-                    skill_cat_6: "新興技術", skill_desc_6: "AIにおける量子コンピューティングの応用にも精通しています",
+                    skill_cat_6: "新興技術", skill_desc_6: "リアルタイムWebSockets、IndexedDBを利用したストレージ拡張",
                     projects_title: "プロジェクト",
                     view_details: "詳細を見る",
                     exp_edu_title: "経験と学歴",
@@ -414,12 +415,35 @@
                     contact_desc: "新しいプロジェクト、創造的なアイデア、または機会についての議論をいつでも歓迎します。<br><br> <strong> お気軽にご連絡ください！</strong>",
                     footer_copy: "© 2025 アリ・カセム. 全著作権所有.",
                     modal_view_code: "GitHubでコードを見る",
+                    modal_view_live: "ライブアプリを見る",
                     language_select_label: "言語"
                 }
             };
             
             // Dynamic content data
             const projectsData = [
+                { 
+                    id: 'xare-ai', 
+                    title: {
+                        en: "Xare AI Platform",
+                        ar: "منصة Xare للذكاء الاصطناعي",
+                        ja: "Xare AI プラットフォーム"
+                    },
+                    description: {
+                        en: "A highly available, zero-cost multi-modal AI platform with real-time voice streaming and dynamic LLM failover routing.",
+                        ar: "منصة ذكاء اصطناعي متعددة الوسائط، مجانية وعالية التوافر، تتميز بالبث الصوتي المباشر وتوجيه النماذج ديناميكياً مع آلية لتجاوز الأعطال.",
+                        ja: "リアルタイムの音声ストリーミングと動的なLLMフェイルオーバールーティングを備えた、高可用性でゼロコストのマルチモーダルAIプラットフォーム。"
+                    },
+                    longDescription: {
+                        en: "Designed and engineered a fully-featured, multi-modal AI conversational platform from scratch, focusing on high availability, fault tolerance, and a $0 operating cost architecture. Features cascading redundancy via a custom n8n microservices backend, live bi-directional WebSocket voice streaming with custom jitter buffers, clever DevOps hacks to maintain 24/7 uptime on HuggingFace, and a highly optimized React/TypeScript frontend utilizing IndexedDB to bypass Firebase storage limits.",
+                        ar: "صممت وطورت منصة محادثة ذكاء اصطناعي متكاملة من الصفر مع التركيز على التوافر العالي وتحمل الأخطاء وتكلفة تشغيل 0 دولار. تتميز المنصة ببنية خدمات مصغرة (Microservices) باستخدام n8n لتوجيه المهام وتجاوز الأعطال تلقائياً، بالإضافة إلى دعم البث الصوتي المباشر عبر WebSockets. كما قمت بتطوير واجهة مستخدم متطورة باستخدام React و TypeScript مع توظيف تقنية IndexedDB لتخطي قيود التخزين السحابي في Firebase.",
+                        ja: "高可用性、フォールトトレランス、および運用コスト0ドルのアーキテクチャに重点を置き、完全に機能するマルチモーダルAI対話プラットフォームをゼロから設計および開発しました。カスタムn8nマイクロサービスバックエンドによるカスケード冗長性、カスタムジッターバッファを備えたライブ双方向WebSocket音声ストリーミング、HuggingFaceで24時間365日の稼働時間を維持するための巧妙なDevOpsハック、およびFirebaseストレージの制限を回避するためにIndexedDBを利用する高度に最適化されたReact/TypeScriptフロントエンドを備えています。"
+                    },
+                    tags: ["System Architecture", "n8n", "Microservices", "WebSockets", "DevOps", "Fault Tolerance"], 
+                    link: null, 
+                    liveLink: "https://xare-ai.netlify.app",
+                    imageUrl: "https://placehold.co/600x400/0f172a/3b82f6?text=Xare+AI+Platform" 
+                },
                 { 
                     id: 'ai-model', 
                     title: {
@@ -439,6 +463,7 @@
                     },
                     tags: ["Python", "Google Colab", "Kaggle","model training"], 
                     link: null, 
+                    liveLink: null,
                     imageUrl: "https://placehold.co/600x400/1f2937/d1d5db?text=Image+Classification" 
                 },
                 { 
@@ -460,11 +485,19 @@
                     },
                     tags: ["Python", "OOP", "Tkinter", "LLM", "Project Management"], 
                     link: "https://github.com/Ali-Kassem-AK/SCM-Simulation-Project/", 
+                    liveLink: null,
                     imageUrl: "https://placehold.co/600x400/1f2937/d1d5db?text=SCM+Simulation" 
                 }
             ];
 
             const experienceData = [
+                { 
+                    icon: 'fa-network-wired',
+                    title: { en: 'Lead Developer & Systems Architect', ar: 'مطور رئيسي ومهندس أنظمة', ja: 'リード開発者＆システムアーキテクト' },
+                    date: { en: '(2026 - Present)', ar: '(2026 - الحاضر)', ja: '(2026年 - 現在)' },
+                    location: { en: 'Xare AI Platform', ar: 'منصة Xare للذكاء الاصطناعي', ja: 'Xare AI プラットフォーム' },
+                    description: { en: 'Engineered a highly available, zero-cost AI platform from scratch. Built a cascading redundancy microservices architecture using n8n, integrated Deepgram WebSockets for live voice streaming, and created a React/TypeScript frontend with advanced IndexedDB media caching.', ar: 'قمت بهندسة وبناء منصة ذكاء اصطناعي عالية التوافر ومجانية بالكامل من الصفر. صممت بنية خدمات مصغرة لتجاوز الأعطال، ودمجت تقنيات WebSockets للبث الصوتي المباشر، وطورت واجهة أمامية باستخدام React متجاوزاً قيود مساحة التخزين السحابية.', ja: '高可用性でゼロコストのAIプラットフォームをゼロから設計・構築しました。カスケード冗長性を備えたマイクロサービスアーキテクチャを構築し、ライブ音声ストリーミング用のWebSocketを統合しました。' }
+                },
                 { 
                     icon: 'fa-code-branch',
                     title: { en: 'Supply Chain Management Project', ar: 'مشروع إدارة سلسلة التوريد', ja: 'サプライチェーンマネジメントプロジェクト' },
@@ -690,9 +723,14 @@
                         <h3 class="text-3xl font-bold text-white mb-2">${p.title[currentLang]}</h3>
                         <div class="mb-4 flex flex-wrap gap-2">${p.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
                         <p class="text-gray-300 mb-6">${p.longDescription[currentLang]}</p>
-                        ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">
-                            ${translations[currentLang].modal_view_code} <i class="fab fa-github ml-2"></i>
-                        </a>` : ''}
+                        <div class="flex flex-wrap gap-3">
+                            ${p.liveLink ? `<a href="${p.liveLink}" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                                ${translations[currentLang].modal_view_live} <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>` : ''}
+                            ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">
+                                ${translations[currentLang].modal_view_code} <i class="fab fa-github ml-2"></i>
+                            </a>` : ''}
+                        </div>
                     </div>`;
                 modalContainer.innerHTML = modalHTML;
                 modalContainer.classList.add('active');
