@@ -454,7 +454,6 @@
                     liveLink: "https://xare-chatbot.vercel.app",
                     imageUrl: "https://placehold.co/600x400/0f172a/3b82f6?text=Xare+AI+Platform" 
                 },
-               
                 { 
                     id: 'scm-sim', 
                     title: {
@@ -493,8 +492,9 @@
                     date: { en: '(Jan 2025 - Apr 2025)', ar: '(يناير 2025 - أبريل 2025)', ja: '(2025年1月 - 2025年4月)' },
                     location: { en: 'Personal Project', ar: 'مشروع شخصي', ja: '個人プロジェクト' },
                     description: { en: 'led a comprehensive SCM simulation in Python (OOP), personally writing about 60% of the main code. I integrated a local LLM for intelligent insights, review analysis, and marketing content generation. The project also includes a Tkinter GUI, SQLite, and Proxy design pattern. My role combined leadership with significant technical and AI contributions.', ar: 'قمت بقيادة محاكاة شاملة لإدارة سلسلة التوريد في بايثون (OOP)، وكتابة حوالي 60٪ من الكود الرئيسي بنفسي. قمت بدمج نموذج لغة كبير محلي للحصول على رؤى ذكية وتحليل المراجعات وإنشاء محتوى تسويقي. يتضمن المشروع أيضًا واجهة مستخدم رسومية Tkinter و SQLite ونمط تصميم الوكيل. جمع دوري بين القيادة والمساهمات الفنية والذكاء الاصطناعي الكبيرة.', ja: 'Python（OOP）で包括的なSCMシミュレーションを主導し、メインコードの約60％を個人的に記述しました。インテリジェントな洞察、レビュー分析、マーケティングコンテンツ生成のためにローカルLLMを統合しました。このプロジェクトには、Tkinter GUI、SQLite、およびプロキシ設計パターンも含まれています。私の役割は、リーダーシップと重要な技術的およびAIへの貢献を組み合わせたものでした。' }
-                },
-
+                }
+            ];
+            
             const educationData = [
                  { 
                     icon: 'fa-graduation-cap',
@@ -722,18 +722,18 @@
                        </div>
                 `).join('');
 
-                if (certContainer) {
+                if (certContainer && typeof certificationsData !== 'undefined') {
                     certContainer.innerHTML = certificationsData.map(item => `
-                       <div class="reveal-element flex">
-                             <div class="mr-6 flex-shrink-0"><i class="fas ${item.icon} text-blue-400 text-2xl mt-1"></i></div>
-                             <div>
-                                   <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
-                                         <p class="font-semibold text-white text-lg">${item.title[currentLang]} <span class="text-gray-400 font-normal">${item.date[currentLang]}</span></p>
-                                         <p class="text-blue-300 text-base flex-shrink-0 sm:ml-4">${item.location[currentLang]}</p>
-                                   </div>
-                                   ${item.description ? `<p class="text-gray-400 text-sm">${item.description[currentLang]}</p>` : ''}
-                             </div>
-                       </div>
+                        <div class="reveal-element flex">
+                            <div class="mr-6 flex-shrink-0"><i class="fas ${item.icon} text-blue-400 text-2xl mt-1"></i></div>
+                            <div>
+                                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
+                                    <p class="font-semibold text-white text-lg">${item.title[currentLang]} <span class="text-gray-400 font-normal">${item.date[currentLang]}</span></p>
+                                    <p class="text-blue-300 text-base flex-shrink-0 sm:ml-4">${item.location[currentLang]}</p>
+                                </div>
+                                ${item.description ? `<p class="text-gray-400">${item.description[currentLang]}</p>` : ''}
+                            </div>
+                        </div>
                     `).join('');
                 }
             }
@@ -749,14 +749,12 @@
                         <h3 class="text-3xl font-bold text-white mb-2">${p.title[currentLang]}</h3>
                         <div class="mb-4 flex flex-wrap gap-2">${p.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
                         <p class="text-gray-300 mb-6">${p.longDescription[currentLang]}</p>
-                        <div class="flex flex-wrap gap-3">
-                            ${p.liveLink ? `<a href="${p.liveLink}" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">
-                                ${translations[currentLang].modal_view_live} <i class="fas fa-external-link-alt ml-2"></i>
-                            </a>` : ''}
-                            ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-300">
-                                ${translations[currentLang].modal_view_code} <i class="fab fa-github ml-2"></i>
-                            </a>` : ''}
-                        </div>
+                        ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                            ${translations[currentLang].modal_view_code} <i class="fab fa-github ml-2"></i>
+                        </a>` : ''}
+                        ${p.liveLink ? `<a href="${p.liveLink}" target="_blank" rel="noopener noreferrer" class="inline-block bg-green-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition-colors duration-300 ml-4">
+                            ${translations[currentLang].modal_view_live} <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>` : ''}
                     </div>`;
                 modalContainer.innerHTML = modalHTML;
                 modalContainer.classList.add('active');
