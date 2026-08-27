@@ -446,12 +446,9 @@
                     },
                     longDescription: {
                         en: "Designed and engineered a fully-featured, multi-modal AI conversational platform from scratch, then rebuilt and expanded it into Xare AI V2 with a 120-node n8n orchestration layer focused on intelligent routing, fault tolerance, and multi-model integration. V2 introduces advanced reasoning, vision, document and PDF processing, OCR, voice, speech-to-text, text-to-speech, and image generation, powered by Gemini, Qwen 3.6 27B, GPT-OSS 120B, Whisper, and Deepgram. Features multi-tier model fallbacks, real-time WebSocket voice streaming, a React/TypeScript frontend, IndexedDB media handling, persistent task management, security, and cloud deployment across Vercel, Hugging Face, Supabase, Firestore, and GitHub Actions.",
-                        
                         ar: "صممت وطورت منصة محادثة ذكاء اصطناعي متكاملة ومتعددة الوسائط من الصفر، ثم أعدت بناءها وتوسيعها لتصبح Xare AI V2 مع طبقة Orchestration مكونة من 120 عقدة باستخدام n8n، تركز على التوجيه الذكي، وتحمل الأعطال، والتكامل مع نماذج ذكاء اصطناعي متعددة. يقدم الإصدار الثاني قدرات متقدمة تشمل الاستدلال، وفهم الصور، ومعالجة المستندات وملفات PDF، وOCR، والصوت، وتحويل الكلام إلى نص، وتحويل النص إلى كلام، وتوليد الصور، بالاعتماد على Gemini وQwen 3.6 27B وGPT-OSS 120B وWhisper وDeepgram. كما يتضمن النظام أنظمة Fallback متعددة المستويات، وبثاً صوتياً لحظياً عبر WebSockets، وواجهة React/TypeScript، وإدارة الوسائط باستخدام IndexedDB، وإدارة المهام، والحماية، والنشر عبر Vercel وHugging Face وSupabase وFirestore وGitHub Actions.",
-                        
                         ja: "完全に機能するマルチモーダルAI対話プラットフォームをゼロから設計・開発し、その後Xare AI V2として再構築および拡張しました。120ノードのn8nオーケストレーション層を採用し、インテリジェントなルーティング、フォールトトレランス、複数モデルの統合を実現しています。V2では、高度な推論、画像理解、ドキュメントおよびPDF処理、OCR、音声入力、音声認識、音声合成、画像生成を追加し、Gemini、Qwen 3.6 27B、GPT-OSS 120B、Whisper、Deepgramなどのモデルを統合しています。さらに、マルチティアのフォールバック、リアルタイムWebSocket音声ストリーミング、React/TypeScriptフロントエンド、IndexedDBによるメディア管理、タスク永続化、セキュリティ、Vercel、Hugging Face、Supabase、Firestore、GitHub Actionsを活用したクラウドデプロイを実装しました。"
                     },
-
                     tags: ["System Architecture", "n8n", "Microservices", "WebSockets", "DevOps", "Fault Tolerance"], 
                     link: null, 
                     liveLink: "https://xare-ai.vercel.app",
@@ -747,7 +744,7 @@
                 const modalContainer = document.getElementById('project-modal');
                 const modalHTML = `
                     <div class="modal-content relative">
-                        <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-4xl leading-none transition-transform duration-200 hover:scale-125" aria-label="Close modal">&times;</button>
+                        <button onclick="closeModal()" class="absolute top-2 right-2 md:top-3 md:right-3 z-10 text-gray-400 hover:text-white text-4xl leading-none transition-transform duration-200 hover:scale-125" aria-label="Close modal">&times;</button>
                         <img src="${p.imageUrl}" alt="Project Image" class="w-full h-64 object-contain bg-black rounded-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Image+Error';">
                         <h3 class="text-3xl font-bold text-white mb-2">${p.title[currentLang]}</h3>
                         <div class="mb-4 flex flex-wrap gap-2">${p.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
