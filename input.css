@@ -43,6 +43,10 @@
     overflow: hidden;
 }
 
+header.glass-effect {
+    overflow: visible;
+}
+
 .tag {
     background-color: #374151;
     color: #d1d5db;
@@ -157,8 +161,7 @@ a[aria-label="GitHub"]:hover { color: #FFFFFF; }
 
 #language-panel {
     position: absolute !important;
-    top: 100%;
-    margin-top: 0.5rem;
+    top: calc(100% + 0.5rem);
     transition: opacity 0.15s ease-out, transform 0.15s ease-out, visibility 0.15s;
     opacity: 0;
     visibility: hidden;
