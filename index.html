@@ -57,10 +57,18 @@
                         <svg class="icon text-xs" aria-hidden="true"><use href="#icon-download"></use></svg>
                     </a>
                 </div>
-                <!-- Language Selector Icon -->
-                <button id="language-selector-button" class="hidden md:flex items-center justify-center ml-6 text-gray-300 hover:text-blue-400 focus:outline-none transition-colors" aria-label="Select language">
-                    <svg class="icon text-lg" aria-hidden="true"><use href="#icon-language"></use></svg>
-                </button>
+                <!-- Language Selector Dropdown Container -->
+                <div class="relative hidden md:flex items-center ml-6">
+                    <button id="language-selector-button" class="flex items-center justify-center text-gray-300 hover:text-blue-400 focus:outline-none transition-colors p-1" aria-label="Select language" aria-expanded="false" aria-haspopup="true">
+                        <svg class="icon text-lg" aria-hidden="true"><use href="#icon-language"></use></svg>
+                    </button>
+                    <!-- Language Selector Panel -->
+                    <div id="language-panel" class="glass-effect rounded-lg shadow-xl py-2 w-36 text-sm">
+                        <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-gray-700/50 transition-colors" data-lang="en">English</a>
+                        <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-gray-700/50 transition-colors" data-lang="ar">Arabic</a>
+                        <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-gray-700/50 transition-colors" data-lang="ja">Japanese</a>
+                    </div>
+                </div>
                 <button id="mobile-menu-button" class="md:hidden ml-4 text-white focus:outline-none flex items-center justify-center" aria-label="Open mobile menu">
                     <svg id="mobile-menu-icon" class="icon text-lg" aria-hidden="true"><use href="#icon-bars"></use></svg>
                 </button>
@@ -84,13 +92,6 @@
             <a href="#" class="block py-2 px-6 text-sm text-gray-300 hover:bg-gray-700" data-lang="ja">Japanese</a>
         </div>
     </header>
-
-    <!-- Language Selector Panel -->
-    <div id="language-panel" class="fixed z-30 glass-effect rounded-lg shadow-xl py-2 w-40 text-sm">
-        <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-gray-700/50 transition-colors" data-lang="en">English</a>
-        <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-gray-700/50 transition-colors" data-lang="ar">Arabic</a>
-        <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-gray-700/50 transition-colors" data-lang="ja">Japanese</a>
-    </div>
 
     <main>
         <!-- Hero Section -->
@@ -473,38 +474,39 @@
                 const langButton = document.getElementById('language-selector-button');
                 const langPanel = document.getElementById('language-panel');
                 if (!langButton || !langPanel) return;
-                const hidePanel = () => langPanel.classList.remove('active');
-                const showPanel = () => {
-                    const buttonRect = langButton.getBoundingClientRect();
-                    langPanel.style.top = (buttonRect.bottom + 8) + 'px'; 
 
-                    if (document.documentElement.dir === 'rtl') {
-                        langPanel.style.left = buttonRect.left + 'px';
-                    } else {
-                        langPanel.style.left = (buttonRect.right - langPanel.offsetWidth) + 'px';
-                    }
-                    
-                    langPanel.classList.add('active');
+                const togglePanel = (show) => {
+                    const isActive = typeof show === 'boolean' ? show : !langPanel.classList.contains('active');
+                    langPanel.classList.toggle('active', isActive);
+                    langButton.setAttribute('aria-expanded', isActive ? 'true' : 'false');
                 };
+
                 langButton.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    langPanel.classList.contains('active') ? hidePanel() : showPanel();
+                    togglePanel();
                 });
+
                 langPanel.addEventListener('click', (e) => {
-                    if (e.target.tagName === 'A' && e.target.dataset.lang) {
+                    const link = e.target.closest('a[data-lang]');
+                    if (link) {
                         e.preventDefault();
-                        setLanguage(e.target.dataset.lang);
-                        hidePanel();
+                        setLanguage(link.dataset.lang);
+                        togglePanel(false);
                     }
                 });
+
                 document.addEventListener('click', (e) => {
                     if (langPanel.classList.contains('active') && !langButton.contains(e.target) && !langPanel.contains(e.target)) {
-                        hidePanel();
+                        togglePanel(false);
                     }
                 });
-                window.addEventListener('scroll', () => {
-                     if (langPanel.classList.contains('active')) hidePanel();
-                }, { passive: true });
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && langPanel.classList.contains('active')) {
+                        togglePanel(false);
+                        langButton.focus();
+                    }
+                });
             }
 
             function initParticleCanvas() {

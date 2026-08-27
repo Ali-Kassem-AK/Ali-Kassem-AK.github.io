@@ -156,16 +156,33 @@ a[aria-label="LinkedIn"]:hover { color: #0A66C2; }
 a[aria-label="GitHub"]:hover { color: #FFFFFF; }
 
 #language-panel {
+    position: absolute !important;
+    top: 100%;
+    margin-top: 0.5rem;
     transition: opacity 0.15s ease-out, transform 0.15s ease-out, visibility 0.15s;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-8px);
+    transform: translateY(-6px);
+    pointer-events: none;
+    z-index: 50;
 }
 
 #language-panel.active {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    pointer-events: auto;
+}
+
+html[dir="ltr"] #language-panel,
+html:not([dir="rtl"]) #language-panel {
+    right: 0;
+    left: auto;
+}
+
+html[dir="rtl"] #language-panel {
+    left: 0;
+    right: auto;
 }
 
 /* Icon utility sizing */
