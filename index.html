@@ -101,7 +101,7 @@
         <section id="about" class="section container mx-auto text-center flex flex-col items-center justify-center min-h-screen">
              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' fill='%23111827'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='56' fill='%23FFFFFF'%3EAK%3C/text%3E%3C/svg%3E" alt="Ali Kassem" width="160" height="160" class="rounded-full w-40 h-40 mb-6 border-4 border-gray-700 reveal-element" fetchpriority="high">
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 reveal-element" data-translate="hero_name">Ali Kassem</h1>
-            <p class="text-xl md:text-2xl text-blue-400 mb-8 h-8 reveal-element"><span id="typing-subtitle"></span><span class="typing-cursor"></span></p>
+            <p class="text-lg sm:text-xl md:text-2xl text-blue-400 mb-8 min-h-[3.5rem] sm:min-h-[2.5rem] max-w-4xl px-2 reveal-element"><span id="typing-subtitle"></span><span class="typing-cursor"></span></p>
             <p class="max-w-3xl text-lg text-gray-400 mb-8 reveal-element" data-translate="hero_bio">
                 Driven Computer Science student at E-JUST specializing in AI Systems Architecture, Automation, and Software Engineering. Experienced in designing production-oriented, fault-tolerant multimodal AI platforms and intelligent workflow automation systems. Proficient in Python, n8n orchestration, LLM integration, and microservices architecture, with a strong focus on building high-availability technology solutions to solve real-world problems.
             </p>
@@ -242,7 +242,7 @@
                     nav_contact: "Contact",
                     nav_cv: "Resume",
                     hero_name: "Ali Kassem",
-                    hero_subtitle: "Computer Science Student & AI Automation Engineer",
+                    hero_subtitle: "AI & Data Science Student @ EJUST | DEPI Microsoft Data Engineer Trainee | Automation Systems Architect | Ex-Victorian",
                     hero_bio: "Driven Computer Science student at E-JUST specializing in AI Systems Architecture, Automation, and Software Engineering. Experienced in designing production-oriented, fault-tolerant multimodal AI platforms and intelligent workflow automation systems. Proficient in Python, n8n orchestration, LLM integration, and microservices architecture, with a strong focus on building high-availability technology solutions to solve real-world problems.",
                     download_cv: "Download Resume",
                     contact_btn: "Get In Touch",
@@ -276,7 +276,7 @@
                     nav_contact: "تواصل معي",
                     nav_cv: "السيرة الذاتية",
                     hero_name: "علي قاسم",
-                    hero_subtitle: "طالب علوم حاسوب ومهندس أتمتة الذكاء الاصطناعي",
+                    hero_subtitle: "طالب ذكاء اصطناعي وعلوم بيانات في EJUST | متدرب هندسة بيانات مايكروسوفت (DEPI) | مهندس أنظمة أتمتة | خريج كلية فيكتوريا",
                     hero_bio: "طالب علوم حاسوب شغوف في الجامعة المصرية اليابانية للعلوم والتكنولوجيا (E-JUST)، متخصص في هندسة أنظمة الذكاء الاصطناعي والأتمتة وهندسة البرمجيات. ذو خبرة في تصميم منصات الذكاء الاصطناعي متعددة الوسائط المقاومة للأعطال والموجهة للإنتاج، وأنظمة أتمتة سير العمل الذكية. متمكن من لغة Python، وأتمتة n8n، ودمج نماذج LLM، وهندسة الخدمات المصغرة (Microservices)، مع تركيز قوي على بناء حلول تقنية عالية التوافر لحل مشاكل العالم الحقيقي.",
                     download_cv: "تحميل السيرة الذاتية",
                     contact_btn: "تواصل معي",
@@ -310,7 +310,7 @@
                     nav_contact: "連絡先",
                     nav_cv: "履歴書",
                     hero_name: "アリ・カセム",
-                    hero_subtitle: "コンピューターサイエンスの学生・AI自動化エンジニア",
+                    hero_subtitle: "EJUST AI・データサイエンス専攻生 | DEPI マイクロソフト データエンジニア研修生 | 自動化システムアーキテクト | ビクトリアカレッジ出身",
                     hero_bio: "AIシステムアーキテクチャ、自動化、ソフトウェアエンジニアリングを専門とするE-JUSTのコンピューターサイエンス専攻の学生。本番環境向けの耐障害性に優れたマルチモーダルAIプラットフォームおよびインテリジェントなワークフロー自動化システムの設計に豊富な経験を有します。Python、n8nオーケストレーション、LLM統合、マイクロサービスアーキテクチャに精通し、現実世界の問題を解決するための高可用性技術ソリューションの構築に注力しています。",
                     download_cv: "履歴書をダウンロード",
                     contact_btn: "お問い合わせ",
@@ -816,12 +816,12 @@
                     if (index < text.length) {
                         subtitleEl.textContent += text.charAt(index);
                         index++;
-                        typeTimeout = setTimeout(type, 90);
+                        typeTimeout = setTimeout(type, 24);
                     } else {
                         cursorEl.style.display = 'none'; 
                     }
                 }
-                typeTimeout = setTimeout(type, 400);
+                typeTimeout = setTimeout(type, 150);
             }
             
             function initScrollReveal() {
