@@ -34,7 +34,6 @@
     <symbol id="icon-award" viewBox="0 0 384 512"><path fill="currentColor" d="M192 0c61.9 0 112 50.1 112 112c0 31.7-13.1 60.3-34.2 80.7l77.7 148.9c6.4 12.2 .9 27.2-11.4 32.5l-96.1 41.2-48 91.9c-6.1 11.7-20.7 16.3-32.5 10.2s-16.3-20.7-10.2-32.5l48-91.9-96.1-41.2c-12.3-5.3-17.8-20.3-11.4-32.5L114.2 192.7C93.1 172.3 80 143.7 80 112C80 50.1 130.1 0 192 0zm0 64a48 48 0 1 0 0 96 48 48 0 1 0 0-96z"/></symbol>
     <symbol id="icon-robot" viewBox="0 0 640 512"><path fill="currentColor" d="M320 0c17.7 0 32 14.3 32 32V96H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H192c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64H288V32c0-17.7 14.3-32 32-32zM208 240a32 32 0 1 0 0 64 32 32 0 1 0 0-64zm224 32a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM192 384h256v32H192V384z"/></symbol>
     <symbol id="icon-certificate" viewBox="0 0 512 512"><path fill="currentColor" d="M211 7.3C205 1 196-1.4 187.6 .8s-14.9 8-17.1 16.2L150.8 95.7l-78.4 20.3c-8.3 2.2-14.7 8.6-16.9 16.9s-.2 17.4 5.4 23.4l55.8 59.9-20.3 78.4c-2.2 8.3 .2 17.1 6.2 23.1s14.8 8.4 23.1 6.2l78.4-20.3 59.9 55.8c6 5.6 15.1 7.6 23.4 5.4s14.7-8.6 16.9-16.9l20.3-78.4 78.4-20.3c8.3-2.2 14.7-8.6 16.9-16.9s.2-17.4-5.4-23.4l-55.8-59.9 20.3-78.4c2.2-8.3-.2-17.1-6.2-23.1s-14.8-8.4-23.1-6.2l-78.4 20.3L234.4 24.4C232.2 16.2 225.4 9.5 217.1 7.3zM256 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></symbol>
-    <symbol id="icon-database" viewBox="0 0 448 512"><path fill="currentColor" d="M448 80v48c0 44.2-100.3 80-224 80S0 172.2 0 128V80C0 35.8 100.3 0 224 0s224 35.8 224 80zm0 128v48c0 44.2-100.3 80-224 80S0 300.2 0 256V208c43.5 28.5 125.4 48 224 48s180.5-19.5 224-48zm0 128v48c0 44.2-100.3 80-224 80S0 428.2 0 384V336c43.5 28.5 125.4 48 224 48s180.5-19.5 224-48z"/></symbol>
     <symbol id="icon-external-link-alt" viewBox="0 0 512 512"><path fill="currentColor" d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></symbol>
   </defs>
 </svg>
@@ -103,7 +102,7 @@
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 reveal-element" data-translate="hero_name">Ali Kassem</h1>
             <p class="text-xl md:text-2xl text-blue-400 mb-8 h-8 reveal-element"><span id="typing-subtitle"></span><span class="typing-cursor"></span></p>
             <p class="max-w-3xl text-lg text-gray-400 mb-8 reveal-element" data-translate="hero_bio">
-                Driven Computer Science student at E-JUST specializing in AI Systems Architecture, Automation, and Software Engineering. Experienced in designing production-oriented, fault-tolerant multimodal AI platforms and intelligent workflow automation systems.
+                Driven Computer Science student at E-JUST specializing in AI Systems Architecture, Automation, and Software Engineering. Experienced in designing production-oriented, fault-tolerant multimodal AI platforms and intelligent workflow automation systems. Proficient in Python, n8n orchestration, LLM integration, and microservices architecture, with a strong focus on building high-availability technology solutions to solve real-world problems.
             </p>
             <!-- Hero Action Buttons -->
             <div class="flex flex-wrap justify-center items-center gap-4 reveal-element">
@@ -145,37 +144,31 @@
             <div class="container mx-auto">
                 <h2 class="text-3xl font-bold text-center text-white mb-12 reveal-element" data-translate="skills_title">Technical Skills & Architecture Stack</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- 1. Programming -->
                     <div class="glass-effect p-6 text-center interactive-card reveal-element">
                         <svg class="icon text-4xl text-blue-400 mb-4 mx-auto" aria-hidden="true"><use href="#icon-code"></use></svg>
                         <h3 class="text-xl font-semibold text-white mb-2" data-translate="skill_cat_1">Programming</h3>
                         <p class="text-gray-400" data-translate="skill_desc_1">Python (Object-Oriented Programming), SQL, MySQL, TypeScript, JavaScript</p>
                     </div>
-                    <!-- 2. Data & Cloud -->
                     <div class="glass-effect p-6 text-center interactive-card reveal-element">
-                        <svg class="icon text-4xl text-blue-400 mb-4 mx-auto" aria-hidden="true"><use href="#icon-database"></use></svg>
+                        <svg class="icon text-4xl text-blue-400 mb-4 mx-auto" aria-hidden="true"><use href="#icon-tasks"></use></svg>
                         <h3 class="text-xl font-semibold text-white mb-2" data-translate="skill_cat_2">Data & Cloud</h3>
                         <p class="text-gray-400" data-translate="skill_desc_2">Data Engineering, ETL/ELT Pipelines, Microsoft Azure, Big Data Processing, Relational Databases (MySQL, SQLite)</p>
                     </div>
-                    <!-- 3. AI & Machine Learning -->
                     <div class="glass-effect p-6 text-center interactive-card reveal-element">
                         <svg class="icon text-4xl text-blue-400 mb-4 mx-auto" aria-hidden="true"><use href="#icon-brain"></use></svg>
                         <h3 class="text-xl font-semibold text-white mb-2" data-translate="skill_cat_3">AI & Machine Learning</h3>
                         <p class="text-gray-400" data-translate="skill_desc_3">LLM Integration, Prompt Engineering, Multi-Modal Routing, Machine Learning, Image Classification, OCR</p>
                     </div>
-                    <!-- 4. Orchestration & DevOps -->
                     <div class="glass-effect p-6 text-center interactive-card reveal-element">
                         <svg class="icon text-4xl text-blue-400 mb-4 mx-auto" aria-hidden="true"><use href="#icon-project-diagram"></use></svg>
                         <h3 class="text-xl font-semibold text-white mb-2" data-translate="skill_cat_4">Orchestration & DevOps</h3>
                         <p class="text-gray-400" data-translate="skill_desc_4">n8n Workflow Automation, Systems Architecture, Microservices, WebSockets, DevOps, Fault Tolerance</p>
                     </div>
-                    <!-- 5. Software & Tools -->
                     <div class="glass-effect p-6 text-center interactive-card reveal-element">
                         <svg class="icon text-4xl text-blue-400 mb-4 mx-auto" aria-hidden="true"><use href="#icon-tools"></use></svg>
                         <h3 class="text-xl font-semibold text-white mb-2" data-translate="skill_cat_5">Software & Tools</h3>
                         <p class="text-gray-400" data-translate="skill_desc_5">Hugging Face, Firebase, GitHub, React, Tkinter, IndexedDB</p>
                     </div>
-                    <!-- 6. Languages -->
                     <div class="glass-effect p-6 text-center interactive-card reveal-element">
                         <svg class="icon text-4xl text-blue-400 mb-4 mx-auto" aria-hidden="true"><use href="#icon-language"></use></svg>
                         <h3 class="text-xl font-semibold text-white mb-2" data-translate="skill_cat_6">Languages</h3>
@@ -215,7 +208,7 @@
             <h2 class="text-2xl font-bold mb-4 reveal-element" data-translate="contact_title">Get In Touch</h2>
             <p class="text-gray-400 mb-8 max-w-md mx-auto reveal-element" data-translate="contact_desc">I'm always open to discussing new projects, creative ideas, or opportunities.<br><br>  <strong>Feel free to reach out!</strong></p>
             <div class="flex justify-center items-center space-x-8 reveal-element">
-                <a href="mailto:alikassemak2005@gmail.com" class="text-3xl text-gray-400 contact-icon flex items-center justify-center" aria-label="Email">
+                <a href="mailto:ali.kassem.contact@gmail.com" class="text-3xl text-gray-400 contact-icon flex items-center justify-center" aria-label="Email">
                     <svg class="icon" aria-hidden="true"><use href="#icon-envelope"></use></svg>
                 </a>
                 <a href="https://www.linkedin.com/in/ali-kassem-7224bb244/" target="_blank" rel="noopener noreferrer" class="text-3xl text-gray-400 contact-icon flex items-center justify-center" aria-label="LinkedIn">
@@ -249,7 +242,7 @@
                     nav_cv: "Resume",
                     hero_name: "Ali Kassem",
                     hero_subtitle: "Computer Science Student & AI Automation Engineer",
-                    hero_bio: "Driven Computer Science student at E-JUST specializing in AI Systems Architecture, Automation, and Software Engineering. Experienced in designing production-oriented, fault-tolerant multimodal AI platforms and intelligent workflow automation systems.",
+                    hero_bio: "Driven Computer Science student at E-JUST specializing in AI Systems Architecture, Automation, and Software Engineering. Experienced in designing production-oriented, fault-tolerant multimodal AI platforms and intelligent workflow automation systems. Proficient in Python, n8n orchestration, LLM integration, and microservices architecture, with a strong focus on building high-availability technology solutions to solve real-world problems.",
                     download_cv: "Download Resume",
                     contact_btn: "Get In Touch",
                     projects_title: "Featured Projects",
@@ -282,8 +275,8 @@
                     nav_contact: "تواصل معي",
                     nav_cv: "السيرة الذاتية",
                     hero_name: "علي قاسم",
-                    hero_subtitle: "طالب علوم حاسوب ومهندس أتمتة بالذكاء الاصطناعي",
-                    hero_bio: "طالب علوم حاسوب في الجامعة المصرية اليابانية للعلوم والتكنولوجيا (E-JUST) متخصص في هندسة أنظمة الذكاء الاصطناعي، والأتمتة، وهندسة البرمجيات. أستخدم مهاراتي في بايثون وتوجيه سير عمل n8n وتكامل نماذج LLM لبناء حلول تقنية عالية التوافر وموجهة للإنتاج لحل مشاكل العالم الحقيقي.",
+                    hero_subtitle: "طالب علوم حاسوب ومهندس أتمتة الذكاء الاصطناعي",
+                    hero_bio: "طالب علوم حاسوب شغوف في الجامعة المصرية اليابانية للعلوم والتكنولوجيا (E-JUST)، متخصص في هندسة أنظمة الذكاء الاصطناعي والأتمتة وهندسة البرمجيات. ذو خبرة في تصميم منصات الذكاء الاصطناعي متعددة الوسائط المقاومة للأعطال والموجهة للإنتاج، وأنظمة أتمتة سير العمل الذكية. متمكن من لغة Python، وأتمتة n8n، ودمج نماذج LLM، وهندسة الخدمات المصغرة (Microservices)، مع تركيز قوي على بناء حلول تقنية عالية التوافر لحل مشاكل العالم الحقيقي.",
                     download_cv: "تحميل السيرة الذاتية",
                     contact_btn: "تواصل معي",
                     projects_title: "المشاريع المميزة",
@@ -291,9 +284,9 @@
                     exp_title: "الخبرة",
                     skills_title: "المهارات التقنية وهندسة الأنظمة",
                     skill_cat_1: "البرمجة", skill_desc_1: "بايثون (البرمجة كائنية التوجه)، SQL، MySQL، TypeScript، JavaScript",
-                    skill_cat_2: "البيانات والسحابة", skill_desc_2: "هندسة البيانات، مسارات ETL/ELT، مايكروسوفت أزور (Azure)، معالجة البيانات الضخمة، قواعد البيانات العلائقية (MySQL، SQLite)",
-                    skill_cat_3: "الذكاء الاصطناعي وتعلم الآلة", skill_desc_3: "تكامل النماذج اللغوية (LLM)، هندسة الأوامر، التوجيه متعدد الوسائط، تعلم الآلة، تصنيف الصور، التعرف الضوئي (OCR)",
-                    skill_cat_4: "الأتمتة وعمليات التطوير (DevOps)", skill_desc_4: "أتمتة سير العمل عبر n8n، هندسة الأنظمة، الخدمات المصغرة (Microservices)، بروتوكول WebSockets، تجاوز الأعطال",
+                    skill_cat_2: "البيانات والحوسبة السحابية", skill_desc_2: "هندسة البيانات، خطوط أنابيب ETL/ELT، منصة Microsoft Azure، معالجة البيانات الضخمة، قواعد البيانات العلائقية (MySQL, SQLite)",
+                    skill_cat_3: "الذكاء الاصطناعي وتعلم الآلة", skill_desc_3: "تكامل نماذج LLM، هندسة الأوامر، التوجيه متعدد الوسائط، تعلم الآلة، تصنيف الصور، التعرف الضوئي على الحروف (OCR)",
+                    skill_cat_4: "التوجيه والعمليات السحابية", skill_desc_4: "أتمتة سير العمل بـ n8n، هندسة الأنظمة، الخدمات المصغرة (Microservices)، تقنية WebSockets، DevOps، تحمل الأعطال",
                     skill_cat_5: "البرامج والأدوات", skill_desc_5: "Hugging Face, Firebase, GitHub, React, Tkinter, IndexedDB",
                     skill_cat_6: "اللغات", skill_desc_6: "العربية (لغة أم)، الإنجليزية (متقدم)، اليابانية (أساسيات)",
                     edu_cert_title: "التعليم والتراخيص والشهادات",
@@ -317,7 +310,7 @@
                     nav_cv: "履歴書",
                     hero_name: "アリ・カセム",
                     hero_subtitle: "コンピューターサイエンスの学生・AI自動化エンジニア",
-                    hero_bio: "E-JUSTのコンピューターサイエンス専攻の学生で、AIシステムアーキテクチャ、自動化、ソフトウェアエンジニアリングを専門としています。Python、n8nオーケストレーション、LLM統合のスキルを活用して、高可用性の本番対応ソリューションを構築し、現実世界の問題を解決します。",
+                    hero_bio: "AIシステムアーキテクチャ、自動化、ソフトウェアエンジニアリングを専門とするE-JUSTのコンピューターサイエンス専攻の学生。本番環境向けの耐障害性に優れたマルチモーダルAIプラットフォームおよびインテリジェントなワークフロー自動化システムの設計に豊富な経験を有します。Python、n8nオーケストレーション、LLM統合、マイクロサービスアーキテクチャに精通し、現実世界の問題を解決するための高可用性技術ソリューションの構築に注力しています。",
                     download_cv: "履歴書をダウンロード",
                     contact_btn: "お問い合わせ",
                     projects_title: "注目のプロジェクト",
@@ -325,10 +318,10 @@
                     exp_title: "経歴",
                     skills_title: "技術スキル・システム構成",
                     skill_cat_1: "プログラミング", skill_desc_1: "Python (オブジェクト指向プログラミング), SQL, MySQL, TypeScript, JavaScript",
-                    skill_cat_2: "データ＆クラウド", skill_desc_2: "データエンジニアリング、ETL/ELTパイプライン、Microsoft Azure、ビッグデータ処理、リレーショナルデータベース (MySQL, SQLite)",
-                    skill_cat_3: "AI＆機械学習", skill_desc_3: "LLM統合、プロンプトエンジニアリング、マルチモーダルルーティング、機械学習、画像分類、OCR",
-                    skill_cat_4: "オーケストレーション＆DevOps", skill_desc_4: "n8nワークフロー自動化、システムアーキテクチャ、マイクロサービス、WebSockets、DevOps、フォールトトレランス",
-                    skill_cat_5: "ソフトウェア＆ツール", skill_desc_5: "Hugging Face, Firebase, GitHub, React, Tkinter, IndexedDB",
+                    skill_cat_2: "データ & クラウド", skill_desc_2: "データエンジニアリング, ETL/ELTパイプライン, Microsoft Azure, ビッグデータ処理, リレーショナルデータベース (MySQL, SQLite)",
+                    skill_cat_3: "AI & 機械学習", skill_desc_3: "LLM統合, プロンプト設計, マルチモーダルルーティング, 機械学習, 画像分類, OCR",
+                    skill_cat_4: "オーケストレーション & DevOps", skill_desc_4: "n8nワークフロー自動化, システムアーキテクチャ, マイクロサービス, WebSockets, DevOps, フォールトトレランス",
+                    skill_cat_5: "ソフトウェア & ツール", skill_desc_5: "Hugging Face, Firebase, GitHub, React, Tkinter, IndexedDB",
                     skill_cat_6: "言語", skill_desc_6: "アラビア語 (ネイティブ)、英語 (上級)、日本語 (基礎)",
                     edu_cert_title: "学歴・認定証",
                     edu_title: "学歴",
@@ -379,11 +372,11 @@
                         ja: "OOP原則を使用したPythonベースのSCMシミュレーションで、Tkinter GUIとインテリジェントな洞察のための統合されたローカルLLMを備えています。"
                     },
                     longDescription: {
-                        en: "Led the design and development of a comprehensive Supply Chain Management (SCM) simulation in Python using OOP principles, personally authoring 60% of the main codebase. Integrated a local LLM for automated business insights, customer review sentiment analysis, and marketing content generation. Architected a complete desktop software solution featuring a Tkinter GUI, SQLite database persistence, and Proxy design patterns.",
-                        ar: "قمت بقيادة تصميم وتطوير محاكاة شاملة لإدارة سلسلة التوريد (SCM) في بايثون باستخدام مبادئ البرمجة كائنية التوجه (OOP)، وكتابة 60٪ من الكود الرئيسي بنفسي. قمت بدمج نموذج لغة كبير محلي للحصول على رؤى أعمال مؤتمتة، وتحليل مشاعر مراجعات العملاء، وإنشاء محتوى تسويقي. صممت حلاً برمجياً متكاملاً لسطح المكتب يتميز بواجهة Tkinter الرسومية، وحفظ البيانات في SQLite، وأنماط تصميم الوكيل (Proxy).",
-                        ja: "OOPの原則を用いたPythonによる包括的なサプライチェーンマネジメント（SCM）シミュレーションの設計と開発を主導し、メインコードベースの60％を自ら作成しました。ローカルLLMを統合して、ビジネスインサイトの自動生成、顧客レビューの感情分析、マーケティングコンテンツの生成を実現。Tkinter GUI、SQLiteデータベース永続化、Proxyデザインパターンを備えた完全なデスクトップソフトウェアソリューションを設計しました。"
+                        en: "Led the development of a comprehensive Supply Chain Management (SCM) simulation in Python, built with Object-Oriented Programming (OOP). As team leader, I managed the entire team, and was personally responsible for writing about 60% of the main code classes. On top of that, I specifically integrated the local Large Language Model (LLM). This AI component now provides intelligent insights, analyzes customer reviews, and generates dynamic marketing content within the simulation. My role encompassed both leadership and direct, substantial technical contribution, bringing a powerful, intelligent layer to our project.",
+                        ar: "قمت بقيادة تطوير محاكاة شاملة لإدارة سلسلة التوريد (SCM) في بايثون، مبنية على البرمجة كائنية التوجه (OOP). بصفتي قائد الفريق، أدرت الفريق بأكمله، وكنت مسؤولاً شخصيًا عن كتابة حوالي 60٪ من فئات الكود الرئيسية. علاوة على ذلك، قمت بدمج نموذج لغة كبير محلي (LLM) على وجه التحديد. يوفر هذا المكون الذكي الآن رؤى ذكية، ويحلل مراجعات العملاء، وينشئ محتوى تسويقيًا ديناميكيًا داخل المحاكاة. شمل دوري القيادة والمساهمة الفنية المباشرة والكبيرة، مما أضاف طبقة قوية وذكية لمشروعنا.",
+                        ja: "オブジェクト指向プログラミング（OOP）で構築された、Pythonでの包括的なサプライチェーンマネジメント（SCM）シミュレーションの開発を主導しました。チームリーダーとして、私はチーム全体を管理し、メインコードクラスの約60％を個人的に記述する責任がありました。さらに、ローカル大規模言語モデル（LLM）を特別に統合しました。このAIコンポーネントは、シミュレーション内でインテリジェントな洞察を提供し、顧客レビューを分析し、動的なマーケティングコンテンツを生成します。私の役割は、リーダーシップと直接的で実質的な技術的貢献の両方を含み、私たちのプロジェクトに強力でインテリジェントな層をもたらしました。"
                     },
-                    tags: ["Python", "OOP", "Tkinter", "LLM", "SQLite"], 
+                    tags: ["Python", "OOP", "Tkinter", "LLM", "Project Management"], 
                     link: "https://github.com/Ali-Kassem-AK/SCM-Simulation-Project/", 
                     liveLink: null,
                     imageUrl: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%231f2937'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='28' fill='%23d1d5db'%3ESCM Simulation%3C/text%3E%3C/svg%3E" 
@@ -392,32 +385,32 @@
 
             const experienceData = [
                 { 
-                    icon: 'database',
-                    title: { en: 'Data Engineering Trainee', ar: 'متدرب هندسة بيانات (Data Engineering Trainee)', ja: 'データエンジニアリング研修生' },
-                    date: { en: '(Jul 2026 - Present)', ar: '(يوليو 2026 - الحاضر)', ja: '(2026年 7月 - 現在)' },
-                    location: { en: 'Digital Egypt Pioneers Initiative (DEPI) • Hybrid (Egypt)', ar: 'مبادرة رواد مصر الرقمية (DEPI) • هجين (مصر)', ja: 'Digital Egypt Pioneers Initiative (DEPI) • ハイブリッド (エジプト)' },
-                    description: { en: 'Selected for the DEPI specialization track in AI & Data Science (Microsoft Data Engineer), developing scalable cloud architectures and modern data solutions. Architected cloud data workflows and big data processing pipelines utilizing Microsoft Azure technologies, designed end-to-end ETL/ELT pipelines, relational database schemas with MySQL & Python, and integrated AI-driven workflows with prompt engineering.', ar: 'تم اختياري لمسار تخصص الذكاء الاصطناعي وعلوم البيانات بمبادرة DEPI (مهندس بيانات مايكروسوفت) لتطوير معماريات سحابية قابلة للتوسع. قمت بتصميم وبناء مسارات بيانات سحابية ومعالجة البيانات الضخمة باستخدام تقنيات Microsoft Azure، وتصميم مسارات ETL/ELT متكاملة وقواعد بيانات علائقية باستخدام MySQL وPython، ودمج مسارات عمل معززة بالذكاء الاصطناعي مع هندسة الأوامر.', ja: 'AI＆データサイエンス（Microsoft Data Engineer）のDEPI専門トラックに選抜。Microsoft Azureを活用したクラウドデータワークフローとビッグデータ処理パイプラインの設計・実装、MySQLとPythonを用いたエンドツーエンドのETL/ELTパイプラインおよびリレーショナルDB設計、本番グレードのAI主導データワークフローとプロンプトエンジニアリングを統合しました。' }
-                },
-                { 
                     icon: 'network-wired',
-                    title: { en: 'Lead Developer & Systems Architect', ar: 'مطور رئيسي ومهندس أنظمة', ja: 'リード開発者＆システムアーキテクト' },
-                    date: { en: '(2026 - Present)', ar: '(2026 - الحاضر)', ja: '(2026年 - 現在)' },
-                    location: { en: 'Xare AI Platform • Personal Project', ar: 'منصة Xare للذكاء الاصطناعي • مشروع شخصي', ja: 'Xare AI プラットフォーム • 個人プロジェクト' },
-                    description: { en: 'Designed and engineered Xare AI from scratch, then rebuilt and expanded it into Xare AI V2, a production-oriented, zero-cost multimodal AI platform. Architected a 120-node n8n orchestration system with intelligent model routing and multi-tier fallbacks across Gemini, Qwen 3.6 27B, GPT-OSS 120B, Whisper, and Deepgram. Built specialized pipelines for advanced reasoning, vision, document/PDF OCR, voice, and image generation, alongside a React/TypeScript frontend, real-time WebSocket voice streaming, and cloud deployment infrastructure.', ar: 'صممت وطورت Xare AI من الصفر، ثم أعدت بناءه وتوسيعه ليصبح Xare AI V2، وهي منصة ذكاء اصطناعي متعددة الوسائط موجهة لبيئة الإنتاج وبدون تكلفة تشغيل. صممت نظام Orchestration مكوناً من 120 عقدة باستخدام n8n، مع توجيه ذكي للنماذج وآليات Fallback متعددة المستويات عبر Gemini وQwen 3.6 27B وGPT-OSS 120B وWhisper وDeepgram. كما طورت مسارات متخصصة للاستدلال المتقدم، وفهم الصور، ومعالجة المستندات وملفات PDF، وOCR، والصوت، وتوليد الصور، إلى جانب واجهة React/TypeScript، وبث صوتي لحظي عبر WebSockets، وبنية تحتية للنشر السحابي.', ja: 'Xare AIをゼロから設計・開発し、その後、Xare AI V2として再構築・拡張しました。Xare AI V2は、本番環境を意識したゼロコストのマルチモーダルAIプラットフォームです。Gemini、Qwen 3.6 27B、GPT-OSS 120B、Whisper、Deepgramを横断するインテリジェントなモデルルーティングとマルチティアのフォールバック機能を備えた、120ノードのn8nオーケストレーションシステムを設計しました。また、高度な推論、画像理解、ドキュメント/PDF OCR、音声、画像生成のための専用パイプラインを構築し、React/TypeScriptフロントエンド、リアルタイムWebSocket音声ストリーミング、IndexedDBによるメディア管理、クラウドデプロイ基盤も実装しました。' }
+                    title: { en: 'Data Engineering Trainee', ar: 'متدرب هندسة بيانات (Data Engineering Trainee)', ja: 'データエンジニアリング研修生 (Data Engineering Trainee)' },
+                    date: { en: '(Jul 2026 - Present)', ar: '(يوليو 2026 - الحاضر)', ja: '(2026年 7月 - 現在)' },
+                    location: { en: 'Digital Egypt Pioneers Initiative (DEPI) • Hybrid (Egypt)', ar: 'مبادرة رواد مصر الرقمية (DEPI) • هجين (مصر)', ja: 'デジタル・エジプト・パイオニア・イニシアチブ (DEPI) • ハイブリッド (エジプト)' },
+                    description: { en: 'Selected for the DEPI specialization track in AI & Data Science – Microsoft Data Engineer, developing scalable cloud architectures and modern data solutions. Architecting and implementing cloud data workflows and big data processing pipelines utilizing Microsoft Azure technologies. Designing end-to-end ETL/ELT data pipelines, relational database schemas, and data management systems using MySQL and Python. Integrating AI-driven data workflows, automated deployment strategies, and prompt engineering practices for production-grade data systems.', ar: 'تم اختياري لمسار الذكاء الاصطناعي وعلوم البيانات (مهندس بيانات مايكروسوفت) لتطوير بنى سحابية قابلة للتوسع وحلول بيانات حديثة. تصميم وتنفيذ مسارات البيانات السحابية ومعالجة البيانات الضخمة باستخدام تقنيات Microsoft Azure. بناء خطوط أنابيب ETL/ELT شاملة ومخططات قواعد البيانات العلائقية باستخدام MySQL وPython. دمج أتمتة البيانات المدفوعة بالذكاء الاصطناعي واستراتيجيات النشر المؤتمت للأنظمة الإنتاجية.', ja: 'AI＆データサイエンス専攻（Microsoft Data Engineer）に選抜され、スケーラブルなクラウドアーキテクチャとデータソリューションを開発。Microsoft Azureを活用したクラウドデータワークフローとビッグデータ処理パイプラインを設計・実装。MySQLとPythonを用いたエンドツーエンドのETL/ELTデータパイプラインおよびリレーショナルデータベーススキーマを構築。本番グレードのAI駆動型データ自動化ワークフローとプロンプトエンジニアリングを統合。' }
                 },
                 { 
                     icon: 'code-branch',
-                    title: { en: 'Supply Chain Management (SCM) Simulation', ar: 'محاكاة إدارة سلسلة التوريد (SCM)', ja: 'サプライチェーンマネジメント（SCM）シミュレーション' },
+                    title: { en: 'Lead Developer & Systems Architect', ar: 'مطور رئيسي ومهندس أنظمة', ja: 'リード開発者＆システムアーキテクト' },
+                    date: { en: '(Mar 2026 - Present)', ar: '(مارس 2026 - الحاضر)', ja: '(2026年 3月 - 現在)' },
+                    location: { en: 'Xare AI Platform • Personal Project', ar: 'منصة Xare للذكاء الاصطناعي • مشروع شخصي', ja: 'Xare AI プラットフォーム • 個人プロジェクト' },
+                    description: { en: 'Designed and engineered Xare AI from scratch and expanded it into Xare AI V2, a production-oriented, zero-cost multimodal AI platform. Architected a 120-node n8n orchestration system featuring intelligent model routing and multi-tier fallbacks across Gemini, Qwen 3.6 27B, GPT-OSS 120B, Whisper, and Deepgram. Built specialized pipelines for advanced reasoning, vision processing, document/PDF OCR, real-time voice synthesis, and image generation. Developed React/TypeScript frontend with real-time WebSocket voice streaming, IndexedDB media state management, and cloud deployment infrastructure.', ar: 'صممت وطورت منصة محادثة ذكاء اصطناعي متكاملة ومتعددة الوسائط من الصفر، ثم وسعتها إلى Xare AI V2 مع طبقة Orchestration مكونة من 120 عقدة في n8n، تركز على التوجيه الذكي وتحمل الأعطال والتكامل مع نماذج متعددة (Gemini، Qwen، GPT-OSS، Whisper، Deepgram). كما تتضمن مسارات للاستدلال المتقدم، وفهم الصور، ومعالجة المستندات وملفات PDF، وOCR، وتوليد الصوت والصور، وبث صوتي لحظي عبر WebSockets، وواجهة React/TypeScript وإدارة وسائط عبر IndexedDB وبنية سحابية متكاملة.', ja: 'Xare AIをゼロから設計・開発し、本番環境向けのゼロコスト・マルチモーダルAIプラットフォームXare AI V2として拡張。Gemini、Qwen 3.6 27B、GPT-OSS 120B、Whisper、Deepgramを横断するインテリジェントなルーティングとマルチティアフォールバックを備えた120ノードのn8nオーケストレーションシステムを設計。推論、画像認識、ドキュメント/PDF OCR、リアルタイム音声合成、画像生成パイプライン、React/TypeScriptフロントエンド、WebSocket音声ストリーミング、IndexedDBメディア管理、クラウド基盤を実装。' }
+                },
+                { 
+                    icon: 'code-branch',
+                    title: { en: 'Team Lead & Software Developer', ar: 'قائد فريق ومطور برمجيات', ja: 'チームリーダー＆ソフトウェア開発者' },
                     date: { en: '(Jan 2025 - Apr 2025)', ar: '(يناير 2025 - أبريل 2025)', ja: '(2025年 1月 - 2025年 4月)' },
-                    location: { en: 'University Project', ar: 'مشروع جامعي', ja: '大学プロジェクト' },
-                    description: { en: 'Led the design and development of a comprehensive SCM simulation in Python using OOP principles, personally authoring 60% of the main codebase. Integrated a local LLM for automated business insights, customer review sentiment analysis, and marketing content generation. Architected a complete desktop software solution featuring a Tkinter GUI, SQLite database persistence, and Proxy design patterns.', ar: 'قمت بقيادة تصميم وتطوير محاكاة شاملة لإدارة سلسلة التوريد في بايثون باستخدام البرمجة كائنية التوجه (OOP)، وكتابة 60٪ من الكود الرئيسي بنفسي. قمت بدمج نموذج لغة كبير محلي للحصول على رؤى أعمال مؤتمتة وتحليل مراجعات العملاء وإنشاء محتوى تسويقي. يتضمن المشروع واجهة مستخدم رسومية Tkinter وحفظ البيانات في SQLite ونمط تصميم الوكيل (Proxy).', ja: 'OOP原則を用いたPythonによる包括的なSCMシミュレーションの設計と開発を主導し、メインコードの約60％を個人的に記述しました。自動化されたビジネスインサイト、顧客レビュー分析、マーケティングコンテンツ生成のためにローカルLLMを統合。Tkinter GUI、SQLite、およびプロキシ設計パターンを備えた完全なデスクトップソフトウェアを構築しました。' }
+                    location: { en: 'Supply Chain Management (SCM) Simulation • University Project', ar: 'محاكاة إدارة سلسلة التوريد (SCM) • مشروع جامعي', ja: 'サプライチェーンマネジメント（SCM）シミュレーション • 大学プロジェクト' },
+                    description: { en: 'Led the design and development of a comprehensive SCM simulation in Python using OOP principles, personally authoring 60% of the main codebase. Integrated a local LLM for automated business insights, customer review sentiment analysis, and marketing content generation. Architected complete desktop software solution featuring a Tkinter GUI, SQLite database persistence, and Proxy design patterns.', ar: 'قدت تصميم وتطوير محاكاة شاملة لإدارة سلسلة التوريد في بايثون (OOP)، وتأليف 60٪ من الكود الرئيسي بنفسي. قمت بدمج نموذج لغة كبير محلي للحصول على رؤى ذكية آلية وتحليل مشاعر المراجعات وإنشاء محتوى تسويقي. صممت حلاً برمجياً مكتبياً متكاملاً يتضمن واجهة مستخدم رسومية Tkinter وقاعدة بيانات SQLite ونمط تصميم Proxy.', ja: 'OOP原則に基づく包括的なPython SCMシミュレーションの設計と開発を主導し、メインコードベースの60％を個人的に執筆。自動化されたビジネスインサイト、顧客レビュー感情分析、マーケティングコンテンツ生成のためにローカルLLMを統合。Tkinter GUI、SQLite永続化、Proxyデザインパターンを備えたデスクトップソフトウェアを構築。' }
                 },
                 { 
                     icon: 'robot',
                     title: { en: 'Artificial Intelligence Intern', ar: 'متدرب ذكاء اصطناعي (AI Intern)', ja: '人工知能インターン (AI Intern)' },
                     date: { en: '(Dec 2024 - Jan 2025)', ar: '(ديسمبر 2024 - يناير 2025)', ja: '(2024年 12月 - 2025年 1月)' },
                     location: { en: 'Youth Technology Academy (YTA) • Remote (Egypt)', ar: 'أكاديمية تكنولوجيا الشباب (YTA) • عن بعد (مصر)', ja: 'Youth Technology Academy (YTA) • リモート (エジプト)' },
-                    description: { en: 'Contributed to the AI development lifecycle through data preparation, model training, and performance evaluation and testing.', ar: 'المساهمة في دورة حياة تطوير الذكاء الاصطناعي من خلال تجهيز البيانات، وتدريب النماذج، وتقييم واختبار الأداء.', ja: 'データ準備、モデルのトレーニング、およびパフォーマンス評価とテストを通じてAI開発ライフサイクルに貢献しました。' }
+                    description: { en: 'Contributed to the AI development lifecycle through data preparation, model training, and performance evaluation and testing.', ar: 'المساهمة في دورة حياة تطوير الذكاء الاصطناعي من خلال تجهيز البيانات، وتدريب النماذج، وتقييم واختبار الأداء.', ja: 'データの準備、モデルのトレーニング、パフォーマンスの評価とテストを通じて、AI開発ライフサイクルに貢献。' }
                 }
             ];
             
@@ -427,13 +420,19 @@
                     title: { en: 'Bachelor of Computer Science', ar: 'بكالوريوس في علوم الحاسوب', ja: 'コンピューターサイエンス学士' },
                     date: { en: '(2024 - 2028)', ar: '(2024 - 2028)', ja: '(2024年 - 2028年)' },
                     location: { en: 'E-JUST University • Alexandria, Egypt', ar: 'الجامعة المصرية اليابانية للعلوم والتكنولوجيا (E-JUST) • الإسكندرية، مصر', ja: 'E-JUST大学 • アレクサンドリア、エジプト' },
-                    description: { en: 'Specializing in Artificial Intelligence and Software Engineering.', ar: 'تخصص في الذكاء الاصطناعي وهندسة البرمجيات.', ja: '人工知能およびソフトウェアエンジニアリングを専攻。' }
+                    description: { en: 'Specializing in Artificial Intelligence and Data Science.', ar: 'تخصص الذكاء الاصطناعي وعلوم البيانات.', ja: '人工知能およびデータサイエンス専攻。' }
                 },
                  { 
                     icon: 'school',
                     title: { en: 'High School Diploma', ar: 'شهادة الثانوية العامة', ja: '高等学校卒業証書' },
                     date: { en: '(2010 - 2024)', ar: '(2010 - 2024)', ja: '(2010年 - 2024年)' },
                     location: { en: 'Victoria College • Alexandria, Egypt', ar: 'كلية فيكتوريا • الإسكندرية، مصر', ja: 'ビクトリアカレッジ • アレクサンドリア、エジプト' }
+                },
+                { 
+                    icon: 'language',
+                    title: { en: 'English Conversation Advanced 3', ar: 'محادثة إنجليزية متقدمة 3', ja: '英会話上級3' },
+                    date: { en: '(2022 - 2023)', ar: '(2022 - 2023)', ja: '(2022年 - 2023年)' },
+                    location: { en: 'American Institute • Alexandria, Egypt', ar: 'المعهد الأمريكي • الإسكندرية، مصر', ja: 'アメリカンインスティテュート • アレクサンドリア、エジプト' }
                 }
             ];
 
