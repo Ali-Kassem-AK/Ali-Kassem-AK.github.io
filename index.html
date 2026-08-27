@@ -4,209 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ali Kassem | Computer Science Student</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23111827'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='42' fill='%233b82f6'%3EAK%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #111827; /* Dark Blue-Gray */
-            color: #d1d5db; /* Light Gray */
-        }
-
-        /* Canvas for background animation */
-        #particle-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .section {
-            padding: 6rem 1rem;
-            position: relative; /* Ensure sections are above canvas */
-            z-index: 1;
-        }
-        
-        @media (min-width: 768px) {
-            .section {
-                padding: 8rem 2rem;
-            }
-        }
-
-        .glass-effect {
-            background: rgba(17, 24, 39, 0.5); /* Darker glass for better contrast */
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 0.75rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .tag {
-            background-color: #374151;
-            color: #d1d5db;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .nav-link {
-            transition: color 0.3s ease;
-            position: relative;
-        }
-        
-        .nav-link.active {
-            color: #3b82f6;
-        }
-
-        .nav-link:hover {
-            color: #3b82f6;
-        }
-        
-        /* Interactive Card Styling */
-        .interactive-card {
-            transition: transform 0.2s ease-out, box-shadow 0.3s ease;
-            will-change: transform;
-        }
-
-        .interactive-card:hover {
-             box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3), 0 4px 8px -4px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* Modal Styles */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 50;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0s linear 0.3s;
-        }
-        
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-content {
-            background-color: #1f2937;
-            padding: 2rem;
-            border-radius: 0.75rem;
-            max-width: 50rem;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            transform: scale(0.95);
-            transition: transform 0.3s ease;
-        }
-
-        .modal-overlay.active .modal-content {
-            transform: scale(1);
-        }
-        
-        /* Scroll Reveal Animation */
-        .reveal-element {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-            will-change: opacity, transform;
-        }
-        .reveal-element.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Typing cursor effect */
-        .typing-cursor {
-            display: inline-block;
-            width: 2px;
-            height: 1.5rem;
-            background-color: #3b82f6;
-            animation: blink 0.7s infinite;
-        }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        /* Contact Icon Animation */
-        .contact-icon {
-            transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), color 0.3s ease;
-        }
-
-        .contact-icon:hover {
-            transform: scale(1.2) rotate(-10deg);
-        }
-        
-        /* Specific hover colors */
-        a[aria-label="Email"]:hover { color: #3b82f6; }
-        a[aria-label="LinkedIn"]:hover { color: #0A66C2; }
-        a[aria-label="GitHub"]:hover { color: #FFFFFF; }
-
-        /* Language Panel Styles */
-        #language-panel {
-            transition: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0.2s;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-        }
-        #language-panel.active {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        
-        /* --- Enhanced RTL Support --- */
-        [dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]) {
-            margin-right: 1.5rem;
-            margin-left: 0;
-        }
-        [dir="rtl"] .space-x-8 > :not([hidden]) ~ :not([hidden]) {
-            margin-right: 2rem;
-            margin-left: 0;
-        }
-
-        /* Flip margins for logical spacing in RTL */
-        [dir="rtl"] .ml-1 { margin-left: 0; margin-right: 0.25rem; }
-        [dir="rtl"] .ml-2 { margin-left: 0; margin-right: 0.5rem; }
-        [dir="rtl"] .ml-4 { margin-left: 0; margin-right: 1rem; }
-        [dir="rtl"] .sm\:ml-4 { margin-left: 0 !important; margin-right: 1rem !important; }
-        [dir="rtl"] .ml-6 { margin-left: 0; margin-right: 1.5rem; }
-        [dir="rtl"] .mr-2 { margin-right: 0; margin-left: 0.5rem; }
-        [dir="rtl"] .mr-6 { margin-right: 0; margin-left: 1.5rem; }
-
-        /* Flip icons and transforms for RTL */
-        [dir="rtl"] .fa-arrow-right:before {
-            content: "\f060"; /* Font Awesome unicode for fa-arrow-left */
-        }
-        [dir="rtl"] .group:hover .group-hover\:translate-x-1 {
-            transform: translateX(-0.25rem);
-        }
-        /* --- End Enhanced RTL Support --- */
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="antialiased">
-    
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none;" aria-hidden="true">
+  <defs>
+    <symbol id="icon-language" viewBox="0 0 640 512"><path fill="currentColor" d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h24c11 0 20 9 20 20s-9 20-20 20H468v32.5c16.9-14.8 31.6-32.9 42.2-53.3c5.3-10.2 17.9-14.2 28.1-8.9s14.2 17.9 8.9 28.1c-13.6 26.1-32.4 49.3-54.6 68.2l31.5 25.2c8.6 6.9 9.9 19.5 3 28.1s-19.5 9.9-28.1 3l-34.6-27.7c-21.7 16.8-47.5 29.5-75.7 36.6c-11.2 2.8-22.5-4-25.3-15.2s4-22.5 15.2-25.3c21.9-5.5 41.9-15.3 58.9-28.3L428 261.2c-5.8 5.7-12.1 11-18.9 15.9c-8.9 6.5-21.4 4.5-27.9-4.4s-4.5-21.4 4.4-27.9c4.9-3.6 9.4-7.4 13.6-11.5L392 228c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l1.7 1.7V184c0-11 9-20 20-20z"/></symbol>
+    <symbol id="icon-bars" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></symbol>
+    <symbol id="icon-times" viewBox="0 0 384 512"><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></symbol>
+    <symbol id="icon-download" viewBox="0 0 512 512"><path fill="currentColor" d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></symbol>
+    <symbol id="icon-code" viewBox="0 0 640 512"><path fill="currentColor" d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L547.2 256 473.4 345.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0zm-306.8 0c-12.5-12.5-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L92.8 256l73.8-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></symbol>
+    <symbol id="icon-brain" viewBox="0 0 512 512"><path fill="currentColor" d="M184 0c30.9 0 56 25.1 56 56V456c0 30.9-25.1 56-56 56c-28.9 0-52.7-21.9-55.7-50.1c-5.2 1.4-10.7 2.1-16.3 2.1c-35.3 0-64-28.7-64-64c0-7.4 1.3-14.6 3.6-21.2C21.4 367.4 0 338.2 0 304c0-31.9 18.7-59.5 45.8-72.3C37.1 220.8 32 207 32 192c0-30.7 21.6-56.3 50.4-62.6C80.8 123.9 80 118 80 112c0-29.9 20.6-55.1 48.3-62C131.5 21.7 155.5 0 184 0zM328 0c28.5 0 52.5 21.7 55.7 49.9c27.8 6.9 48.3 32.1 48.3 62.1c0 6-.8 11.9-2.4 17.4c28.7 6.3 50.4 31.9 50.4 62.6c0 15-5.1 28.8-13.8 39.7C493.3 244.5 512 272.1 512 304c0 34.2-21.4 63.4-51.6 74.8c2.4 6.6 3.6 13.8 3.6 21.2c0 35.3-28.7 64-64 64c-5.6 0-11.1-.7-16.3-2.1c-3 28.2-26.8 50.1-55.7 50.1c-30.9 0-56-25.1-56-56V56c0-30.9 25.1-56 56-56z"/></symbol>
+    <symbol id="icon-tools" viewBox="0 0 512 512"><path fill="currentColor" d="M78.6 5c11.2-6.6 25.2-6.6 36.4 0L240.6 80.7c11.3 6.6 18.3 18.7 18.3 31.8c0 1.2-.1 2.5-.2 3.7c-5.4 38.6 8.3 77.2 36.7 103.3l175.7 161.4c17.5 16.1 18.5 43.4 2.4 60.9s-43.4 18.5-60.9 2.4L237.1 282.8c-26.1-28.4-64.7-42.1-103.3-36.7c-1.2 .2-2.5 .2-3.7 .2c-13.1 0-25.1-7-31.8-18.3L23.7 102.4C17.1 91.2 17.1 77.2 23.7 66L78.6 5zM388.9 44.7c13.3-13.3 34.9-13.3 48.3 0l30.2 30.2c13.3 13.3 13.3 34.9 0 48.3L347.1 243.5 268.5 165 388.9 44.7z"/></symbol>
+    <symbol id="icon-tasks" viewBox="0 0 512 512"><path fill="currentColor" d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192v-48V128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192H400V448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192zM112 288c-8.8 0-16 7.2-16 16s7.2 16 16 16h64c8.8 0 16-7.2 16-16s-7.2-16-16-16H112zm0 96c-8.8 0-16 7.2-16 16s7.2 16 16 16h64c8.8 0 16-7.2 16-16s-7.2-16-16-16H112zm144-96c-8.8 0-16 7.2-16 16s7.2 16 16 16h80c8.8 0 16-7.2 16-16s-7.2-16-16-16H256zm0 96c-8.8 0-16 7.2-16 16s7.2 16 16 16h80c8.8 0 16-7.2 16-16s-7.2-16-16-16H256z"/></symbol>
+    <symbol id="icon-project-diagram" viewBox="0 0 576 512"><path fill="currentColor" d="M0 80C0 53.5 21.5 32 48 32h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H112v64c0 35.3 28.7 64 64 64h144v-32c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H368c-26.5 0-48-21.5-48-48V416H176c-70.7 0-128-57.3-128-128V224H48c-26.5 0-48-21.5-48-48V80zm48 32v64h96V112H48zm320 288v64h96V400H368z"/></symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 448 512"><path fill="currentColor" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></symbol>
+    <symbol id="icon-arrow-left" viewBox="0 0 448 512"><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></symbol>
+    <symbol id="icon-envelope" viewBox="0 0 512 512"><path fill="currentColor" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 448 512"><path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></symbol>
+    <symbol id="icon-github" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></symbol>
+    <symbol id="icon-network-wired" viewBox="0 0 640 512"><path fill="currentColor" d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64H176c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM192 288H64c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64H192c35.3 0 64-28.7 64-64V352c0-35.3-28.7-64-64-64zM448 32c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64H576c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H448zM576 288H448c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64H576c35.3 0 64-28.7 64-64V352c0-35.3-28.7-64-64-64zM288 224v64h64V224H288z"/></symbol>
+    <symbol id="icon-code-branch" viewBox="0 0 448 512"><path fill="currentColor" d="M80 104a40 40 0 1 0 -80 0 40 40 0 1 0 80 0zm288 0a40 40 0 1 0 -80 0 40 40 0 1 0 80 0zM40 184v144c0 23.6 12.8 44.2 32 55.4V408a40 40 0 1 0 80 0V383.4c19.2-11.2 32-31.8 32-55.4V256c0-13.3 10.7-24 24-24h96c39.8 0 72-32.2 72-72V144c19.2-11.2 32-31.8 32-55.4V40a40 40 0 1 0 -80 0v48.6c-19.2 11.2-32 31.8-32 55.4v16c0 13.3-10.7 24-24 24H184c-39.8 0-72 32.2-72 72v72c0 13.3-10.7 24-24 24H72c-13.3 0-24-10.7-24-24V184H40z"/></symbol>
+    <symbol id="icon-graduation-cap" viewBox="0 0 640 512"><path fill="currentColor" d="M320 32c-8.1 0-16.1 2.1-23.2 6.4L7.2 173.5C2.6 176.3 0 181 0 186s2.6 9.7 7.2 12.5L128 271.3V384c0 53 86 96 192 96s192-43 192-96V271.3l88.8-52.8c4.6-2.8 7.2-7.5 7.2-12.5s-2.6-9.7-7.2-12.5L343.2 38.4C336.1 34.1 328.1 32 320 32zM176 317.9c37.7 17.6 88.8 28.1 144 28.1s106.3-10.5 144-28.1V384c0 23.4-56.1 48-144 48s-144-24.6-144-48V317.9z"/></symbol>
+    <symbol id="icon-school" viewBox="0 0 640 512"><path fill="currentColor" d="M320 32c-8.1 0-16.1 2.1-23.2 6.4L7.2 173.5C2.6 176.3 0 181 0 186s2.6 9.7 7.2 12.5L64 232.7V448c0 17.7 14.3 32 32 32h96c17.7 0 32-14.3 32-32V352h192v96c0 17.7 14.3 32 32 32h96c17.7 0 32-14.3 32-32V232.7l56.8-34.2c4.6-2.8 7.2-7.5 7.2-12.5s-2.6-9.7-7.2-12.5L343.2 38.4C336.1 34.1 328.1 32 320 32zM272 176a48 48 0 1 1 96 0 48 48 0 1 1 -96 0z"/></symbol>
+    <symbol id="icon-award" viewBox="0 0 384 512"><path fill="currentColor" d="M192 0c61.9 0 112 50.1 112 112c0 31.7-13.1 60.3-34.2 80.7l77.7 148.9c6.4 12.2 .9 27.2-11.4 32.5l-96.1 41.2-48 91.9c-6.1 11.7-20.7 16.3-32.5 10.2s-16.3-20.7-10.2-32.5l48-91.9-96.1-41.2c-12.3-5.3-17.8-20.3-11.4-32.5L114.2 192.7C93.1 172.3 80 143.7 80 112C80 50.1 130.1 0 192 0zm0 64a48 48 0 1 0 0 96 48 48 0 1 0 0-96z"/></symbol>
+    <symbol id="icon-robot" viewBox="0 0 640 512"><path fill="currentColor" d="M320 0c17.7 0 32 14.3 32 32V96H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H192c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64H288V32c0-17.7 14.3-32 32-32zM208 240a32 32 0 1 0 0 64 32 32 0 1 0 0-64zm224 32a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM192 384h256v32H192V384z"/></symbol>
+    <symbol id="icon-certificate" viewBox="0 0 512 512"><path fill="currentColor" d="M211 7.3C205 1 196-1.4 187.6 .8s-14.9 8-17.1 16.2L150.8 95.7l-78.4 20.3c-8.3 2.2-14.7 8.6-16.9 16.9s-.2 17.4 5.4 23.4l55.8 59.9-20.3 78.4c-2.2 8.3 .2 17.1 6.2 23.1s14.8 8.4 23.1 6.2l78.4-20.3 59.9 55.8c6 5.6 15.1 7.6 23.4 5.4s14.7-8.6 16.9-16.9l20.3-78.4 78.4-20.3c8.3-2.2 14.7-8.6 16.9-16.9s.2-17.4-5.4-23.4l-55.8-59.9 20.3-78.4c2.2-8.3-.2-17.1-6.2-23.1s-14.8-8.4-23.1-6.2l-78.4 20.3L234.4 24.4C232.2 16.2 225.4 9.5 217.1 7.3zM256 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></symbol>
+    <symbol id="icon-external-link-alt" viewBox="0 0 512 512"><path fill="currentColor" d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></symbol>
+  </defs>
+</svg>
+
     <!-- Animated background -->
-    <canvas id="particle-canvas"></canvas>
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
 
     <!-- Header & Navigation -->
     <header class="fixed w-full z-20 glass-effect top-0 shadow-md">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center" aria-label="Main Navigation">
             <a href="#" class="text-xl font-bold text-white" data-translate="name_logo">Ali Kassem</a>
             <div class="flex items-center">
                 <div id="desktop-nav" class="hidden md:flex items-center space-x-6 text-gray-300">
@@ -217,27 +54,27 @@
                     <a href="#contact" class="nav-link" data-translate="nav_contact">Contact</a>
                     <a href="Resume - Ali Kassem.pdf" download="Resume - Ali Kassem.pdf" class="nav-link flex items-center gap-1.5" aria-label="Resume">
                         <span data-translate="nav_cv">Resume</span>
-                        <i class="fas fa-download text-xs"></i>
+                        <svg class="icon text-xs" aria-hidden="true"><use href="#icon-download"></use></svg>
                     </a>
                 </div>
                 <!-- Language Selector Icon -->
-                <button id="language-selector-button" class="hidden md:block ml-6 text-gray-300 hover:text-blue-400 focus:outline-none transition-colors" aria-label="Select language">
-                    <i class="fas fa-language fa-lg"></i>
+                <button id="language-selector-button" class="hidden md:flex items-center justify-center ml-6 text-gray-300 hover:text-blue-400 focus:outline-none transition-colors" aria-label="Select language">
+                    <svg class="icon text-lg" aria-hidden="true"><use href="#icon-language"></use></svg>
                 </button>
-                <button id="mobile-menu-button" class="md:hidden ml-4 text-white focus:outline-none">
-                    <i class="fas fa-bars fa-lg"></i>
+                <button id="mobile-menu-button" class="md:hidden ml-4 text-white focus:outline-none flex items-center justify-center" aria-label="Open mobile menu">
+                    <svg id="mobile-menu-icon" class="icon text-lg" aria-hidden="true"><use href="#icon-bars"></use></svg>
                 </button>
             </div>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-800/80 backdrop-blur">
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800/90 backdrop-blur">
             <a href="#about" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-700" data-translate="nav_about">About</a>
             <a href="#skills" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-700" data-translate="nav_skills">Skills</a>
             <a href="#projects" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-700" data-translate="nav_projects">Projects</a>
             <a href="#experience" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-700" data-translate="nav_experience">Experience & Education</a>
             <a href="#contact" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-700" data-translate="nav_contact">Contact</a>
             <a href="Resume - Ali Kassem.pdf" download="Resume - Ali Kassem.pdf" class="flex items-center gap-2 py-3 px-6 text-sm text-gray-300 hover:bg-gray-700">
-                <i class="fas fa-download text-xs"></i>
+                <svg class="icon text-xs" aria-hidden="true"><use href="#icon-download"></use></svg>
                 <span data-translate="download_cv">Download Resume</span>
             </a>
             <div class="border-t border-gray-700 my-2"></div>
@@ -249,7 +86,7 @@
     </header>
 
     <!-- Language Selector Panel -->
-    <div id="language-panel" class="fixed z-10 glass-effect rounded-lg shadow-xl py-2 w-40 text-sm">
+    <div id="language-panel" class="fixed z-30 glass-effect rounded-lg shadow-xl py-2 w-40 text-sm">
         <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-gray-700/50 transition-colors" data-lang="en">English</a>
         <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-gray-700/50 transition-colors" data-lang="ar">Arabic</a>
         <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-gray-700/50 transition-colors" data-lang="ja">Japanese</a>
@@ -258,7 +95,7 @@
     <main>
         <!-- Hero Section -->
         <section id="about" class="section container mx-auto text-center flex flex-col items-center justify-center min-h-screen">
-             <img src="https://placehold.co/150x150/111827/FFFFFF?text=AK" alt="Ali Kassem" class="rounded-full w-40 h-40 mb-6 border-4 border-gray-700 reveal-element" onerror="this.onerror=null;this.src='https://placehold.co/150x150/111827/FFFFFF?text=Image+Error';">
+             <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' fill='%23111827'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='56' fill='%23FFFFFF'%3EAK%3C/text%3E%3C/svg%3E" alt="Ali Kassem" width="160" height="160" class="rounded-full w-40 h-40 mb-6 border-4 border-gray-700 reveal-element" fetchpriority="high">
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 reveal-element" data-translate="hero_name">Ali Kassem</h1>
             <p class="text-xl md:text-2xl text-blue-400 mb-8 h-8 reveal-element"><span id="typing-subtitle"></span><span class="typing-cursor"></span></p>
             <p class="max-w-3xl text-lg text-gray-400 mb-8 reveal-element" data-translate="hero_bio">
@@ -267,11 +104,11 @@
             <!-- Hero Action Buttons -->
             <div class="flex flex-wrap justify-center items-center gap-4 reveal-element">
                 <a href="Resume - Ali Kassem.pdf" download="Resume - Ali Kassem.pdf" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-0.5" aria-label="Download Resume">
-                    <i class="fas fa-download"></i>
+                    <svg class="icon text-sm" aria-hidden="true"><use href="#icon-download"></use></svg>
                     <span data-translate="download_cv">Download Resume</span>
                 </a>
                 <a href="#contact" class="inline-flex items-center gap-2 bg-gray-800/80 hover:bg-gray-700 text-gray-200 border border-gray-700 hover:border-gray-600 font-semibold px-6 py-3 rounded-lg transition-all duration-300">
-                    <i class="fas fa-envelope"></i>
+                    <svg class="icon text-sm" aria-hidden="true"><use href="#icon-envelope"></use></svg>
                     <span data-translate="contact_btn">Get In Touch</span>
                 </a>
             </div>
@@ -282,12 +119,36 @@
             <div class="container mx-auto">
                 <h2 class="text-3xl font-bold text-center text-white mb-12 reveal-element" data-translate="skills_title">My Skillset</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="glass-effect p-6 text-center interactive-card reveal-element"><i class="fas fa-code fa-2x text-blue-400 mb-4"></i><h3 class="text-xl font-semibold text-white mb-2" data-translate="skill_cat_1">Programming</h3><p class="text-gray-400" data-translate="skill_desc_1">Python (Object-Oriented Programming)</p></div>
-                    <div class="glass-effect p-6 text-center interactive-card reveal-element"><i class="fas fa-brain fa-2x text-blue-400 mb-4"></i><h3 class="text-xl font-semibold text-white mb-2" data-translate="skill_cat_2">AI & Data Science</h3><p class="text-gray-400" data-translate="skill_desc_2">Machine learning, LLM Integration, Multi-Modal Routing, Image Classification</p></div>
-                    <div class="glass-effect p-6 text-center interactive-card reveal-element"><i class="fas fa-tools fa-2x text-blue-400 mb-4"></i><h3 class="text-xl font-semibold text-white mb-2" data-translate="skill_cat_3">Software & Tools</h3><p class="text-gray-400" data-translate="skill_desc_3">n8n, Hugging Face, Firebase, GitHub</p></div>
-                    <div class="glass-effect p-6 text-center interactive-card reveal-element"><i class="fas fa-tasks fa-2x text-blue-400 mb-4"></i><h3 class="text-xl font-semibold text-white mb-2" data-translate="skill_cat_4">Professional Skills</h3><p class="text-gray-400" data-translate="skill_desc_4">Systems Architecture, DevOps, Fault Tolerance, Problem Solving</p></div>
-                    <div class="glass-effect p-6 text-center interactive-card reveal-element"><i class="fas fa-language fa-2x text-blue-400 mb-4"></i><h3 class="text-xl font-semibold text-white mb-2" data-translate="skill_cat_5">Languages</h3><p class="text-gray-400" data-translate="skill_desc_5">Arabic (Native), English (Advanced), Japanese (Basics)</p></div>
-                    <div class="glass-effect p-6 text-center interactive-card reveal-element"><i class="fas fa-project-diagram fa-2x text-blue-400 mb-4"></i><h3 class="text-xl font-semibold text-white mb-2" data-translate="skill_cat_6">AI Orchestration</h3><p class="text-gray-400" data-translate="skill_desc_6">Advanced Prompt Engineering, API Integration, Workflow Automation</p></div>
+                    <div class="glass-effect p-6 text-center interactive-card reveal-element">
+                        <svg class="icon text-4xl text-blue-400 mb-4 mx-auto" aria-hidden="true"><use href="#icon-code"></use></svg>
+                        <h3 class="text-xl font-semibold text-white mb-2" data-translate="skill_cat_1">Programming</h3>
+                        <p class="text-gray-400" data-translate="skill_desc_1">Python (Object-Oriented Programming)</p>
+                    </div>
+                    <div class="glass-effect p-6 text-center interactive-card reveal-element">
+                        <svg class="icon text-4xl text-blue-400 mb-4 mx-auto" aria-hidden="true"><use href="#icon-brain"></use></svg>
+                        <h3 class="text-xl font-semibold text-white mb-2" data-translate="skill_cat_2">AI & Data Science</h3>
+                        <p class="text-gray-400" data-translate="skill_desc_2">Machine learning, LLM Integration, Multi-Modal Routing, Image Classification</p>
+                    </div>
+                    <div class="glass-effect p-6 text-center interactive-card reveal-element">
+                        <svg class="icon text-4xl text-blue-400 mb-4 mx-auto" aria-hidden="true"><use href="#icon-tools"></use></svg>
+                        <h3 class="text-xl font-semibold text-white mb-2" data-translate="skill_cat_3">Software & Tools</h3>
+                        <p class="text-gray-400" data-translate="skill_desc_3">n8n, Hugging Face, Firebase, GitHub</p>
+                    </div>
+                    <div class="glass-effect p-6 text-center interactive-card reveal-element">
+                        <svg class="icon text-4xl text-blue-400 mb-4 mx-auto" aria-hidden="true"><use href="#icon-tasks"></use></svg>
+                        <h3 class="text-xl font-semibold text-white mb-2" data-translate="skill_cat_4">Professional Skills</h3>
+                        <p class="text-gray-400" data-translate="skill_desc_4">Systems Architecture, DevOps, Fault Tolerance, Problem Solving</p>
+                    </div>
+                    <div class="glass-effect p-6 text-center interactive-card reveal-element">
+                        <svg class="icon text-4xl text-blue-400 mb-4 mx-auto" aria-hidden="true"><use href="#icon-language"></use></svg>
+                        <h3 class="text-xl font-semibold text-white mb-2" data-translate="skill_cat_5">Languages</h3>
+                        <p class="text-gray-400" data-translate="skill_desc_5">Arabic (Native), English (Advanced), Japanese (Basics)</p>
+                    </div>
+                    <div class="glass-effect p-6 text-center interactive-card reveal-element">
+                        <svg class="icon text-4xl text-blue-400 mb-4 mx-auto" aria-hidden="true"><use href="#icon-project-diagram"></use></svg>
+                        <h3 class="text-xl font-semibold text-white mb-2" data-translate="skill_cat_6">AI Orchestration</h3>
+                        <p class="text-gray-400" data-translate="skill_desc_6">Advanced Prompt Engineering, API Integration, Workflow Automation</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -337,24 +198,29 @@
     <footer id="contact" class="bg-gray-900 text-white section">
         <div class="container mx-auto py-12 px-6 text-center">
             <h2 class="text-2xl font-bold mb-4 reveal-element" data-translate="contact_title">Get In Touch</h2>
-            <p class="text-gray-400 mb-8 max-w-md mx-auto reveal-element" data-translate="contact_desc">I'm always open to discussing new projects, creative ideas, or opportunities.<br><br>  Feel free to reach out!</p>
+            <p class="text-gray-400 mb-8 max-w-md mx-auto reveal-element" data-translate="contact_desc">I'm always open to discussing new projects, creative ideas, or opportunities.<br><br>  <strong>Feel free to reach out!</strong></p>
             <div class="flex justify-center items-center space-x-8 reveal-element">
-                <a href="mailto:ali.kassem.contact@gmail.com" class="text-3xl text-gray-400 contact-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/ali-kassem-7224bb244/" target="_blank" rel="noopener noreferrer" class="text-3xl text-gray-400 contact-icon" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Ali-Kassem-AK" target="_blank" rel="noopener noreferrer" class="text-3xl text-gray-400 contact-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:ali.kassem.contact@gmail.com" class="text-3xl text-gray-400 contact-icon flex items-center justify-center" aria-label="Email">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-envelope"></use></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/ali-kassem-7224bb244/" target="_blank" rel="noopener noreferrer" class="text-3xl text-gray-400 contact-icon flex items-center justify-center" aria-label="LinkedIn">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-linkedin"></use></svg>
+                </a>
+                <a href="https://github.com/Ali-Kassem-AK" target="_blank" rel="noopener noreferrer" class="text-3xl text-gray-400 contact-icon flex items-center justify-center" aria-label="GitHub">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-github"></use></svg>
+                </a>
             </div>
              <p class="mt-10 text-gray-500 text-sm reveal-element" data-translate="footer_copy">&copy; 2026 Ali Kassem. All rights reserved.</p>
         </div>
     </footer>
     
     <!-- Modal for Project Details -->
-    <div id="project-modal" class="modal-overlay">
+    <div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
         <!-- Modal content is dynamically generated and translated via JS -->
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-
             // --- DATA & TRANSLATIONS---
             const translations = {
                 en: {
@@ -397,7 +263,7 @@
                     nav_projects: "مشاريعي",
                     nav_experience: "الخبرة والتعليم",
                     nav_contact: "تواصل معي",
-                    nav_cv: "تحميل السيرة الذاتية",
+                    nav_cv: "السيرة الذاتية",
                     hero_name: "علي قاسم",
                     hero_subtitle: "طالب علوم حاسوب ومهندس أنظمة أتمتة",
                     hero_bio: "طالب علوم حاسوب في الجامعة المصرية اليابانية للعلوم والتكنولوجيا، متخصص في الذكاء الاصطناعي وتطوير البرمجيات. أستخدم مهاراتي في بايثون وهندسة الأنظمة وتوجيه الذكاء الاصطناعي لبناء حلول تقنية عالية التوافر وحل مشاكل العالم الحقيقي.",
@@ -502,20 +368,20 @@
                     tags: ["Python", "OOP", "Tkinter", "LLM", "Project Management"], 
                     link: "https://github.com/Ali-Kassem-AK/SCM-Simulation-Project/", 
                     liveLink: null,
-                    imageUrl: "https://placehold.co/600x400/1f2937/d1d5db?text=SCM+Simulation" 
+                    imageUrl: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%231f2937'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='28' fill='%23d1d5db'%3ESCM Simulation%3C/text%3E%3C/svg%3E" 
                 }
             ];
 
             const experienceData = [
                 { 
-                    icon: 'fa-network-wired',
+                    icon: 'network-wired',
                     title: { en: 'Lead Developer & Systems Architect', ar: 'مطور رئيسي ومهندس أنظمة', ja: 'リード開発者＆システムアーキテクト' },
                     date: { en: '(2026 - Present)', ar: '(2026 - الحاضر)', ja: '(2026年 - 現在)' },
                     location: { en: 'Xare AI Platform', ar: 'منصة Xare للذكاء الاصطناعي', ja: 'Xare AI プラットフォーム' },
                     description: { en: 'Designed and engineered Xare AI from scratch, then rebuilt and expanded it into Xare AI V2, a production-oriented, zero-cost multimodal AI platform. Architected a 120-node n8n orchestration system with intelligent model routing and multi-tier fallbacks across Gemini, Qwen 3.6 27B, GPT-OSS 120B, Whisper, and Deepgram. Built specialized pipelines for advanced reasoning, vision, document/PDF processing, OCR, voice, and image generation, alongside a React/TypeScript frontend, real-time WebSocket voice streaming, IndexedDB media handling, and cloud deployment infrastructure.', ar: 'صممت وطورت Xare AI من الصفر، ثم أعدت بناءه وتوسيعه ليصبح Xare AI V2، وهي منصة ذكاء اصطناعي متعددة الوسائط موجهة لبيئة الإنتاج وبدون تكلفة تشغيل. صممت نظام Orchestration مكوناً من 120 عقدة باستخدام n8n، مع توجيه ذكي للنماذج وآليات Fallback متعددة المستويات عبر Gemini وQwen 3.6 27B وGPT-OSS 120B وWhisper وDeepgram. كما طورت مسارات متخصصة للاستدلال المتقدم، وفهم الصور، ومعالجة المستندات وملفات PDF، وOCR، والصوت، وتوليد الصور، إلى جانب واجهة React/TypeScript، وبث صوتي لحظي عبر WebSockets، وإدارة الوسائط باستخدام IndexedDB، وبنية تحتية للنشر السحابي.', ja: 'Xare AIをゼロから設計・開発し、その後、Xare AI V2として再構築・拡張しました。Xare AI V2は、本番環境を意識したゼロコストのマルチモーダルAIプラットフォームです。Gemini、Qwen 3.6 27B、GPT-OSS 120B、Whisper、Deepgramを横断するインテリジェントなモデルルーティングとマルチティアのフォールバック機能を備えた、120ノードのn8nオーケストレーションシステムを設計しました。また、高度な推論、画像理解、ドキュメント/PDF処理、OCR、音声、画像生成のための専用パイプラインを構築し、React/TypeScriptフロントエンド、リアルタイムWebSocket音声ストリーミング、IndexedDBによるメディア管理、クラウドデプロイ基盤も実装しました。' }
                 },
                 { 
-                    icon: 'fa-code-branch',
+                    icon: 'code-branch',
                     title: { en: 'Supply Chain Management Project', ar: 'مشروع إدارة سلسلة التوريد', ja: 'サプライチェーンマネジメントプロジェクト' },
                     date: { en: '(Jan 2025 - Apr 2025)', ar: '(يناير 2025 - أبريل 2025)', ja: '(2025年1月 - 2025年4月)' },
                     location: { en: 'Personal Project', ar: 'مشروع شخصي', ja: '個人プロジェクト' },
@@ -525,19 +391,19 @@
             
             const educationData = [
                  { 
-                    icon: 'fa-graduation-cap',
+                    icon: 'graduation-cap',
                     title: { en: 'Bachelor of Computer Science', ar: 'بكالوريوس في علوم الحاسوب', ja: 'コンピューターサイエンス学士' },
                     date: { en: '(2024 - 2028)', ar: '(2024 - 2028)', ja: '(2024年 - 2028年)' },
                     location: { en: 'E-JUST University', ar: 'الجامعة المصرية اليابانية للعلوم والتكنولوجيا', ja: 'E-JUST大学' }
                 },
                  { 
-                    icon: 'fa-school',
+                    icon: 'school',
                     title: { en: 'High School Diploma', ar: 'شهادة الثانوية العامة', ja: '高等学校卒業証書' },
                     date: { en: '(2010 - 2024)', ar: '(2010 - 2024)', ja: '(2010年 - 2024年)' },
                     location: { en: 'Victoria College', ar: 'كلية فيكتوريا', ja: 'ビクトリアカレッジ' }
                 },
                 { 
-                    icon: 'fa-language',
+                    icon: 'language',
                     title: { en: 'English Conversation Advanced 3', ar: 'محادثة إنجليزية متقدمة 3', ja: '英会話上級3' },
                     date: { en: '(2022 - 2023)', ar: '(2022 - 2023)', ja: '(2022年 - 2023年)' },
                     location: { en: 'American Institute', ar: 'المعهد الأمريكي', ja: 'アメリカンインスティテュート' }
@@ -546,26 +412,26 @@
 
             const certificationsData = [
                 { 
-                    icon: 'fa-award',
+                    icon: 'award',
                     title: { en: 'HCIA-AI V4.0 Course (Colombia Training Program)', ar: 'دورة HCIA-AI V4.0 (برنامج تدريب كولومبيا)', ja: 'HCIA-AI V4.0 コース (コロンビア研修プログラム)' },
                     date: { en: '(Dec 2025)', ar: '(ديسمبر 2025)', ja: '(2025年 12月)' },
                     location: { en: 'Huawei ICT Academy', ar: 'أكاديمية هواوي', ja: 'Huawei ICT Academy' },
                     description: { en: 'Credential ID: ICT20251226005707', ar: 'معرف الاعتماد: ICT20251226005707', ja: '資格ID: ICT20251226005707' }
                 },
                 { 
-                    icon: 'fa-robot',
+                    icon: 'robot',
                     title: { en: 'Introduction to machine learning concepts', ar: 'مقدمة في مفاهيم تعلم الآلة', ja: '機械学習の概念入門' },
                     date: { en: '(Dec 2025)', ar: '(ديسمبر 2025)', ja: '(2025年 12月)' },
                     location: { en: 'Microsoft', ar: 'مايكروسوفت', ja: 'マイクロソフト' }
                 },
                 { 
-                    icon: 'fa-brain',
+                    icon: 'brain',
                     title: { en: 'Introduction to AI concepts', ar: 'مقدمة في مفاهيم الذكاء الاصطناعي', ja: 'AIの概念入門' },
                     date: { en: '(Dec 2025)', ar: '(ديسمبر 2025)', ja: '(2025年 12月)' },
                     location: { en: 'Microsoft', ar: 'مايكروسوفت', ja: 'マイクロソフト' }
                 },
                 { 
-                    icon: 'fa-certificate',
+                    icon: 'certificate',
                     title: { en: 'English Conversation Advanced 3', ar: 'محادثة إنجليزية متقدمة 3', ja: '英会話上級3' },
                     date: { en: '(Jan 2023)', ar: '(يناير 2023)', ja: '(2023年 1月)' },
                     location: { en: 'American Institute', ar: 'المعهد الأمريكي', ja: 'アメリカンインスティテュート' },
@@ -573,7 +439,7 @@
                 }
             ];
             
-            let currentLang = 'en';
+            let currentLang = localStorage.getItem('user_preferred_lang') || 'en';
             let typeTimeout; 
             let scrollObserver;
 
@@ -581,13 +447,13 @@
             function setLanguage(lang) {
                 if (!translations[lang]) return;
                 currentLang = lang;
+                try { localStorage.setItem('user_preferred_lang', lang); } catch (e) {}
                 document.documentElement.lang = lang;
                 document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
 
                 document.querySelectorAll('[data-translate]').forEach(el => {
                     const key = el.dataset.translate;
                     if (translations[lang][key]) {
-                        // Use innerHTML to render the <br> tag
                         if (key === 'contact_desc') {
                              el.innerHTML = translations[lang][key];
                         } else {
@@ -610,12 +476,12 @@
                 const hidePanel = () => langPanel.classList.remove('active');
                 const showPanel = () => {
                     const buttonRect = langButton.getBoundingClientRect();
-                    langPanel.style.top = `${buttonRect.bottom + 8}px`; 
+                    langPanel.style.top = (buttonRect.bottom + 8) + 'px'; 
 
                     if (document.documentElement.dir === 'rtl') {
-                        langPanel.style.left = `${buttonRect.left}px`;
+                        langPanel.style.left = buttonRect.left + 'px';
                     } else {
-                        langPanel.style.left = `${buttonRect.right - langPanel.offsetWidth}px`;
+                        langPanel.style.left = (buttonRect.right - langPanel.offsetWidth) + 'px';
                     }
                     
                     langPanel.classList.add('active');
@@ -644,12 +510,24 @@
             function initParticleCanvas() {
                 const canvas = document.getElementById('particle-canvas');
                 if (!canvas) return;
-                const ctx = canvas.getContext('2d');
+
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    canvas.style.display = 'none';
+                    return;
+                }
+
+                const ctx = canvas.getContext('2d', { alpha: true });
+                if (!ctx) return;
+
                 let particles = [];
+                let animationFrameId = null;
+                let isTabActive = !document.hidden;
+
                 const setCanvasSize = () => {
                     canvas.width = window.innerWidth;
                     canvas.height = window.innerHeight;
                 };
+
                 class Particle {
                     constructor() {
                         this.x = Math.random() * canvas.width;
@@ -657,7 +535,7 @@
                         this.size = Math.random() * 15 + 5;
                         this.speedX = Math.random() * 0.4 - 0.2;
                         this.speedY = Math.random() * -1 - 0.2;
-                        this.color = `rgba(59, 130, 246, ${Math.random() * 0.4 + 0.1})`;
+                        this.color = 'rgba(59, 130, 246, ' + (Math.random() * 0.4 + 0.1).toFixed(2) + ')';
                         this.rotation = Math.random() * Math.PI * 2;
                         this.rotationSpeed = (Math.random() - 0.5) * 0.02;
                     }
@@ -682,30 +560,68 @@
                         ctx.restore();
                     }
                 }
+
                 function initParticles() {
                     particles = [];
-                    const particleCount = window.innerWidth < 768 ? 15 : 25;
+                    const particleCount = window.innerWidth < 768 ? 12 : 22;
                     for (let i = 0; i < particleCount; i++) particles.push(new Particle());
                 }
+
                 function animate() {
+                    if (!isTabActive) return;
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    particles.forEach(p => { p.update(); p.draw(); });
-                    requestAnimationFrame(animate);
+                    for (let i = 0; i < particles.length; i++) {
+                        particles[i].update();
+                        particles[i].draw();
+                    }
+                    animationFrameId = requestAnimationFrame(animate);
                 }
+
+                function startAnimation() {
+                    if (!animationFrameId && isTabActive) {
+                        animationFrameId = requestAnimationFrame(animate);
+                    }
+                }
+
+                function stopAnimation() {
+                    if (animationFrameId) {
+                        cancelAnimationFrame(animationFrameId);
+                        animationFrameId = null;
+                    }
+                }
+
+                document.addEventListener('visibilitychange', () => {
+                    isTabActive = !document.hidden;
+                    if (isTabActive) {
+                        startAnimation();
+                    } else {
+                        stopAnimation();
+                    }
+                });
+
+                let resizeTimer;
+                window.addEventListener('resize', () => {
+                    clearTimeout(resizeTimer);
+                    resizeTimer = setTimeout(() => {
+                        setCanvasSize();
+                        initParticles();
+                    }, 200);
+                }, { passive: true });
+
                 setCanvasSize();
                 initParticles();
-                animate();
-                window.addEventListener('resize', () => { setCanvasSize(); initParticles(); });
+                startAnimation();
             }
             
             function renderProjects() {
                 const container = document.getElementById('projects-container');
                 if (!container) return;
                 container.innerHTML = projectsData.map(project => {
-                    const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+                    const tagsHTML = project.tags.map(tag => '<span class="tag">' + tag + '</span>').join('');
                     const buttonHTML = project.longDescription[currentLang] !== 'none' ? `
-                        <button onclick="openModal('${project.id}')" class="text-blue-400 hover:text-blue-300 font-semibold self-start text-left mt-auto pt-4 group transition-colors">
-                            ${translations[currentLang].view_details} <i class="fas fa-arrow-right ml-1 transform transition-transform duration-300 group-hover:translate-x-1"></i>
+                        <button onclick="openModal('${project.id}')" class="text-blue-400 hover:text-blue-300 font-semibold self-start text-left mt-auto pt-4 group transition-colors flex items-center gap-1.5">
+                            <span>${translations[currentLang].view_details}</span>
+                            <svg class="icon text-xs icon-arrow-flip transform transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
                         </button>` : '';
                     return `
                         <div class="glass-effect p-6 interactive-card flex flex-col h-full reveal-element">
@@ -717,6 +633,7 @@
                             ${buttonHTML}
                         </div>`;
                 }).join('');
+                initInteractiveCards();
             }
             
             function renderExperienceAndEducation() {
@@ -727,7 +644,9 @@
 
                 expContainer.innerHTML = experienceData.map(item => `
                     <div class="reveal-element flex">
-                        <div class="mr-6 flex-shrink-0"><i class="fas ${item.icon} text-blue-400 text-2xl mt-1"></i></div>
+                        <div class="mr-6 flex-shrink-0 flex items-center justify-center w-8">
+                            <svg class="icon text-2xl text-blue-400 mt-1" aria-hidden="true"><use href="#icon-${item.icon}"></use></svg>
+                        </div>
                         <div>
                             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
                                 <p class="font-semibold text-white text-lg">${item.title[currentLang]} <span class="text-gray-400 font-normal">${item.date[currentLang]}</span></p>
@@ -740,7 +659,9 @@
                 
                 eduContainer.innerHTML = educationData.map(item => `
                        <div class="reveal-element flex">
-                             <div class="mr-6 flex-shrink-0"><i class="fas ${item.icon} text-blue-400 text-2xl mt-1"></i></div>
+                             <div class="mr-6 flex-shrink-0 flex items-center justify-center w-8">
+                                 <svg class="icon text-2xl text-blue-400 mt-1" aria-hidden="true"><use href="#icon-${item.icon}"></use></svg>
+                             </div>
                              <div>
                                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
                                          <p class="font-semibold text-white text-lg">${item.title[currentLang]} <span class="text-gray-400 font-normal">${item.date[currentLang]}</span></p>
@@ -750,16 +671,18 @@
                        </div>
                 `).join('');
 
-                if (certContainer && typeof certificationsData !== 'undefined') {
+                if (certContainer) {
                     certContainer.innerHTML = certificationsData.map(item => `
                         <div class="reveal-element flex">
-                            <div class="mr-6 flex-shrink-0"><i class="fas ${item.icon} text-blue-400 text-2xl mt-1"></i></div>
+                            <div class="mr-6 flex-shrink-0 flex items-center justify-center w-8">
+                                <svg class="icon text-2xl text-blue-400 mt-1" aria-hidden="true"><use href="#icon-${item.icon}"></use></svg>
+                            </div>
                             <div>
                                 <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
                                     <p class="font-semibold text-white text-lg">${item.title[currentLang]} <span class="text-gray-400 font-normal">${item.date[currentLang]}</span></p>
                                     <p class="text-blue-300 text-base flex-shrink-0 sm:ml-4">${item.location[currentLang]}</p>
                                 </div>
-                                ${item.description ? `<p class="text-gray-400">${item.description[currentLang]}</p>` : ''}
+                                ${item.description ? '<p class="text-gray-400">' + item.description[currentLang] + '</p>' : ''}
                             </div>
                         </div>
                     `).join('');
@@ -772,19 +695,26 @@
                 const modalContainer = document.getElementById('project-modal');
                 const modalHTML = `
                     <div class="modal-content relative">
-                        <button onclick="closeModal()" class="absolute top-2 right-1.5 md:top-2.5 md:right-2 z-10 text-gray-400 hover:text-white text-4xl leading-none transition-transform duration-200 hover:scale-125" aria-label="Close modal">&times;</button>
-                        <img src="${p.imageUrl}" alt="Project Image" class="w-full h-64 object-cover rounded-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Image+Error';">
+                        <button onclick="closeModal()" class="absolute top-2 right-1.5 md:top-2.5 md:right-2 z-10 text-gray-400 hover:text-white text-3xl leading-none transition-transform duration-200 hover:scale-110 p-2" aria-label="Close modal">
+                            <svg class="icon w-6 h-6" aria-hidden="true"><use href="#icon-times"></use></svg>
+                        </button>
+                        <img src="${p.imageUrl}" alt="Project Image" class="w-full h-64 object-cover rounded-lg mb-4" loading="lazy" decoding="async">
                         <h3 class="text-3xl font-bold text-white mb-2">${p.title[currentLang]}</h3>
-                        <div class="mb-4 flex flex-wrap gap-2">${p.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+                        <div class="mb-4 flex flex-wrap gap-2">${p.tags.map(tag => '<span class="tag">' + tag + '</span>').join('')}</div>
                         <p class="text-gray-300 mb-6">${p.longDescription[currentLang]}</p>
-                        ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300">
-                            ${translations[currentLang].modal_view_code} <i class="fab fa-github ml-2"></i>
-                        </a>` : ''}
-                        ${p.liveLink ? `<a href="${p.liveLink}" target="_blank" rel="noopener noreferrer" class="inline-block bg-green-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition-colors duration-300 ml-4">
-                            ${translations[currentLang].modal_view_live} <i class="fas fa-external-link-alt ml-2"></i>
-                        </a>` : ''}
+                        <div class="flex flex-wrap gap-4">
+                            ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                                <span>${translations[currentLang].modal_view_code}</span>
+                                <svg class="icon text-lg" aria-hidden="true"><use href="#icon-github"></use></svg>
+                            </a>` : ''}
+                            ${p.liveLink ? `<a href="${p.liveLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-green-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition-colors duration-200">
+                                <span>${translations[currentLang].modal_view_live}</span>
+                                <svg class="icon text-lg" aria-hidden="true"><use href="#icon-external-link-alt"></use></svg>
+                            </a>` : ''}
+                        </div>
                     </div>`;
                 modalContainer.innerHTML = modalHTML;
+                modalContainer.setAttribute('aria-hidden', 'false');
                 modalContainer.classList.add('active');
                 document.body.style.overflow = 'hidden';
             };
@@ -793,6 +723,7 @@
                 const modal = document.getElementById('project-modal');
                 if(modal) { 
                     modal.classList.remove('active'); 
+                    modal.setAttribute('aria-hidden', 'true');
                     document.body.style.overflow = ''; 
                     modal.innerHTML = '';
                 }
@@ -805,37 +736,29 @@
             function initMobileMenu() {
                 const btn = document.getElementById('mobile-menu-button');
                 const menu = document.getElementById('mobile-menu');
+                const iconUse = document.querySelector('#mobile-menu-icon use');
                 if (!btn || !menu) return;
 
                 const closeMenu = () => {
                     menu.classList.add('hidden');
-                    const icon = btn.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
+                    if (iconUse) iconUse.setAttribute('href', '#icon-bars');
                 };
 
                 btn.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    menu.classList.toggle('hidden');
-                    const icon = btn.querySelector('i');
-                    icon.classList.toggle('fa-bars');
-                    icon.classList.toggle('fa-times');
+                    const isHidden = menu.classList.toggle('hidden');
+                    if (iconUse) iconUse.setAttribute('href', isHidden ? '#icon-bars' : '#icon-times');
                 });
                 
-                // Add listeners to nav links to close the menu
                 menu.querySelectorAll('a[href^="#"]').forEach(link => {
-                    link.addEventListener('click', () => {
-                        closeMenu();
-                    });
+                    link.addEventListener('click', closeMenu);
                 });
 
-                // Add separate listeners for language links
                 menu.querySelectorAll('a[data-lang]').forEach(link => {
                     link.addEventListener('click', (e) => {
                         e.preventDefault();
                         e.stopPropagation();
-                        const lang = e.currentTarget.dataset.lang;
-                        setLanguage(lang);
+                        setLanguage(e.currentTarget.dataset.lang);
                         closeMenu();
                     });
                 });
@@ -854,16 +777,16 @@
                     if (index < text.length) {
                         subtitleEl.textContent += text.charAt(index);
                         index++;
-                        typeTimeout = setTimeout(type, 100);
+                        typeTimeout = setTimeout(type, 90);
                     } else {
                         cursorEl.style.display = 'none'; 
                     }
                 }
-                typeTimeout = setTimeout(type, 500);
+                typeTimeout = setTimeout(type, 400);
             }
             
             function initScrollReveal() {
-                const els = document.querySelectorAll('.reveal-element');
+                const els = document.querySelectorAll('.reveal-element:not(.visible)');
                 if (!('IntersectionObserver' in window)) {
                     els.forEach(el => el.classList.add('visible'));
                     return;
@@ -878,7 +801,7 @@
                             scrollObserver.unobserve(entry.target);
                         }
                     });
-                }, { threshold: 0.1 });
+                }, { threshold: 0.08 });
 
                 els.forEach(el => scrollObserver.observe(el));
             }
@@ -887,56 +810,63 @@
                 const sections = document.querySelectorAll('section[id], footer[id]');
                 const navLinks = document.querySelectorAll('#desktop-nav a');
                 if (!('IntersectionObserver' in window)) return;
-                // Adjusting rootMargin to better highlight nav items as they come into view
+                
                 const observer = new IntersectionObserver(entries => {
                     entries.forEach(entry => {
                         const id = entry.target.getAttribute('id');
-                        const navLink = document.querySelector(`#desktop-nav a[href="#${id}"]`);
+                        const navLink = document.querySelector('#desktop-nav a[href="#' + id + '"]');
                         if (entry.isIntersecting && navLink) {
                             navLinks.forEach(link => link.classList.remove('active'));
                             navLink.classList.add('active');
                         }
                     });
-                }, { rootMargin: '-40% 0px -55% 0px' });
+                }, { rootMargin: '-35% 0px -50% 0px' });
                 sections.forEach(sec => observer.observe(sec));
             }
 
-
             function initInteractiveCards() {
-                document.body.addEventListener('mousemove', e => {
-                    // Find the closest card ancestor
-                    const card = e.target.closest('.interactive-card');
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+                
+                const cards = document.querySelectorAll('.interactive-card');
+                cards.forEach(card => {
+                    if (card._hasTilt) return;
+                    card._hasTilt = true;
                     
-                    // Reset all cards if not hovering over one
-                    document.querySelectorAll('.interactive-card').forEach(c => {
-                        if (c !== card) {
-                           c.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
-                        }
-                    });
-
-                    if (!card) return;
-
-                    const { left, top, width, height } = card.getBoundingClientRect();
-                    const x = e.clientX - left;
-                    const y = e.clientY - top;
-                    const rotateX = -7 * ((y - height / 2) / height);
-                    const rotateY = 7 * ((x - width / 2) / width);
-                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.04)`;
-                });
-                 document.body.addEventListener('mouseleave', () => {
-                     document.querySelectorAll('.interactive-card').forEach(card => {
-                        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
-                     });
+                    let rect = null;
+                    let ticking = false;
+                    
+                    card.addEventListener('mouseenter', () => {
+                        rect = card.getBoundingClientRect();
+                    }, { passive: true });
+                    
+                    card.addEventListener('mousemove', (e) => {
+                        if (!rect) rect = card.getBoundingClientRect();
+                        if (ticking) return;
+                        ticking = true;
+                        
+                        requestAnimationFrame(() => {
+                            const x = e.clientX - rect.left;
+                            const y = e.clientY - rect.top;
+                            const rotateX = -6 * ((y - rect.height / 2) / rect.height);
+                            const rotateY = 6 * ((x - rect.width / 2) / rect.width);
+                            card.style.transform = 'perspective(1000px) rotateX(' + rotateX.toFixed(2) + 'deg) rotateY(' + rotateY.toFixed(2) + 'deg) scale3d(1.025, 1.025, 1.025)';
+                            ticking = false;
+                        });
+                    }, { passive: true });
+                    
+                    card.addEventListener('mouseleave', () => {
+                        rect = null;
+                        card.style.transform = '';
+                    }, { passive: true });
                 });
             }
             
             // --- FINAL INITIALIZATION ---
             initMobileMenu();
             initNavHighlightingOnScroll();
-            initInteractiveCards();
             initParticleCanvas();
             initLanguageSelector();
-            setLanguage('en'); // Set default language, which also calls all render and reveal functions
+            setLanguage(currentLang);
         });
     </script>
 </body>
