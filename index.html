@@ -745,7 +745,7 @@
                 const modalHTML = `
                     <div class="modal-content relative">
                         <button onclick="closeModal()" class="absolute top-2 right-1.5 md:top-2.5 md:right-2 z-10 text-gray-400 hover:text-white text-4xl leading-none transition-transform duration-200 hover:scale-125" aria-label="Close modal">&times;</button>
-                        <img src="${p.imageUrl}" alt="Project Image" class="w-full h-64 object-contain bg-black rounded-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Image+Error';">
+                        <img src="${p.imageUrl}" alt="Project Image" class="w-full h-64 object-cover rounded-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Image+Error';">
                         <h3 class="text-3xl font-bold text-white mb-2">${p.title[currentLang]}</h3>
                         <div class="mb-4 flex flex-wrap gap-2">${p.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
                         <p class="text-gray-300 mb-6">${p.longDescription[currentLang]}</p>
