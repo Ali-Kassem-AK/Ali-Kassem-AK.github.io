@@ -298,16 +298,16 @@
                     <!-- Education -->
                     <div>
                         <h3 class="text-2xl font-bold text-white mb-8 reveal-element border-b-2 border-blue-500/50 pb-3" data-translate="edu_title">Education</h3>
-                          <div id="education-container" class="space-y-8">
+                         <div id="education-container" class="space-y-8">
                              <!-- Education items dynamically inserted here -->
-                          </div>
+                         </div>
                     </div>
                     <!-- Certifications -->
                     <div class="mt-12">
                         <h3 class="text-2xl font-bold text-white mb-8 reveal-element border-b-2 border-blue-500/50 pb-3" data-translate="cert_title">Licenses & Certifications</h3>
-                          <div id="certifications-container" class="space-y-8">
+                         <div id="certifications-container" class="space-y-8">
                              <!-- Certification items dynamically inserted here -->
-                          </div>
+                         </div>
                     </div>
                 </div>
             </div>
@@ -455,7 +455,7 @@
                     tags: ["System Architecture", "n8n", "Microservices", "WebSockets", "DevOps", "Fault Tolerance"], 
                     link: null, 
                     liveLink: "https://xare-ai.vercel.app",
-                    imageUrl: "https://placehold.co/600x400/0f172a/3b82f6?text=Xare+AI+Platform" 
+                    imageUrl: "images/xare-v2.png" 
                 },
                 { 
                     id: 'scm-sim', 
@@ -748,7 +748,7 @@
                 const modalHTML = `
                     <div class="modal-content relative">
                         <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-4xl leading-none transition-transform duration-200 hover:scale-125" aria-label="Close modal">&times;</button>
-                        <img src="${p.imageUrl}" alt="Project Image" class="w-full h-64 object-cover rounded-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Image+Error';">
+                        <img src="${p.imageUrl}" alt="Project Image" class="w-full h-64 object-contain bg-black rounded-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1f2937/d1d5db?text=Image+Error';">
                         <h3 class="text-3xl font-bold text-white mb-2">${p.title[currentLang]}</h3>
                         <div class="mb-4 flex flex-wrap gap-2">${p.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
                         <p class="text-gray-300 mb-6">${p.longDescription[currentLang]}</p>
