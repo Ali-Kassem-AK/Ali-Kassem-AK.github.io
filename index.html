@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ali Kassem | Computer Science Student</title>
+    <title>Ali Kassem | Computer Science Student & Automation Systems Architect</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23111827'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='42' fill='%233b82f6'%3EAK%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,9 +48,10 @@
             <div class="flex items-center">
                 <div id="desktop-nav" class="hidden md:flex items-center space-x-6 text-gray-300">
                     <a href="#about" class="nav-link" data-translate="nav_about">About</a>
-                    <a href="#skills" class="nav-link" data-translate="nav_skills">Skills</a>
                     <a href="#projects" class="nav-link" data-translate="nav_projects">Projects</a>
                     <a href="#experience" class="nav-link" data-translate="nav_experience">Experience</a>
+                    <a href="#skills" class="nav-link" data-translate="nav_skills">Skills</a>
+                    <a href="#education" class="nav-link" data-translate="nav_education">Education</a>
                     <a href="#contact" class="nav-link" data-translate="nav_contact">Contact</a>
                     <a href="Resume - Ali Kassem.pdf" download="Resume - Ali Kassem.pdf" class="nav-link flex items-center gap-1.5" aria-label="Resume">
                         <span data-translate="nav_cv">Resume</span>
@@ -77,9 +78,10 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-gray-800/90 backdrop-blur">
             <a href="#about" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-700" data-translate="nav_about">About</a>
-            <a href="#skills" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-700" data-translate="nav_skills">Skills</a>
             <a href="#projects" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-700" data-translate="nav_projects">Projects</a>
-            <a href="#experience" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-700" data-translate="nav_experience">Experience & Education</a>
+            <a href="#experience" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-700" data-translate="nav_experience">Experience</a>
+            <a href="#skills" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-700" data-translate="nav_skills">Skills</a>
+            <a href="#education" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-700" data-translate="nav_education">Education</a>
             <a href="#contact" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-700" data-translate="nav_contact">Contact</a>
             <a href="Resume - Ali Kassem.pdf" download="Resume - Ali Kassem.pdf" class="flex items-center gap-2 py-3 px-6 text-sm text-gray-300 hover:bg-gray-700">
                 <svg class="icon text-xs" aria-hidden="true"><use href="#icon-download"></use></svg>
@@ -94,7 +96,7 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- 1. Hero / Identity Section (#about) -->
         <section id="about" class="section container mx-auto text-center flex flex-col items-center justify-center min-h-screen">
              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' fill='%23111827'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='56' fill='%23FFFFFF'%3EAK%3C/text%3E%3C/svg%3E" alt="Ali Kassem" width="160" height="160" class="rounded-full w-40 h-40 mb-6 border-4 border-gray-700 reveal-element" fetchpriority="high">
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 reveal-element" data-translate="hero_name">Ali Kassem</h1>
@@ -115,10 +117,32 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
+        <!-- 2. Featured Projects Section (#projects) -->
+        <section id="projects" class="section bg-gray-900/50">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-center text-white mb-12 reveal-element" data-translate="projects_title">Featured Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-container">
+                    <!-- Projects dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Work & Leadership Experience Section (#experience) -->
+        <section id="experience" class="section">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-center text-white mb-12 reveal-element" data-translate="exp_title">Work & Leadership Experience</h2>
+                <div class="max-w-4xl mx-auto">
+                    <div id="experience-container" class="space-y-8">
+                       <!-- Experience items dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Core Technical Skills & Architecture Stack (#skills) -->
         <section id="skills" class="section bg-gray-900/50">
             <div class="container mx-auto">
-                <h2 class="text-3xl font-bold text-center text-white mb-12 reveal-element" data-translate="skills_title">My Skillset</h2>
+                <h2 class="text-3xl font-bold text-center text-white mb-12 reveal-element" data-translate="skills_title">Technical Skills & Architecture Stack</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="glass-effect p-6 text-center interactive-card reveal-element">
                         <svg class="icon text-4xl text-blue-400 mb-4 mx-auto" aria-hidden="true"><use href="#icon-code"></use></svg>
@@ -154,37 +178,20 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section">
+        <!-- 5. Education & Verified Certifications Section (#education) -->
+        <section id="education" class="section">
             <div class="container mx-auto">
-                <h2 class="text-3xl font-bold text-center text-white mb-12 reveal-element" data-translate="projects_title">Projects</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-container">
-                    <!-- Projects dynamically inserted here -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience & Education Section -->
-        <section id="experience" class="section bg-gray-900/50">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold text-center text-white mb-12 reveal-element" data-translate="exp_edu_title">Experience & Education</h2>
+                <h2 class="text-3xl font-bold text-center text-white mb-12 reveal-element" data-translate="edu_cert_title">Education & Certifications</h2>
                 <div class="max-w-4xl mx-auto">
-                    <!-- Experience -->
+                    <!-- Education Subsection -->
                     <div class="mb-12">
-                        <h3 class="text-2xl font-bold text-white mb-8 reveal-element border-b-2 border-blue-500/50 pb-3" data-translate="exp_title">Experience</h3>
-                        <div id="experience-container" class="space-y-8">
-                           <!-- Experience items dynamically inserted here -->
-                        </div>
-                    </div>
-                    <!-- Education -->
-                    <div>
                         <h3 class="text-2xl font-bold text-white mb-8 reveal-element border-b-2 border-blue-500/50 pb-3" data-translate="edu_title">Education</h3>
                          <div id="education-container" class="space-y-8">
                              <!-- Education items dynamically inserted here -->
                          </div>
                     </div>
-                    <!-- Certifications -->
-                    <div class="mt-12">
+                    <!-- Certifications Subsection -->
+                    <div>
                         <h3 class="text-2xl font-bold text-white mb-8 reveal-element border-b-2 border-blue-500/50 pb-3" data-translate="cert_title">Licenses & Certifications</h3>
                          <div id="certifications-container" class="space-y-8">
                              <!-- Certification items dynamically inserted here -->
@@ -195,7 +202,7 @@
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- 6. Footer / Contact (#contact) -->
     <footer id="contact" class="bg-gray-900 text-white section">
         <div class="container mx-auto py-12 px-6 text-center">
             <h2 class="text-2xl font-bold mb-4 reveal-element" data-translate="contact_title">Get In Touch</h2>
@@ -227,9 +234,10 @@
                 en: {
                     name_logo: "Ali Kassem",
                     nav_about: "About",
-                    nav_skills: "Skills",
                     nav_projects: "Projects",
-                    nav_experience: "Experience & Education",
+                    nav_experience: "Experience",
+                    nav_skills: "Skills",
+                    nav_education: "Education",
                     nav_contact: "Contact",
                     nav_cv: "Resume",
                     hero_name: "Ali Kassem",
@@ -237,17 +245,17 @@
                     hero_bio: "A Computer Science student at E-JUST specializing in AI and software development. I use my skills in Python, System Architecture, and AI Orchestration to build innovative, high-availability tech solutions and solve real-world problems.",
                     download_cv: "Download Resume",
                     contact_btn: "Get In Touch",
-                    skills_title: "My Skillset",
+                    projects_title: "Featured Projects",
+                    view_details: "View Details",
+                    exp_title: "Work & Leadership Experience",
+                    skills_title: "Technical Skills & Architecture Stack",
                     skill_cat_1: "Programming", skill_desc_1: "Python (Object-Oriented Programming)",
                     skill_cat_2: "AI & Data Science", skill_desc_2: "Machine learning, LLM Integration, Multi-Modal Routing, Image Classification",
                     skill_cat_3: "Software & Tools", skill_desc_3: "n8n, Hugging Face, Firebase, GitHub",
                     skill_cat_4: "Professional Skills", skill_desc_4: "Systems Architecture, DevOps, Fault Tolerance, Problem Solving",
                     skill_cat_5: "Languages", skill_desc_5: "Arabic (Native), English (Advanced), Japanese (Basics)",
                     skill_cat_6: "AI Orchestration", skill_desc_6: "Advanced Prompt Engineering, API Integration, Workflow Automation",
-                    projects_title: "Projects",
-                    view_details: "View Details",
-                    exp_edu_title: "Experience & Education",
-                    exp_title: "Experience",
+                    edu_cert_title: "Education & Certifications",
                     edu_title: "Education",
                     cert_title: "Licenses & Certifications",
                     contact_title: "Get In Touch",
@@ -260,9 +268,10 @@
                 ar: {
                     name_logo: "علي قاسم",
                     nav_about: "عني",
-                    nav_skills: "مهاراتي",
                     nav_projects: "مشاريعي",
-                    nav_experience: "الخبرة والتعليم",
+                    nav_experience: "الخبرة",
+                    nav_skills: "مهاراتي",
+                    nav_education: "التعليم",
                     nav_contact: "تواصل معي",
                     nav_cv: "السيرة الذاتية",
                     hero_name: "علي قاسم",
@@ -270,17 +279,17 @@
                     hero_bio: "طالب علوم حاسوب في الجامعة المصرية اليابانية للعلوم والتكنولوجيا، متخصص في الذكاء الاصطناعي وتطوير البرمجيات. أستخدم مهاراتي في بايثون وهندسة الأنظمة وتوجيه الذكاء الاصطناعي لبناء حلول تقنية عالية التوافر وحل مشاكل العالم الحقيقي.",
                     download_cv: "تحميل السيرة الذاتية",
                     contact_btn: "تواصل معي",
-                    skills_title: "مجموعة مهاراتي",
+                    projects_title: "المشاريع المميزة",
+                    view_details: "عرض التفاصيل",
+                    exp_title: "الخبرة والقيادة التقنية",
+                    skills_title: "المهارات التقنية وهندسة الأنظمة",
                     skill_cat_1: "البرمجة", skill_desc_1: "بايثون (البرمجة كائنية التوجه)",
                     skill_cat_2: "الذكاء الاصطناعي وعلوم البيانات", skill_desc_2: "تعلم الآلة، تكامل النماذج اللغوية (LLM)، وتوجيه المهام المتعددة، وتصنيف الصور",
                     skill_cat_3: "البرامج والأدوات", skill_desc_3: "n8n, Hugging Face, Firebase, GitHub",
                     skill_cat_4: "المهارات المهنية", skill_desc_4: "هندسة الأنظمة، عمليات التطوير (DevOps)، تجاوز الأعطال، حل المشكلات",
                     skill_cat_5: "اللغات", skill_desc_5: "العربية (لغة أم)، الإنجليزية (متقدم)، اليابانية (أساسيات)",
                     skill_cat_6: "توجيه الذكاء الاصطناعي", skill_desc_6: "هندسة الأوامر المتقدمة، دمج واجهات برمجة التطبيقات (APIs)، أتمتة سير العمل",
-                    projects_title: "مشاريعي",
-                    view_details: "عرض التفاصيل",
-                    exp_edu_title: "الخبرة والتعليم",
-                    exp_title: "الخبرة",
+                    edu_cert_title: "التعليم والتراخيص والشهادات",
                     edu_title: "التعليم",
                     cert_title: "التراخيص والشهادات",
                     contact_title: "تواصل معي",
@@ -293,9 +302,10 @@
                 ja: {
                     name_logo: "アリ・カセム",
                     nav_about: "概要",
-                    nav_skills: "スキル",
                     nav_projects: "プロジェクト",
-                    nav_experience: "経験と学歴",
+                    nav_experience: "経験",
+                    nav_skills: "スキル",
+                    nav_education: "学歴",
                     nav_contact: "連絡先",
                     nav_cv: "履歴書",
                     hero_name: "アリ・カセム",
@@ -303,17 +313,17 @@
                     hero_bio: "E-JUSTのコンピューターサイエンスを専攻する学生で、AIとソフトウェア開発を専門としています。Python、システムアーキテクチャ、AIオーケストレーションのスキルを活かして、革新的で高可用性の技術ソリューションを構築し、現実世界の問題を解決します。",
                     download_cv: "履歴書をダウンロード",
                     contact_btn: "お問い合わせ",
-                    skills_title: "私のスキルセット",
+                    projects_title: "注目のプロジェクト",
+                    view_details: "詳細を見る",
+                    exp_title: "職歴とリーダーシップ経験",
+                    skills_title: "技術スキル・システム構成",
                     skill_cat_1: "プログラミング", skill_desc_1: "Python (オブジェクト指向プログラミング)",
                     skill_cat_2: "AI & データサイエンス", skill_desc_2: "機械学習、LLM統合、マルチモーダルルーティング、画像分類",
                     skill_cat_3: "ソフトウェア & ツール", skill_desc_3: "n8n, Hugging Face, Firebase, GitHub",
                     skill_cat_4: "プロフェッショナルスキル", skill_desc_4: "システムアーキテクチャ、DevOps、フォールトトレランス、問題解決",
                     skill_cat_5: "言語", skill_desc_5: "アラビア語 (ネイティブ)、英語 (上級)、日本語 (基礎)",
                     skill_cat_6: "AIオーケストレーション", skill_desc_6: "高度なプロンプト設計、API統合、ワークフロー自動化",
-                    projects_title: "プロジェクト",
-                    view_details: "詳細を見る",
-                    exp_edu_title: "経験と学歴",
-                    exp_title: "経験",
+                    edu_cert_title: "学歴・認定証",
                     edu_title: "学歴",
                     cert_title: "ライセンスと認定証",
                     contact_title: "お問い合わせ",
@@ -642,36 +652,39 @@
                 const expContainer = document.getElementById('experience-container');
                 const eduContainer = document.getElementById('education-container');
                 const certContainer = document.getElementById('certifications-container');
-                if(!expContainer || !eduContainer) return;
-
-                expContainer.innerHTML = experienceData.map(item => `
-                    <div class="reveal-element flex">
-                        <div class="mr-6 flex-shrink-0 flex items-center justify-center w-8">
-                            <svg class="icon text-2xl text-blue-400 mt-1" aria-hidden="true"><use href="#icon-${item.icon}"></use></svg>
-                        </div>
-                        <div>
-                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
-                                <p class="font-semibold text-white text-lg">${item.title[currentLang]} <span class="text-gray-400 font-normal">${item.date[currentLang]}</span></p>
-                                <p class="text-blue-300 text-base flex-shrink-0 sm:ml-4">${item.location[currentLang]}</p>
-                            </div>
-                            <p class="text-gray-400">${item.description[currentLang]}</p>
-                        </div>
-                    </div>
-                `).join('');
                 
-                eduContainer.innerHTML = educationData.map(item => `
-                       <div class="reveal-element flex">
-                             <div class="mr-6 flex-shrink-0 flex items-center justify-center w-8">
-                                 <svg class="icon text-2xl text-blue-400 mt-1" aria-hidden="true"><use href="#icon-${item.icon}"></use></svg>
-                             </div>
-                             <div>
-                                   <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-                                         <p class="font-semibold text-white text-lg">${item.title[currentLang]} <span class="text-gray-400 font-normal">${item.date[currentLang]}</span></p>
-                                         <p class="text-blue-300 text-base flex-shrink-0 sm:ml-4">${item.location[currentLang]}</p>
-                                   </div>
-                             </div>
-                       </div>
-                `).join('');
+                if (expContainer) {
+                    expContainer.innerHTML = experienceData.map(item => `
+                        <div class="reveal-element flex">
+                            <div class="mr-6 flex-shrink-0 flex items-center justify-center w-8">
+                                <svg class="icon text-2xl text-blue-400 mt-1" aria-hidden="true"><use href="#icon-${item.icon}"></use></svg>
+                            </div>
+                            <div>
+                                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
+                                    <p class="font-semibold text-white text-lg">${item.title[currentLang]} <span class="text-gray-400 font-normal">${item.date[currentLang]}</span></p>
+                                    <p class="text-blue-300 text-base flex-shrink-0 sm:ml-4">${item.location[currentLang]}</p>
+                                </div>
+                                <p class="text-gray-400">${item.description[currentLang]}</p>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+                
+                if (eduContainer) {
+                    eduContainer.innerHTML = educationData.map(item => `
+                           <div class="reveal-element flex">
+                                 <div class="mr-6 flex-shrink-0 flex items-center justify-center w-8">
+                                     <svg class="icon text-2xl text-blue-400 mt-1" aria-hidden="true"><use href="#icon-${item.icon}"></use></svg>
+                                 </div>
+                                 <div>
+                                       <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+                                             <p class="font-semibold text-white text-lg">${item.title[currentLang]} <span class="text-gray-400 font-normal">${item.date[currentLang]}</span></p>
+                                             <p class="text-blue-300 text-base flex-shrink-0 sm:ml-4">${item.location[currentLang]}</p>
+                                       </div>
+                                 </div>
+                           </div>
+                    `).join('');
+                }
 
                 if (certContainer) {
                     certContainer.innerHTML = certificationsData.map(item => `
