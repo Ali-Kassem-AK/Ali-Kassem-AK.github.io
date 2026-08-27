@@ -215,6 +215,10 @@
                     <a href="#projects" class="nav-link" data-translate="nav_projects">Projects</a>
                     <a href="#experience" class="nav-link" data-translate="nav_experience">Experience</a>
                     <a href="#contact" class="nav-link" data-translate="nav_contact">Contact</a>
+                    <a href="Resume - Ali Kassem.pdf" download="Resume - Ali Kassem.pdf" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors shadow-sm" aria-label="Download CV">
+                        <i class="fas fa-file-arrow-down"></i>
+                        <span data-translate="nav_cv">Download CV</span>
+                    </a>
                 </div>
                 <!-- Language Selector Icon -->
                 <button id="language-selector-button" class="hidden md:block ml-6 text-gray-300 hover:text-blue-400 focus:outline-none transition-colors" aria-label="Select language">
@@ -232,6 +236,10 @@
             <a href="#projects" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-700" data-translate="nav_projects">Projects</a>
             <a href="#experience" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-700" data-translate="nav_experience">Experience & Education</a>
             <a href="#contact" class="block py-3 px-6 text-sm text-gray-300 hover:bg-gray-700" data-translate="nav_contact">Contact</a>
+            <a href="Resume - Ali Kassem.pdf" download="Resume - Ali Kassem.pdf" class="flex items-center gap-2 py-3 px-6 text-sm text-blue-400 font-semibold hover:bg-gray-700">
+                <i class="fas fa-file-arrow-down"></i>
+                <span data-translate="download_cv">Download CV</span>
+            </a>
             <div class="border-t border-gray-700 my-2"></div>
             <div class="px-6 py-2 text-sm text-gray-400" data-translate="language_select_label">Language</div>
             <a href="#" class="block py-2 px-6 text-sm text-gray-300 hover:bg-gray-700" data-lang="en">English</a>
@@ -253,9 +261,20 @@
              <img src="https://placehold.co/150x150/111827/FFFFFF?text=AK" alt="Ali Kassem" class="rounded-full w-40 h-40 mb-6 border-4 border-gray-700 reveal-element" onerror="this.onerror=null;this.src='https://placehold.co/150x150/111827/FFFFFF?text=Image+Error';">
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 reveal-element" data-translate="hero_name">Ali Kassem</h1>
             <p class="text-xl md:text-2xl text-blue-400 mb-8 h-8 reveal-element"><span id="typing-subtitle"></span><span class="typing-cursor"></span></p>
-            <p class="max-w-3xl text-lg text-gray-400 reveal-element" data-translate="hero_bio">
+            <p class="max-w-3xl text-lg text-gray-400 mb-8 reveal-element" data-translate="hero_bio">
                 A Computer Science student at E-JUST specializing in AI and software development. I use my skills in Python, System Architecture, and AI Orchestration to build innovative, high-availability tech solutions and solve real-world problems.
             </p>
+            <!-- Hero Action Buttons -->
+            <div class="flex flex-wrap justify-center items-center gap-4 reveal-element">
+                <a href="Resume - Ali Kassem.pdf" download="Resume - Ali Kassem.pdf" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-0.5" aria-label="Download CV">
+                    <i class="fas fa-file-arrow-down"></i>
+                    <span data-translate="download_cv">Download CV</span>
+                </a>
+                <a href="#contact" class="inline-flex items-center gap-2 bg-gray-800/80 hover:bg-gray-700 text-gray-200 border border-gray-700 hover:border-gray-600 font-semibold px-6 py-3 rounded-lg transition-all duration-300">
+                    <i class="fas fa-envelope"></i>
+                    <span data-translate="contact_btn">Get In Touch</span>
+                </a>
+            </div>
         </section>
 
         <!-- Skills Section -->
@@ -345,9 +364,12 @@
                     nav_projects: "Projects",
                     nav_experience: "Experience & Education",
                     nav_contact: "Contact",
+                    nav_cv: "Download CV",
                     hero_name: "Ali Kassem",
                     hero_subtitle: "Computer Science Student & Automation Systems Architect",
                     hero_bio: "A Computer Science student at E-JUST specializing in AI and software development. I use my skills in Python, System Architecture, and AI Orchestration to build innovative, high-availability tech solutions and solve real-world problems.",
+                    download_cv: "Download CV",
+                    contact_btn: "Get In Touch",
                     skills_title: "My Skillset",
                     skill_cat_1: "Programming", skill_desc_1: "Python (Object-Oriented Programming)",
                     skill_cat_2: "AI & Data Science", skill_desc_2: "Machine learning, LLM Integration, Multi-Modal Routing, Image Classification",
@@ -375,9 +397,12 @@
                     nav_projects: "مشاريعي",
                     nav_experience: "الخبرة والتعليم",
                     nav_contact: "تواصل معي",
+                    nav_cv: "تحميل السيرة الذاتية",
                     hero_name: "علي قاسم",
                     hero_subtitle: "طالب علوم حاسوب ومهندس أنظمة أتمتة",
                     hero_bio: "طالب علوم حاسوب في الجامعة المصرية اليابانية للعلوم والتكنولوجيا، متخصص في الذكاء الاصطناعي وتطوير البرمجيات. أستخدم مهاراتي في بايثون وهندسة الأنظمة وتوجيه الذكاء الاصطناعي لبناء حلول تقنية عالية التوافر وحل مشاكل العالم الحقيقي.",
+                    download_cv: "تحميل السيرة الذاتية",
+                    contact_btn: "تواصل معي",
                     skills_title: "مجموعة مهاراتي",
                     skill_cat_1: "البرمجة", skill_desc_1: "بايثون (البرمجة كائنية التوجه)",
                     skill_cat_2: "الذكاء الاصطناعي وعلوم البيانات", skill_desc_2: "تعلم الآلة، تكامل النماذج اللغوية (LLM)، وتوجيه المهام المتعددة، وتصنيف الصور",
@@ -405,9 +430,12 @@
                     nav_projects: "プロジェクト",
                     nav_experience: "経験と学歴",
                     nav_contact: "連絡先",
+                    nav_cv: "履歴書",
                     hero_name: "アリ・カセム",
                     hero_subtitle: "コンピューターサイエンスの学生・自動化システムアーキテクト",
                     hero_bio: "E-JUSTのコンピューターサイエンスを専攻する学生で、AIとソフトウェア開発を専門としています。Python、システムアーキテクチャ、AIオーケストレーションのスキルを活かして、革新的で高可用性の技術ソリューションを構築し、現実世界の問題を解決します。",
+                    download_cv: "履歴書をダウンロード",
+                    contact_btn: "お問い合わせ",
                     skills_title: "私のスキルセット",
                     skill_cat_1: "プログラミング", skill_desc_1: "Python (オブジェクト指向プログラミング)",
                     skill_cat_2: "AI & データサイエンス", skill_desc_2: "機械学習、LLM統合、マルチモーダルルーティング、画像分類",
