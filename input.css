@@ -128,10 +128,10 @@ header.glass-effect {
 
 .modal-close-btn {
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
+    top: 0.35rem;
+    right: 0.35rem;
     z-index: 30;
-    padding: 0.25rem;
+    padding: 0.15rem;
     background: transparent;
     border: none;
     color: #9ca3af;
@@ -140,6 +140,11 @@ header.glass-effect {
     justify-content: center;
     cursor: pointer;
     transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.modal-close-btn svg {
+    width: 2rem;
+    height: 2rem;
 }
 
 .modal-close-btn:hover,
@@ -151,17 +156,21 @@ header.glass-effect {
 
 [dir="rtl"] .modal-close-btn {
     right: auto;
-    left: 0.5rem;
+    left: 0.35rem;
 }
 
 @media (min-width: 640px) {
     .modal-close-btn {
-        top: 0.75rem;
-        right: 0.75rem;
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+    .modal-close-btn svg {
+        width: 2.25rem;
+        height: 2.25rem;
     }
     [dir="rtl"] .modal-close-btn {
         right: auto;
-        left: 0.75rem;
+        left: 0.5rem;
     }
 }
 
