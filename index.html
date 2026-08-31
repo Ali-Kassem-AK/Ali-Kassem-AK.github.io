@@ -69,6 +69,7 @@
                         <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-gray-700/50 transition-colors" data-lang="en">English</a>
                         <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-gray-700/50 transition-colors" data-lang="ar">Arabic</a>
                         <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-gray-700/50 transition-colors" data-lang="ja">Japanese</a>
+                        <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-gray-700/50 transition-colors" data-lang="tr">Turkish</a>
                     </div>
                 </div>
                 <button id="mobile-menu-button" class="md:hidden ml-4 text-white focus:outline-none flex items-center justify-center" aria-label="Open mobile menu">
@@ -93,6 +94,7 @@
             <a href="#" class="block py-2 px-6 text-sm text-gray-300 hover:bg-gray-700" data-lang="en">English</a>
             <a href="#" class="block py-2 px-6 text-sm text-gray-300 hover:bg-gray-700" data-lang="ar">Arabic</a>
             <a href="#" class="block py-2 px-6 text-sm text-gray-300 hover:bg-gray-700" data-lang="ja">Japanese</a>
+            <a href="#" class="block py-2 px-6 text-sm text-gray-300 hover:bg-gray-700" data-lang="tr">Turkish</a>
         </div>
     </header>
 
@@ -333,6 +335,40 @@
                     modal_view_code: "GitHubでコードを見る",
                     modal_view_live: "ライブアプリを見る",
                     language_select_label: "言語"
+                },
+                tr: {
+                    name_logo: "Ali Kassem",
+                    nav_about: "Hakkımda",
+                    nav_projects: "Projeler",
+                    nav_experience: "Deneyim",
+                    nav_skills: "Yetenekler",
+                    nav_education: "Eğitim",
+                    nav_contact: "İletişim",
+                    nav_cv: "Özgeçmiş",
+                    hero_name: "Ali Kassem",
+                    hero_subtitle: "E-JUST'ta Yapay Zeka ve Veri Bilimi Öğrencisi | Microsoft Veri Mühendisi Stajyeri @ DEPI | Otomasyon Sistemleri Mimarı",
+                    hero_bio: "E-JUST'ta Yapay Zeka ve Veri Bilimi ile Yazılım Mühendisliği alanlarında uzmanlaşan ve şu anda DEPI'de Microsoft Veri Mühendisi Stajyeri olan azimli bir Bilgisayar Bilimi öğrencisi. Üretime yönelik, hataya dayanıklı çok modlu yapay zeka platformları ve akıllı iş akışı otomasyon sistemleri tasarlama konusunda deneyimli. Gerçek dünya sorunlarını çözmek için yüksek erişilebilirlikli teknoloji çözümleri geliştirmeye güçlü bir odaklanma ile Python, n8n orkestrasyonu, LLM entegrasyonu ve mikroservis mimarisi konularında yetkin.",
+                    download_cv: "Özgeçmişi İndir",
+                    contact_btn: "İletişime Geç",
+                    projects_title: "Öne Çıkan Projeler",
+                    view_details: "Detayları Gör",
+                    exp_title: "Deneyim",
+                    skills_title: "Teknik Yetenekler ve Mimari Altyapısı",
+                    skill_cat_1: "Programlama", skill_desc_1: "Python (Nesne Yönelimli Programlama), SQL, MySQL, TypeScript, JavaScript",
+                    skill_cat_2: "Veri ve Bulut", skill_desc_2: "Veri Mühendisliği, ETL/ELT Veri Boru Hatları, Microsoft Azure, Büyük Veri İşleme, İlişkisel Veritabanları (MySQL, SQLite)",
+                    skill_cat_3: "Yapay Zeka ve Makine Öğrenimi", skill_desc_3: "LLM Entegrasyonu, Prompt Mühendisliği, Çok Modlu Yönlendirme, Makine Öğrenimi, Görüntü Sınıflandırma, OCR",
+                    skill_cat_4: "Orkestrasyon ve DevOps", skill_desc_4: "n8n İş Akışı Otomasyonu, Sistem Mimarisi, Mikroservisler, WebSockets, DevOps, Hataya Dayanıklılık",
+                    skill_cat_5: "Yazılım ve Araçlar", skill_desc_5: "Hugging Face, Firebase, GitHub, React, Tkinter, IndexedDB",
+                    skill_cat_6: "Diller", skill_desc_6: "Arapça (Anadil), İngilizce (İleri Düzey), Japonca (Temel)",
+                    edu_cert_title: "Eğitim ve Sertifikalar",
+                    edu_title: "Eğitim",
+                    cert_title: "Lisanslar ve Sertifikalar",
+                    contact_title: "İletişime Geç",
+                    contact_desc: "Yeni projeleri, yaratıcı fikirleri veya fırsatları tartışmaya her zaman açığım.<br><br>  <strong>İletişime geçmekten çekinmeyin!</strong>",
+                    footer_copy: "© 2026 Ali Kassem. Tüm hakları saklıdır.",
+                    modal_view_code: "Kodu GitHub'da Gör",
+                    modal_view_live: "Canlı Uygulamayı Gör",
+                    language_select_label: "Dil"
                 }
             };
             
@@ -343,17 +379,20 @@
                     title: {
                         en: "Xare AI Platform",
                         ar: "منصة Xare للذكاء الاصطناعي",
-                        ja: "Xare AI プラットフォーム"
+                        ja: "Xare AI プラットフォーム",
+                        tr: "Xare Yapay Zeka Platformu"
                     },
                     description: {
                         en: "A production-oriented, zero-cost multimodal AI platform with intelligent model routing, multi-tier LLM fallbacks, advanced reasoning, real-time voice streaming, vision, document processing, OCR, and image generation.",
                         ar: "منصة ذكاء اصطناعي متعددة الوسائط موجهة لبيئة الإنتاج وبدون تكلفة، تتميز بالتوجيه الذكي للنماذج، وآليات Fallback متعددة المستويات لنماذج LLM، والاستدلال المتقدم، والبث الصوتي اللحظي، وفهم الصور، ومعالجة المستندات، وOCR، وتوليد الصور.",
-                        ja: "インテリジェントなモデルルーティング、マルチティアLLMフォールバック、高度な推論、リアルタイム音声ストリーミング、画像理解、ドキュメント処理、OCR、画像生成を備えた、本番環境向けのゼロコスト・マルチモーダルAIプラットフォーム。"
+                        ja: "インテリジェントなモデルルーティング、マルチティアLLMフォールバック、高度な推論、リアルタイム音声ストリーミング、画像理解、ドキュメント処理、OCR、画像生成を備えた、本番環境向けのゼロコスト・マルチモーダルAIプラットフォーム。",
+                        tr: "Akıllı model yönlendirme, çok katmanlı LLM yedeklemeleri, gelişmiş akıl yürütme, gerçek zamanlı ses akışı, görüntü işleme, belge analizi, OCR ve görsel üretimi içeren üretime yönelik, sıfır maliyetli çok modlu yapay zeka platformu."
                     },
                     longDescription: {
                         en: "Designed and engineered a fully-featured, multi-modal AI conversational platform from scratch, then rebuilt and expanded it into Xare AI V2 with a 120-node n8n orchestration layer focused on intelligent routing, fault tolerance, and multi-model integration. V2 introduces advanced reasoning, vision, document and PDF processing, OCR, voice, speech-to-text, text-to-speech, and image generation, powered by Gemini, Qwen 3.6 27B, GPT-OSS 120B, Whisper, and Deepgram. Features multi-tier model fallbacks, real-time WebSocket voice streaming, a React/TypeScript frontend, IndexedDB media handling, persistent task management, security, and cloud deployment across Vercel, Hugging Face, Supabase, Firestore, and GitHub Actions.",
                         ar: "صممت وطورت منصة محادثة ذكاء اصطناعي متكاملة ومتعددة الوسائط من الصفر، ثم أعدت بناءها وتوسيعها لتصبح Xare AI V2 مع طبقة Orchestration مكونة من 120 عقدة باستخدام n8n، تركز على التوجيه الذكي، وتحمل الأعطال، والتكامل مع نماذج ذكاء اصطناعي متعددة. يقدم الإصدار الثاني قدرات متقدمة تشمل الاستدلال، وفهم الصور، ومعالجة المستندات وملفات PDF، وOCR، والصوت، وتحويل الكلام إلى نص، وتحويل النص إلى كلام، وتوليد الصور، بالاعتماد على Gemini وQwen 3.6 27B وGPT-OSS 120B وWhisper وDeepgram. كما يتضمن النظام أنظمة Fallback متعددة المستويات، وبثاً صوتياً لحظياً عبر WebSockets، وواجهة React/TypeScript، وإدارة الوسائط باستخدام IndexedDB، وإدارة المهام، والحماية، والنشر عبر Vercel وHugging Face وSupabase وFirestore وGitHub Actions.",
-                        ja: "完全に機能するマルチモーダルAI対話プラットフォームをゼロから設計・開発し、その後Xare AI V2として再構築および拡張しました。120ノードのn8nオーケストレーション層を採用し、インテリジェントなルーティング、フォールトトレランス、複数モデルの統合を実現しています。V2では、高度な推論、画像理解、ドキュメントおよびPDF処理、OCR、音声入力、音声認識、音声合成、画像生成を追加し、Gemini、Qwen 3.6 27B、GPT-OSS 120B、Whisper、Deepgramなどのモデルを統合しています。さらに、マルチティアのフォールバック、リアルタイムWebSocket音声ストリーミング、React/TypeScriptフロントエンド、IndexedDBによるメディア管理、タスク永続化、セキュリティ、Vercel、Hugging Face、Supabase、Firestore、GitHub Actionsを活用したクラウドデプロイを実装しました。"
+                        ja: "完全に機能するマルチモーダルAI対話プラットフォームをゼロから設計・開発し、その後Xare AI V2として再構築および拡張しました。120ノードのn8nオーケストレーション層を採用し、インテリジェントなルーティング、フォールトトレランス、複数モデルの統合を実現しています。V2では、高度な推論、画像理解、ドキュメントおよびPDF処理、OCR、音声入力、音声認識、音声合成、画像生成を追加し、Gemini、Qwen 3.6 27B、GPT-OSS 120B、Whisper、Deepgramなどのモデルを統合しています。さらに、マルチティアのフォールバック、リアルタイムWebSocket音声ストリーミング、React/TypeScriptフロントエンド、IndexedDBによるメディア管理、タスク永続化、セキュリティ、Vercel、Hugging Face、Supabase、Firestore、GitHub Actionsを活用したクラウドデプロイを実装しました。",
+                        tr: "Sıfırdan tam özellikli, çok modlu bir yapay zeka sohbet platformu tasarlayıp geliştirdim ve ardından akıllı yönlendirme, hataya dayanıklılık ve çoklu model entegrasyonuna odaklanan 120 düğümlü bir n8n orkestrasyon katmanıyla Xare AI V2'ye genişlettim. V2 sürümü; Gemini, Qwen 3.6 27B, GPT-OSS 120B, Whisper ve Deepgram tarafından desteklenen gelişmiş akıl yürütme, görüntü işleme, belge ve PDF analizi, OCR, ses, konuşmayı metne ve metni sese dönüştürme ve görsel üretimini sunmaktadır. Çok katmanlı model yedeklemeleri, gerçek zamanlı WebSocket ses akışı, React/TypeScript arayüzü, IndexedDB medya yönetimi, kalıcı görev yönetimi, güvenlik ve Vercel, Hugging Face, Supabase, Firestore ve GitHub Actions üzerinde bulut dağıtımı içerir."
                     },
                     tags: ["System Architecture", "n8n", "Microservices", "WebSockets", "DevOps", "Fault Tolerance"], 
                     link: null, 
@@ -365,17 +404,20 @@
                     title: {
                         en: "Supply Chain Management (SCM) Simulation",
                         ar: "محاكاة إدارة سلسلة التوريد (SCM)",
-                        ja: "サプライチェーンマネジメント（SCM）シミュレーション"
+                        ja: "サプライチェーンマネジメント（SCM）シミュレーション",
+                        tr: "Tedarik Zinciri Yönetimi (SCM) Simülasyonu"
                     },
                     description: {
                         en: "A Python-based SCM simulation using OOP principles, featuring a Tkinter GUI and an integrated local LLM for intelligent insights.",
                         ar: "محاكاة SCM قائمة على بايثون تستخدم مبادئ OOP ، وتتميز بواجهة مستخدم رسومية Tkinter ونموذج لغة كبير محلي مدمج للحصول على رؤى ذكية.",
-                        ja: "OOP原則を使用したPythonベースのSCMシミュレーションで、Tkinter GUIとインテリジェントな洞察のための統合されたローカルLLMを備えています。"
+                        ja: "OOP原則を使用したPythonベースのSCMシミュレーションで、Tkinter GUIとインテリジェントな洞察のための統合されたローカルLLMを備えています。",
+                        tr: "OOP prensipleri kullanılarak Python ile geliştirilen, Tkinter grafik arayüzüne ve akıllı içgörüler için entegre yerel LLM modeline sahip bir Tedarik Zinciri Yönetimi simülasyonu."
                     },
                     longDescription: {
                         en: "Led the development of a comprehensive Supply Chain Management (SCM) simulation in Python, built with Object-Oriented Programming (OOP). As team leader, I managed the entire team, and was personally responsible for writing about 60% of the main code classes. On top of that, I specifically integrated the local Large Language Model (LLM). This AI component now provides intelligent insights, analyzes customer reviews, and generates dynamic marketing content within the simulation. My role encompassed both leadership and direct, substantial technical contribution, bringing a powerful, intelligent layer to our project.",
                         ar: "قمت بقيادة تطوير محاكاة شاملة لإدارة سلسلة التوريد (SCM) في بايثون، مبنية على البرمجة كائنية التوجه (OOP). بصفتي قائد الفريق، أدرت الفريق بأكمله، وكنت مسؤولاً شخصيًا عن كتابة حوالي 60٪ من فئات الكود الرئيسية. علاوة على ذلك، قمت بدمج نموذج لغة كبير محلي (LLM) على وجه التحديد. يوفر هذا المكون الذكي الآن رؤى ذكية، ويحلل مراجعات العملاء، وينشئ محتوى تسويقيًا ديناميكيًا داخل المحاكاة. شمل دوري القيادة والمساهمة الفنية المباشرة والكبيرة، مما أضاف طبقة قوية وذكية لمشروعنا.",
-                        ja: "オブジェクト指向プログラミング（OOP）で構築された、Pythonでの包括的なサプライチェーンマネジメント（SCM）シミュレーションの開発を主導しました。チームリーダーとして、私はチーム全体を管理し、メインコードクラスの約60％を個人的に記述する責任がありました。さらに、ローカル大規模言語モデル（LLM）を特別に統合しました。このAIコンポーネントは、シミュレーション内でインテリジェントな洞察を提供し、顧客レビューを分析し、動的なマーケティングコンテンツを生成します。私の役割は、リーダーシップと直接的で実質的な技術的貢献の両方を含み、私たちのプロジェクトに強力でインテリジェントな層をもたらしました。"
+                        ja: "オブジェクト指向プログラミング（OOP）で構築された、Pythonでの包括的なサプライチェーンマネジメント（SCM）シミュレーションの開発を主導しました。チームリーダーとして、私はチーム全体を管理し、メインコードクラスの約60％を個人的に記述する責任がありました。さらに、ローカル大規模言語モデル（LLM）を特別に統合しました。このAIコンポーネントは、シミュレーション内でインテリジェントな洞察を提供し、顧客レビューを分析し、動的なマーケティングコンテンツを生成します。私の役割は、リーダーシップと直接的で実質的な技術的貢献の両方を含み、私たちのプロジェクトに強力でインテリジェントな層をもたらしました。",
+                        tr: "Nesne Yönelimli Programlama (OOP) ile Python'da kapsamlı bir Tedarik Zinciri Yönetimi (SCM) simülasyonunun geliştirilmesine liderlik ettim. Takım lideri olarak tüm ekibi yönettim ve ana kod sınıflarının yaklaşık %60'ını bizzat yazdım. Bunun yanı sıra, yerel Büyük Dil Modeli (LLM) entegrasyonunu özel olarak gerçekleştirdim. Bu yapay zeka bileşeni, simülasyon içinde akıllı içgörüler sağlar, müşteri yorumlarını analiz eder ve dinamik pazarlama içerikleri üretir. Rolüm hem liderliği hem de projeye güçlü, akıllı bir katman kazandıran doğrudan, kapsamlı teknik katkıyı kapsıyordu."
                     },
                     tags: ["Python", "OOP", "Tkinter", "LLM", "Project Management"], 
                     link: "https://github.com/Ali-Kassem-AK/SCM-Simulation-Project/", 
@@ -387,89 +429,89 @@
             const experienceData = [
                 { 
                     icon: 'network-wired',
-                    title: { en: 'Data Engineering Trainee', ar: 'متدرب هندسة بيانات (Data Engineering Trainee)', ja: 'データエンジニアリング研修生 (Data Engineering Trainee)' },
-                    date: { en: '(Jul 2026 - Present)', ar: '(يوليو 2026 - الحاضر)', ja: '(2026年 7月 - 現在)' },
-                    location: { en: 'Digital Egypt Pioneers Initiative (DEPI) • Hybrid (Egypt)', ar: 'مبادرة رواد مصر الرقمية (DEPI) • هجين (مصر)', ja: 'デジタル・エジプト・パイオニア・イニシアチブ (DEPI) • ハイブリッド (エジプト)' },
-                    description: { en: 'Selected for the DEPI specialization track in AI & Data Science – Microsoft Data Engineer, developing scalable cloud architectures and modern data solutions. Architecting and implementing cloud data workflows and big data processing pipelines utilizing Microsoft Azure technologies. Designing end-to-end ETL/ELT data pipelines, relational database schemas, and data management systems using MySQL and Python. Integrating AI-driven data workflows, automated deployment strategies, and prompt engineering practices for production-grade data systems.', ar: 'تم اختياري لمسار الذكاء الاصطناعي وعلوم البيانات (مهندس بيانات مايكروسوفت) لتطوير بنى سحابية قابلة للتوسع وحلول بيانات حديثة. تصميم وتنفيذ مسارات البيانات السحابية ومعالجة البيانات الضخمة باستخدام تقنيات Microsoft Azure. بناء خطوط أنابيب ETL/ELT شاملة ومخططات قواعد البيانات العلائقية باستخدام MySQL وPython. دمج أتمتة البيانات المدفوعة بالذكاء الاصطناعي واستراتيجيات النشر المؤتمت للأنظمة الإنتاجية.', ja: 'AI＆データサイエンス専攻（Microsoft Data Engineer）に選抜され、スケーラブルなクラウドアーキテクチャとデータソリューションを開発。Microsoft Azureを活用したクラウドデータワークフローとビッグデータ処理パイプラインを設計・実装。MySQLとPythonを用いたエンドツーエンドのETL/ELTデータパイプラインおよびリレーショナルデータベーススキーマを構築。本番グレードのAI駆動型データ自動化ワークフローとプロンプトエンジニアリングを統合。' }
+                    title: { en: 'Data Engineering Trainee', ar: 'متدرب هندسة بيانات (Data Engineering Trainee)', ja: 'データエンジニアリング研修生 (Data Engineering Trainee)', tr: 'Veri Mühendisliği Stajyeri (Data Engineering Trainee)' },
+                    date: { en: '(Jul 2026 - Present)', ar: '(يوليو 2026 - الحاضر)', ja: '(2026年 7月 - 現在)', tr: '(Tem 2026 - Günümüz)' },
+                    location: { en: 'Digital Egypt Pioneers Initiative (DEPI) • Hybrid (Egypt)', ar: 'مبادرة رواد مصر الرقمية (DEPI) • هجين (مصر)', ja: 'デジタル・エジプト・パイオニア・イニシアチブ (DEPI) • ハイブリッド (エジプト)', tr: 'Digital Egypt Pioneers Initiative (DEPI) • Hibrit (Mısır)' },
+                    description: { en: 'Selected for the DEPI specialization track in AI & Data Science – Microsoft Data Engineer, developing scalable cloud architectures and modern data solutions. Architecting and implementing cloud data workflows and big data processing pipelines utilizing Microsoft Azure technologies. Designing end-to-end ETL/ELT data pipelines, relational database schemas, and data management systems using MySQL and Python. Integrating AI-driven data workflows, automated deployment strategies, and prompt engineering practices for production-grade data systems.', ar: 'تم اختياري لمسار الذكاء الاصطناعي وعلوم البيانات (مهندس بيانات مايكروسوفت) لتطوير بنى سحابية قابلة للتوسع وحلول بيانات حديثة. تصميم وتنفيذ مسارات البيانات السحابية ومعالجة البيانات الضخمة باستخدام تقنيات Microsoft Azure. بناء خطوط أنابيب ETL/ELT شاملة ومخططات قواعد البيانات العلائقية باستخدام MySQL وPython. دمج أتمتة البيانات المدفوعة بالذكاء الاصطناعي واستراتيجيات النشر المؤتمت للأنظمة الإنتاجية.', ja: 'AI＆データサイエンス専攻（Microsoft Data Engineer）に選抜され、スケーラブルなクラウドアーキテクチャとデータソリューションを開発。Microsoft Azureを活用したクラウドデータワークフローとビッグデータ処理パイプラインを設計・実装。MySQLとPythonを用いたエンドツーエンドのETL/ELTデータパイプラインおよびリレーショナルデータベーススキーマを構築。本番グレードのAI駆動型データ自動化ワークフローとプロンプトエンジニアリングを統合。', tr: 'Ölçeklenebilir bulut mimarileri ve modern veri çözümleri geliştirmek üzere AI & Veri Bilimi - Microsoft Veri Mühendisi DEPI uzmanlık programına seçildim. Microsoft Azure teknolojilerini kullanarak bulut veri iş akışları ve büyük veri işleme hatları tasarlayıp uyguluyorum. MySQL ve Python kullanarak uçtan uca ETL/ELT veri hatları, ilişkisel veritabanı şemaları ve veri yönetim sistemleri tasarlıyorum. Üretim düzeyindeki veri sistemleri için yapay zeka destekli veri iş akışlarını, otomatik dağıtım stratejilerini ve prompt mühendisliği uygulamalarını entegre ediyorum.' }
                 },
                 { 
                     icon: 'code-branch',
-                    title: { en: 'Lead Developer & Systems Architect', ar: 'مطور رئيسي ومهندس أنظمة', ja: 'リード開発者＆システムアーキテクト' },
-                    date: { en: '(Mar 2026 - Present)', ar: '(مارس 2026 - الحاضر)', ja: '(2026年 3月 - 現在)' },
-                    location: { en: 'Xare AI Platform • Personal Project', ar: 'منصة Xare للذكاء الاصطناعي • مشروع شخصي', ja: 'Xare AI プラットフォーム • 個人プロジェクト' },
-                    description: { en: 'Designed and engineered Xare AI from scratch and expanded it into Xare AI V2, a production-oriented, zero-cost multimodal AI platform. Architected a 120-node n8n orchestration system featuring intelligent model routing and multi-tier fallbacks across Gemini, Qwen 3.6 27B, GPT-OSS 120B, Whisper, and Deepgram. Built specialized pipelines for advanced reasoning, vision processing, document/PDF OCR, real-time voice synthesis, and image generation. Developed React/TypeScript frontend with real-time WebSocket voice streaming, IndexedDB media state management, and cloud deployment infrastructure.', ar: 'صممت وطورت منصة محادثة ذكاء اصطناعي متكاملة ومتعددة الوسائط من الصفر، ثم وسعتها إلى Xare AI V2 مع طبقة Orchestration مكونة من 120 عقدة في n8n، تركز على التوجيه الذكي وتحمل الأعطال والتكامل مع نماذج متعددة (Gemini، Qwen، GPT-OSS، Whisper، Deepgram). كما تتضمن مسارات للاستدلال المتقدم، وفهم الصور، ومعالجة المستندات وملفات PDF، وOCR، وتوليد الصوت والصور، وبث صوتي لحظي عبر WebSockets، وواجهة React/TypeScript وإدارة وسائط عبر IndexedDB وبنية سحابية متكاملة.', ja: 'Xare AIをゼロから設計・開発し、本番環境向けのゼロコスト・マルチモーダルAIプラットフォームXare AI V2として拡張。Gemini、Qwen 3.6 27B、GPT-OSS 120B、Whisper、Deepgramを横断するインテリジェントなルーティングとマルチティアフォールバックを備えた120ノードのn8nオーケストレーションシステムを設計。推論、画像認識、ドキュメント/PDF OCR、リアルタイム音声合成、画像生成パイプライン、React/TypeScriptフロントエンド、WebSocket音声ストリーミング、IndexedDBメディア管理、クラウド基盤を実装。' }
+                    title: { en: 'Lead Developer & Systems Architect', ar: 'مطور رئيسي ومهندس أنظمة', ja: 'リード開発者＆システムアーキテクト', tr: 'Lider Geliştirici ve Sistem Mimarı' },
+                    date: { en: '(Mar 2026 - Present)', ar: '(مارس 2026 - الحاضر)', ja: '(2026年 3月 - 現在)', tr: '(Mar 2026 - Günümüz)' },
+                    location: { en: 'Xare AI Platform • Personal Project', ar: 'منصة Xare للذكاء الاصطناعي • مشروع شخصي', ja: 'Xare AI プラットフォーム • 個人プロジェクト', tr: 'Xare Yapay Zeka Platformu • Kişisel Proje' },
+                    description: { en: 'Designed and engineered Xare AI from scratch and expanded it into Xare AI V2, a production-oriented, zero-cost multimodal AI platform. Architected a 120-node n8n orchestration system featuring intelligent model routing and multi-tier fallbacks across Gemini, Qwen 3.6 27B, GPT-OSS 120B, Whisper, and Deepgram. Built specialized pipelines for advanced reasoning, vision processing, document/PDF OCR, real-time voice synthesis, and image generation. Developed React/TypeScript frontend with real-time WebSocket voice streaming, IndexedDB media state management, and cloud deployment infrastructure.', ar: 'صممت وطورت منصة محادثة ذكاء اصطناعي متكاملة ومتعددة الوسائط من الصفر، ثم وسعتها إلى Xare AI V2 مع طبقة Orchestration مكونة من 120 عقدة في n8n، تركز على التوجيه الذكي وتحمل الأعطال والتكامل مع نماذج متعددة (Gemini، Qwen، GPT-OSS، Whisper، Deepgram). كما تتضمن مسارات للاستدلال المتقدم، وفهم الصور، ومعالجة المستندات وملفات PDF، وOCR، وتوليد الصوت والصور، وبث صوتي لحظي عبر WebSockets، وواجهة React/TypeScript وإدارة وسائط عبر IndexedDB وبنية سحابية متكاملة.', ja: 'Xare AIをゼロから設計・開発し、本番環境向けのゼロコスト・マルチモーダルAIプラットフォームXare AI V2として拡張。Gemini、Qwen 3.6 27B、GPT-OSS 120B、Whisper、Deepgramを横断するインテリジェントなルーティングとマルチティアフォールバックを備えた120ノードのn8nオーケストレーションシステムを設計。推論、画像認識、ドキュメント/PDF OCR、リアルタイム音声合成、画像生成パイプライン、React/TypeScriptフロントエンド、WebSocket音声ストリーミング、IndexedDBメディア管理、クラウド基盤を実装。', tr: 'Xare AI\'ı sıfırdan tasarlayıp geliştirdim ve üretime yönelik, sıfır maliyetli çok modlu bir yapay zeka platformu olan Xare AI V2\'ye genişlettim. Gemini, Qwen 3.6 27B, GPT-OSS 120B, Whisper ve Deepgram arasında akıllı model yönlendirme ve çok katmanlı yedeklemelere sahip 120 düğümlü bir n8n orkestrasyon sistemi tasarladım. İleri düzey akıl yürütme, görüntü işleme, belge/PDF OCR, gerçek zamanlı ses sentezi ve görsel üretimi için özel boru hatları oluşturdum. Gerçek zamanlı WebSocket ses akışı, IndexedDB medya durumu yönetimi ve bulut altyapısına sahip React/TypeScript arayüzü geliştirdim.' }
                 },
                 { 
                     icon: 'code-branch',
-                    title: { en: 'Team Lead & Software Developer', ar: 'قائد فريق ومطور برمجيات', ja: 'チームリーダー＆ソフトウェア開発者' },
-                    date: { en: '(Jan 2025 - Apr 2025)', ar: '(يناير 2025 - أبريل 2025)', ja: '(2025年 1月 - 2025年 4月)' },
-                    location: { en: 'Supply Chain Management (SCM) Simulation • University Project', ar: 'محاكاة إدارة سلسلة التوريد (SCM) • مشروع جامعي', ja: 'サプライチェーンマネジメント（SCM）シミュレーション • 大学プロジェクト' },
-                    description: { en: 'Led the design and development of a comprehensive SCM simulation in Python using OOP principles, personally authoring 60% of the main codebase. Integrated a local LLM for automated business insights, customer review sentiment analysis, and marketing content generation. Architected complete desktop software solution featuring a Tkinter GUI, SQLite database persistence, and Proxy design patterns.', ar: 'قدت تصميم وتطوير محاكاة شاملة لإدارة سلسلة التوريد في بايثون (OOP)، وتأليف 60٪ من الكود الرئيسي بنفسي. قمت بدمج نموذج لغة كبير محلي للحصول على رؤى ذكية آلية وتحليل مشاعر المراجعات وإنشاء محتوى تسويقي. صممت حلاً برمجياً مكتبياً متكاملاً يتضمن واجهة مستخدم رسومية Tkinter وقاعدة بيانات SQLite ونمط تصميم Proxy.', ja: 'OOP原則に基づく包括的なPython SCMシミュレーションの設計と開発を主導し、メインコードベースの60％を個人的に執筆。自動化されたビジネスインサイト、顧客レビュー感情分析、マーケティングコンテンツ生成のためにローカルLLMを統合。Tkinter GUI、SQLite永続化、Proxyデザインパターンを備えたデスクトップソフトウェアを構築。' }
+                    title: { en: 'Team Lead & Software Developer', ar: 'قائد فريق ومطور برمجيات', ja: 'チームリーダー＆ソフトウェア開発者', tr: 'Takım Lideri ve Yazılım Geliştirici' },
+                    date: { en: '(Jan 2025 - Apr 2025)', ar: '(يناير 2025 - أبريل 2025)', ja: '(2025年 1月 - 2025年 4月)', tr: '(Oca 2025 - Nis 2025)' },
+                    location: { en: 'Supply Chain Management (SCM) Simulation • University Project', ar: 'محاكاة إدارة سلسلة التوريد (SCM) • مشروع جامعي', ja: 'サプライチェーンマネジメント（SCM）シミュレーション • 大学プロジェクト', tr: 'Tedarik Zinciri Yönetimi (SCM) Simülasyonu • Üniversite Projesi' },
+                    description: { en: 'Led the design and development of a comprehensive SCM simulation in Python using OOP principles, personally authoring 60% of the main codebase. Integrated a local LLM for automated business insights, customer review sentiment analysis, and marketing content generation. Architected complete desktop software solution featuring a Tkinter GUI, SQLite database persistence, and Proxy design patterns.', ar: 'قدت تصميم وتطوير محاكاة شاملة لإدارة سلسلة التوريد في بايثون (OOP)، وتأليف 60٪ من الكود الرئيسي بنفسي. قمت بدمج نموذج لغة كبير محلي للحصول على رؤى ذكية آلية وتحليل مشاعر المراجعات وإنشاء محتوى تسويقي. صممت حلاً برمجياً مكتبياً متكاملاً يتضمن واجهة مستخدم رسومية Tkinter وقاعدة بيانات SQLite ونمط تصميم Proxy.', ja: 'OOP原則に基づく包括的なPython SCMシミュレーションの設計と開発を主導し、メインコードベースの60％を個人的に執筆。自動化されたビジネスインサイト、顧客レビュー感情分析、マーケティングコンテンツ生成のためにローカルLLMを統合。Tkinter GUI、SQLite永続化、Proxyデザインパターンを備えたデスクトップソフトウェアを構築。', tr: 'OOP prensiplerini kullanarak Python ile kapsamlı bir SCM simülasyonunun tasarım ve geliştirmesine liderlik ettim ve ana kod tabanının %60\'ını bizzat yazdım. Otomatik iş içgörüleri, müşteri yorumu duygu analizi ve pazarlama içeriği üretimi için yerel bir LLM entegre ettim. Tkinter GUI, SQLite veritabanı kalıcılığı ve Proxy tasarım desenlerini içeren eksiksiz bir masaüstü yazılım çözümü tasarladım.' }
                 },
                 { 
                     icon: 'robot',
-                    title: { en: 'Artificial Intelligence Intern', ar: 'متدرب ذكاء اصطناعي (AI Intern)', ja: '人工知能インターン (AI Intern)' },
-                    date: { en: '(Dec 2024 - Jan 2025)', ar: '(ديسمبر 2024 - يناير 2025)', ja: '(2024年 12月 - 2025年 1月)' },
-                    location: { en: 'Youth Technology Academy (YTA) • Remote (Egypt)', ar: 'أكاديمية تكنولوجيا الشباب (YTA) • عن بعد (مصر)', ja: 'Youth Technology Academy (YTA) • リモート (エジプト)' },
-                    description: { en: 'Contributed to the AI development lifecycle through data preparation, model training, and performance evaluation and testing.', ar: 'المساهمة في دورة حياة تطوير الذكاء الاصطناعي من خلال تجهيز البيانات، وتدريب النماذج، وتقييم واختبار الأداء.', ja: 'データの準備、モデルのトレーニング、パフォーマンスの評価とテストを通じて、AI開発ライフサイクルに貢献。' }
+                    title: { en: 'Artificial Intelligence Intern', ar: 'متدرب ذكاء اصطناعي (AI Intern)', ja: '人工知能インターン (AI Intern)', tr: 'Yapay Zeka Stajyeri (AI Intern)' },
+                    date: { en: '(Dec 2024 - Jan 2025)', ar: '(ديسمبر 2024 - يناير 2025)', ja: '(2024年 12月 - 2025年 1月)', tr: '(Ara 2024 - Oca 2025)' },
+                    location: { en: 'Youth Technology Academy (YTA) • Remote (Egypt)', ar: 'أكاديمية تكنولوجيا الشباب (YTA) • عن بعد (مصر)', ja: 'Youth Technology Academy (YTA) • リモート (エジプト)', tr: 'Youth Technology Academy (YTA) • Uzaktan (Mısır)' },
+                    description: { en: 'Contributed to the AI development lifecycle through data preparation, model training, and performance evaluation and testing.', ar: 'المساهمة في دورة حياة تطوير الذكاء الاصطناعي من خلال تجهيز البيانات، وتدريب النماذج، وتقييم واختبار الأداء.', ja: 'データの準備、モデルのトレーニング、パフォーマンスの評価とテストを通じて、AI開発ライフサイクルに貢献。', tr: 'Veri hazırlama, model eğitimi, performans değerlendirmesi ve test süreçleri aracılığıyla yapay zeka geliştirme yaşam döngüsüne katkıda bulundum.' }
                 }
             ];
             
             const educationData = [
                  { 
                     icon: 'graduation-cap',
-                    title: { en: 'Bachelor of Computer Science', ar: 'بكالوريوس في علوم الحاسوب', ja: 'コンピューターサイエンス学士' },
-                    date: { en: '(2024 - 2028)', ar: '(2024 - 2028)', ja: '(2024年 - 2028年)' },
-                    location: { en: 'E-JUST University • Alexandria, Egypt', ar: 'الجامعة المصرية اليابانية للعلوم والتكنولوجيا (E-JUST) • الإسكندرية، مصر', ja: 'E-JUST大学 • アレクサンドリア、エジプト' },
-                    description: { en: 'Specializing in Artificial Intelligence and Data Science.', ar: 'تخصص الذكاء الاصطناعي وعلوم البيانات.', ja: '人工知能およびデータサイエンス専攻。' }
+                    title: { en: 'Bachelor of Computer Science', ar: 'بكالوريوس في علوم الحاسوب', ja: 'コンピューターサイエンス学士', tr: 'Bilgisayar Bilimleri Lisansı' },
+                    date: { en: '(2024 - 2028)', ar: '(2024 - 2028)', ja: '(2024年 - 2028年)', tr: '(2024 - 2028)' },
+                    location: { en: 'E-JUST University • Alexandria, Egypt', ar: 'الجامعة المصرية اليابانية للعلوم والتكنولوجيا (E-JUST) • الإسكندرية، مصر', ja: 'E-JUST大学 • アレクサンドリア、エジプト', tr: 'E-JUST Üniversitesi • İskenderiye, Mısır' },
+                    description: { en: 'Specializing in Artificial Intelligence and Data Science.', ar: 'تخصص الذكاء الاصطناعي وعلوم البيانات.', ja: '人工知能およびデータサイエンス専攻。', tr: 'Yapay Zeka ve Veri Bilimi alanında uzmanlaşma.' }
                 },
                  { 
                     icon: 'school',
-                    title: { en: 'High School Diploma', ar: 'شهادة الثانوية العامة', ja: '高等学校卒業証書' },
-                    date: { en: '(2010 - 2024)', ar: '(2010 - 2024)', ja: '(2010年 - 2024年)' },
-                    location: { en: 'Victoria College • Alexandria, Egypt', ar: 'كلية فيكتوريا • الإسكندرية، مصر', ja: 'ビクトリアカレッジ • アレクサンドリア、エジプト' }
+                    title: { en: 'High School Diploma', ar: 'شهادة الثانوية العامة', ja: '高等学校卒業証書', tr: 'Lise Diploması' },
+                    date: { en: '(2010 - 2024)', ar: '(2010 - 2024)', ja: '(2010年 - 2024年)', tr: '(2010 - 2024)' },
+                    location: { en: 'Victoria College • Alexandria, Egypt', ar: 'كلية فيكتوريا • الإسكندرية، مصر', ja: 'ビクトリアカレッジ • アレクサンドリア、エジプト', tr: 'Victoria College • İskenderiye, Mısır' }
                 },
                 { 
                     icon: 'language',
-                    title: { en: 'English Conversation Advanced 3', ar: 'محادثة إنجليزية متقدمة 3', ja: '英会話上級3' },
-                    date: { en: '(2022 - 2023)', ar: '(2022 - 2023)', ja: '(2022年 - 2023年)' },
-                    location: { en: 'American Institute • Alexandria, Egypt', ar: 'المعهد الأمريكي • الإسكندرية، مصر', ja: 'アメリカンインスティテュート • アレクサンドリア、エジプト' }
+                    title: { en: 'English Conversation Advanced 3', ar: 'محادثة إنجليزية متقدمة 3', ja: '英会話上級3', tr: 'İleri Düzey İngilizce Konuşma 3' },
+                    date: { en: '(2022 - 2023)', ar: '(2022 - 2023)', ja: '(2022年 - 2023年)', tr: '(2022 - 2023)' },
+                    location: { en: 'American Institute • Alexandria, Egypt', ar: 'المعهد الأمريكي • الإسكندرية، مصر', ja: 'アメリカンインスティテュート • アレクサンドリア、エジプト', tr: 'Amerikan Enstitüsü • İskenderiye, Mısır' }
                 }
             ];
 
             const certificationsData = [
                 { 
                     icon: 'award',
-                    title: { en: 'AI for You: Training and Assessment', ar: 'برنامج AI for You: التدريب والتقييم', ja: 'AI for You: トレーニングとアセスメント' },
-                    date: { en: '(Aug 2026)', ar: '(أغسطس 2026)', ja: '(2026年 8月)' },
-                    location: { en: 'Oracle • Online', ar: 'أوراكل (Oracle) • عبر الإنترنت', ja: 'オラクル (Oracle) • オンライン' },
-                    description: { en: 'Oracle AI for You: Training & Assessment Completion', ar: 'إتمام برنامج Oracle AI for You: التدريب والتقييم', ja: 'Oracle AI for You: トレーニング＆アセスメント修了証' }
+                    title: { en: 'AI for You: Training and Assessment', ar: 'برنامج AI for You: التدريب والتقييم', ja: 'AI for You: トレーニングとアセスメント', tr: 'AI for You: Eğitim ve Değerlendirme' },
+                    date: { en: '(Aug 2026)', ar: '(أغسطس 2026)', ja: '(2026年 8月)', tr: '(Ağu 2026)' },
+                    location: { en: 'Oracle • Online', ar: 'أوراكل (Oracle) • عبر الإنترنت', ja: 'オラクル (Oracle) • オンライン', tr: 'Oracle • Çevrim İçi' },
+                    description: { en: 'Oracle AI for You: Training & Assessment Completion', ar: 'إتمام برنامج Oracle AI for You: التدريب والتقييم', ja: 'Oracle AI for You: トレーニング＆アセスメント修了証', tr: 'Oracle AI for You: Eğitim ve Değerlendirme Tamamlama Sertifikası' }
                 },
                 { 
                     icon: 'robot',
-                    title: { en: 'Introduction to Machine Learning Concepts', ar: 'مقدمة في مفاهيم تعلم الآلة', ja: '機械学習の概念入門' },
-                    date: { en: '(Dec 2025)', ar: '(ديسمبر 2025)', ja: '(2025年 12月)' },
-                    location: { en: 'Microsoft • Online', ar: 'مايكروسوفت • عبر الإنترنت', ja: 'マイクロソフト • オンライン' }
+                    title: { en: 'Introduction to Machine Learning Concepts', ar: 'مقدمة في مفاهيم تعلم الآلة', ja: '機械学習の概念入門', tr: 'Makine Öğrenimi Kavramlarına Giriş' },
+                    date: { en: '(Dec 2025)', ar: '(ديسمبر 2025)', ja: '(2025年 12月)', tr: '(Ara 2025)' },
+                    location: { en: 'Microsoft • Online', ar: 'مايكروسوفت • عبر الإنترنت', ja: 'マイクロソフト • オンライン', tr: 'Microsoft • Çevrim İçi' }
                 },
                 { 
                     icon: 'brain',
-                    title: { en: 'Introduction to AI Concepts', ar: 'مقدمة في مفاهيم الذكاء الاصطناعي', ja: 'AIの概念入門' },
-                    date: { en: '(Dec 2025)', ar: '(ديسمبر 2025)', ja: '(2025年 12月)' },
-                    location: { en: 'Microsoft • Online', ar: 'مايكروسوفت • عبر الإنترنت', ja: 'マイクロソフト • オンライン' }
+                    title: { en: 'Introduction to AI Concepts', ar: 'مقدمة في مفاهيم الذكاء الاصطناعي', ja: 'AIの概念入門', tr: 'Yapay Zeka Kavramlarına Giriş' },
+                    date: { en: '(Dec 2025)', ar: '(ديسمبر 2025)', ja: '(2025年 12月)', tr: '(Ara 2025)' },
+                    location: { en: 'Microsoft • Online', ar: 'مايكروسوفت • عبر الإنترنت', ja: 'マイクロソフト • オンライン', tr: 'Microsoft • Çevrim İçi' }
                 },
                 { 
                     icon: 'award',
-                    title: { en: 'HCIA-AI V4.0 Course', ar: 'دورة HCIA-AI V4.0', ja: 'HCIA-AI V4.0 コース' },
-                    date: { en: '(Nov 2025)', ar: '(نوفمبر 2025)', ja: '(2025年 11月)' },
-                    location: { en: 'Huawei • Online', ar: 'هواوي (Huawei) • عبر الإنترنت', ja: 'ファーウェイ (Huawei) • オンライン' },
-                    description: { en: 'Credential ID: ICT20251126005697', ar: 'معرف الاعتماد: ICT20251126005697', ja: '資格ID: ICT20251126005697' }
+                    title: { en: 'HCIA-AI V4.0 Course', ar: 'دورة HCIA-AI V4.0', ja: 'HCIA-AI V4.0 コース', tr: 'HCIA-AI V4.0 Kursu' },
+                    date: { en: '(Nov 2025)', ar: '(نوفمبر 2025)', ja: '(2025年 11月)', tr: '(Kas 2025)' },
+                    location: { en: 'Huawei • Online', ar: 'هواوي (Huawei) • عبر الإنترنت', ja: 'ファーウェイ (Huawei) • オンライン', tr: 'Huawei • Çevrim İçi' },
+                    description: { en: 'Credential ID: ICT20251126005697', ar: 'معرف الاعتماد: ICT20251126005697', ja: '資格ID: ICT20251126005697', tr: 'Sertifika Kimliği: ICT20251126005697' }
                 },
                 { 
                     icon: 'certificate',
-                    title: { en: 'English Conversation Advanced 3', ar: 'محادثة إنجليزية متقدمة 3', ja: '英会話上級3' },
-                    date: { en: '(Jan 2023)', ar: '(يناير 2023)', ja: '(2023年 1月)' },
-                    location: { en: 'American Institute • Alexandria, Egypt', ar: 'المعهد الأمريكي • الإسكندرية، مصر', ja: 'アメリカンインスティテュート • アレクサンドリア、エジプト' },
-                    description: { en: 'Credential ID: 102855', ar: 'معرف الاعتماد: 102855', ja: '資格ID: 102855' }
+                    title: { en: 'English Conversation Advanced 3', ar: 'محادثة إنجليزية متقدمة 3', ja: '英会話上級3', tr: 'İleri Düzey İngilizce Konuşma 3' },
+                    date: { en: '(Jan 2023)', ar: '(يناير 2023)', ja: '(2023年 1月)', tr: '(Oca 2023)' },
+                    location: { en: 'American Institute • Alexandria, Egypt', ar: 'المعهد الأمريكي • الإسكندرية، مصر', ja: 'アメリカンインスティテュート • アレクサンドリア、エジプト', tr: 'Amerikan Enstitüsü • İskenderiye, Mısır' },
+                    description: { en: 'Credential ID: 102855', ar: 'معرف الاعتماد: 102855', ja: '資格ID: 102855', tr: 'Sertifika Kimliği: 102855' }
                 }
             ];
             
