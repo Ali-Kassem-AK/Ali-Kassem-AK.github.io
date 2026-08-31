@@ -812,9 +812,9 @@
                 const modalContainer = document.getElementById('project-modal');
                 const modalHTML = `
                     <div class="modal-content">
-                        <div class="flex justify-end items-center mb-2 sm:mb-3">
-                            <button onclick="closeModal()" class="text-gray-400 hover:text-white transition-all duration-200 p-0 hover:scale-110 focus:outline-none flex items-center justify-center cursor-pointer" aria-label="Close modal">
-                                <svg class="icon w-8 h-8 md:w-9 md:h-9" aria-hidden="true"><use href="#icon-times"></use></svg>
+                        <div class="modal-header-bar">
+                            <button onclick="closeModal()" class="modal-close-icon-btn" aria-label="Close modal">
+                                <svg class="icon" aria-hidden="true"><use href="#icon-times"></use></svg>
                             </button>
                         </div>
                         ${imageHTML}
