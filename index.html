@@ -263,9 +263,10 @@
                     cert_title: "Licenses & Certifications",
                     contact_title: "Get In Touch",
                     contact_desc: "I'm always open to discussing new projects, creative ideas, or opportunities.<br><br>  <strong>Feel free to reach out!</strong>",
-                    footer_copy: "© 2026 Ali Kassem. All rights reserved.",
-                    modal_view_code: "View Code on GitHub",
+                    footer_copy: "© 2026 Ali Kassem. All rights reserved.",                    modal_view_code: "View Code on GitHub",
                     modal_view_live: "View Live App",
+                    modal_preview_live: "Live Preview",
+                    modal_preview_code: "View Code",
                     language_select_label: "Language"
                 },
                 ar: {
@@ -300,6 +301,8 @@
                     footer_copy: "© 2026 علي قاسم. جميع الحقوق محفوظة.",
                     modal_view_code: "عرض الكود على GitHub",
                     modal_view_live: "عرض التطبيق المباشر",
+                    modal_preview_live: "معاينة حية",
+                    modal_preview_code: "عرض الكود",
                     language_select_label: "اللغة"
                 },
                 ja: {
@@ -334,6 +337,8 @@
                     footer_copy: "© 2026 アリ・カセム. 全著作権所有.",
                     modal_view_code: "GitHubでコードを見る",
                     modal_view_live: "ライブアプリを見る",
+                    modal_preview_live: "ライブプレビュー",
+                    modal_preview_code: "コードを見る",
                     language_select_label: "言語"
                 },
                 tr: {
@@ -368,6 +373,8 @@
                     footer_copy: "© 2026 Ali Kassem. Tüm hakları saklıdır.",
                     modal_view_code: "Kodu GitHub'da Gör",
                     modal_view_live: "Canlı Uygulamayı Gör",
+                    modal_preview_live: "Canlı Önizleme",
+                    modal_preview_code: "Kodu Gör",
                     language_select_label: "Dil"
                 }
             };
@@ -782,9 +789,22 @@
                 if (!p) return;
                 const isAr = currentLang === 'ar';
                 const targetUrl = p.liveLink || p.link;
+                const isLive = Boolean(p.liveLink);
+                const badgeText = isLive ? translations[currentLang].modal_preview_live : translations[currentLang].modal_preview_code;
+                const badgeIcon = isLive ? 'external-link-alt' : 'github';
+                
                 const imageHTML = targetUrl ? `
-                    <a href="${targetUrl}" target="_blank" rel="noopener noreferrer" class="block group cursor-pointer overflow-hidden rounded-lg mb-4" aria-label="${p.title[currentLang]}">
-                        <img src="${p.imageUrl}" alt="Project Image" class="modal-project-img transition-transform duration-300 group-hover:scale-[1.02]" loading="lazy" decoding="async">
+                    <a href="${targetUrl}" target="_blank" rel="noopener noreferrer" class="modal-img-link group" aria-label="${p.title[currentLang]} - ${badgeText}">
+                        <img src="${p.imageUrl}" alt="Project Image" class="modal-project-img" loading="lazy" decoding="async">
+                        <div class="modal-img-overlay">
+                            <div class="modal-img-center-btn">
+                                <svg class="icon text-xl" aria-hidden="true"><use href="#icon-${badgeIcon}"></use></svg>
+                            </div>
+                        </div>
+                        <div class="modal-img-badge">
+                            <span>${badgeText}</span>
+                            <svg class="icon text-xs" aria-hidden="true"><use href="#icon-${badgeIcon}"></use></svg>
+                        </div>
                     </a>` : `
                     <img src="${p.imageUrl}" alt="Project Image" class="modal-project-img" loading="lazy" decoding="async">`;
 
