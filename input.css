@@ -116,6 +116,24 @@ header.glass-effect {
     transition: transform 0.25s ease;
 }
 
+@media (max-width: 640px) {
+    .modal-content {
+        padding: 1.25rem;
+        width: 94%;
+    }
+}
+
+.modal-project-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background-color: #0b0f19;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: block;
+}
+
 .modal-overlay.active .modal-content {
     transform: scale(1);
 }
