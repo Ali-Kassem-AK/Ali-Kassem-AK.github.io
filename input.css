@@ -145,13 +145,13 @@ header.glass-effect {
     cursor: pointer;
     padding: 0.25rem;
     margin-left: auto;
-    margin-right: -0.35rem;
-    margin-top: -0.35rem;
+    margin-right: -0.75rem;
+    margin-top: -0.75rem;
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
 [dir="rtl"] .modal-close-icon-btn {
-    margin-left: -0.35rem;
+    margin-left: -0.75rem;
     margin-right: auto;
 }
 
@@ -172,15 +172,15 @@ header.glass-effect {
         margin-bottom: 0.75rem;
     }
     .modal-close-icon-btn {
-        margin-right: -0.65rem;
-        margin-top: -0.65rem;
+        margin-right: -1.5rem;
+        margin-top: -1.5rem;
     }
     .modal-close-icon-btn svg {
         width: 2.25rem;
         height: 2.25rem;
     }
     [dir="rtl"] .modal-close-icon-btn {
-        margin-left: -0.65rem;
+        margin-left: -1.5rem;
         margin-right: auto;
     }
 }
