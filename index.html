@@ -788,15 +788,15 @@
                             <svg class="icon w-6 h-6" aria-hidden="true"><use href="#icon-times"></use></svg>
                         </button>
                         <img src="${p.imageUrl}" alt="Project Image" class="modal-project-img" loading="lazy" decoding="async">
-                        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-2" ${isAr ? 'dir="auto"' : ''}>${p.title[currentLang]}</h3>
+                        <h3 class="text-3xl font-bold text-white mb-2" ${isAr ? 'dir="auto"' : ''}>${p.title[currentLang]}</h3>
                         <div class="mb-4 flex flex-wrap gap-2">${p.tags.map(tag => '<span class="tag">' + tag + '</span>').join('')}</div>
-                        <p class="text-gray-300 text-sm sm:text-base mb-6 leading-relaxed" ${isAr ? 'dir="auto"' : ''}>${p.longDescription[currentLang]}</p>
+                        <p class="text-gray-300 mb-6" ${isAr ? 'dir="auto"' : ''}>${p.longDescription[currentLang]}</p>
                         <div class="flex flex-wrap gap-4">
-                            ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm sm:text-base">
+                            ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200">
                                 <span>${translations[currentLang].modal_view_code}</span>
                                 <svg class="icon text-lg" aria-hidden="true"><use href="#icon-github"></use></svg>
                             </a>` : ''}
-                            ${p.liveLink ? `<a href="${p.liveLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-green-600 text-white font-semibold px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg hover:bg-green-700 transition-colors duration-200 text-sm sm:text-base">
+                            ${p.liveLink ? `<a href="${p.liveLink}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-green-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition-colors duration-200">
                                 <span>${translations[currentLang].modal_view_live}</span>
                                 <svg class="icon text-lg" aria-hidden="true"><use href="#icon-external-link-alt"></use></svg>
                             </a>` : ''}
