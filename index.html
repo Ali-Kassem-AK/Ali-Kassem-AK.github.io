@@ -811,8 +811,8 @@
 
                 const modalContainer = document.getElementById('project-modal');
                 const modalHTML = `
-                    <div class="modal-content relative">
-                        <button onclick="closeModal()" class="absolute top-2 right-2 md:top-2 md:right-2 z-10 text-gray-400 hover:text-white transition-colors duration-200 hover:scale-110 p-1" aria-label="Close modal">
+                    <div class="modal-content">
+                        <button onclick="closeModal()" class="modal-close-btn" aria-label="Close modal">
                             <svg class="icon w-6 h-6" aria-hidden="true"><use href="#icon-times"></use></svg>
                         </button>
                         ${imageHTML}
