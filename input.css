@@ -107,7 +107,6 @@ header.glass-effect {
 .modal-content {
     background-color: #1f2937;
     padding: 1.25rem;
-    padding-top: 3.25rem;
     border-radius: 0.75rem;
     max-width: 50rem;
     width: 92%;
@@ -115,62 +114,12 @@ header.glass-effect {
     overflow-y: auto;
     transform: scale(0.95);
     transition: transform 0.25s ease;
-    position: relative;
 }
 
 @media (min-width: 640px) {
     .modal-content {
         padding: 2rem;
-        padding-top: 3.5rem;
         width: 90%;
-    }
-}
-
-.modal-close-btn {
-    position: absolute;
-    top: 0.4rem;
-    right: 0.4rem;
-    z-index: 30;
-    padding: 0.15rem;
-    background: transparent;
-    border: none;
-    color: #9ca3af;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.modal-close-btn svg {
-    width: 2rem;
-    height: 2rem;
-}
-
-.modal-close-btn:hover,
-.modal-close-btn:focus {
-    color: #ffffff;
-    transform: scale(1.15);
-    outline: none;
-}
-
-[dir="rtl"] .modal-close-btn {
-    right: auto;
-    left: 0.4rem;
-}
-
-@media (min-width: 640px) {
-    .modal-close-btn {
-        top: 0.6rem;
-        right: 0.6rem;
-    }
-    .modal-close-btn svg {
-        width: 2.25rem;
-        height: 2.25rem;
-    }
-    [dir="rtl"] .modal-close-btn {
-        right: auto;
-        left: 0.6rem;
     }
 }
 
