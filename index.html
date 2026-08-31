@@ -535,6 +535,11 @@
                         } else {
                              el.textContent = translations[lang][key];
                         }
+                        if (lang === 'ar') {
+                            el.setAttribute('dir', 'auto');
+                        } else {
+                            el.removeAttribute('dir');
+                        }
                     }
                 });
 
@@ -693,6 +698,7 @@
             function renderProjects() {
                 const container = document.getElementById('projects-container');
                 if (!container) return;
+                const isAr = currentLang === 'ar';
                 container.innerHTML = projectsData.map(project => {
                     const tagsHTML = project.tags.map(tag => '<span class="tag">' + tag + '</span>').join('');
                     const buttonHTML = project.longDescription[currentLang] !== 'none' ? `
@@ -703,8 +709,8 @@
                     return `
                         <div class="glass-effect p-6 interactive-card flex flex-col h-full reveal-element">
                             <div class="flex-grow">
-                                <h3 class="text-2xl font-bold text-white mb-3">${project.title[currentLang]}</h3>
-                                <p class="text-gray-400 mb-4">${project.description[currentLang]}</p>
+                                <h3 class="text-2xl font-bold text-white mb-3" ${isAr ? 'dir="auto"' : ''}>${project.title[currentLang]}</h3>
+                                <p class="text-gray-400 mb-4" ${isAr ? 'dir="auto"' : ''}>${project.description[currentLang]}</p>
                                 <div class="mb-4 flex flex-wrap gap-2">${tagsHTML}</div>
                             </div>
                             ${buttonHTML}
@@ -717,6 +723,7 @@
                 const expContainer = document.getElementById('experience-container');
                 const eduContainer = document.getElementById('education-container');
                 const certContainer = document.getElementById('certifications-container');
+                const isAr = currentLang === 'ar';
                 
                 if (expContainer) {
                     expContainer.innerHTML = experienceData.map(item => `
@@ -724,12 +731,12 @@
                             <div class="mr-6 flex-shrink-0 flex items-center justify-center w-8">
                                 <svg class="icon text-2xl text-blue-400 mt-1" aria-hidden="true"><use href="#icon-${item.icon}"></use></svg>
                             </div>
-                            <div>
+                            <div class="flex-grow">
                                 <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
-                                    <p class="font-semibold text-white text-lg">${item.title[currentLang]} <span class="text-gray-400 font-normal">${item.date[currentLang]}</span></p>
-                                    <p class="text-blue-300 text-base flex-shrink-0 sm:ml-4">${item.location[currentLang]}</p>
+                                    <p class="font-semibold text-white text-lg" ${isAr ? 'dir="auto"' : ''}>${item.title[currentLang]} <span class="text-gray-400 font-normal">${item.date[currentLang]}</span></p>
+                                    <p class="text-blue-300 text-base flex-shrink-0 sm:ml-4" ${isAr ? 'dir="auto"' : ''}>${item.location[currentLang]}</p>
                                 </div>
-                                <p class="text-gray-400">${item.description[currentLang]}</p>
+                                <p class="text-gray-400" ${isAr ? 'dir="auto"' : ''}>${item.description[currentLang]}</p>
                             </div>
                         </div>
                     `).join('');
@@ -741,12 +748,12 @@
                                  <div class="mr-6 flex-shrink-0 flex items-center justify-center w-8">
                                      <svg class="icon text-2xl text-blue-400 mt-1" aria-hidden="true"><use href="#icon-${item.icon}"></use></svg>
                                  </div>
-                                 <div>
+                                 <div class="flex-grow">
                                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
-                                             <p class="font-semibold text-white text-lg">${item.title[currentLang]} <span class="text-gray-400 font-normal">${item.date[currentLang]}</span></p>
-                                             <p class="text-blue-300 text-base flex-shrink-0 sm:ml-4">${item.location[currentLang]}</p>
+                                             <p class="font-semibold text-white text-lg" ${isAr ? 'dir="auto"' : ''}>${item.title[currentLang]} <span class="text-gray-400 font-normal">${item.date[currentLang]}</span></p>
+                                             <p class="text-blue-300 text-base flex-shrink-0 sm:ml-4" ${isAr ? 'dir="auto"' : ''}>${item.location[currentLang]}</p>
                                        </div>
-                                       ${item.description ? '<p class="text-gray-400">' + item.description[currentLang] + '</p>' : ''}
+                                       ${item.description ? '<p class="text-gray-400" ' + (isAr ? 'dir="auto"' : '') + '>' + item.description[currentLang] + '</p>' : ''}
                                  </div>
                            </div>
                     `).join('');
@@ -758,12 +765,12 @@
                             <div class="mr-6 flex-shrink-0 flex items-center justify-center w-8">
                                 <svg class="icon text-2xl text-blue-400 mt-1" aria-hidden="true"><use href="#icon-${item.icon}"></use></svg>
                             </div>
-                            <div>
+                            <div class="flex-grow">
                                 <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
-                                    <p class="font-semibold text-white text-lg">${item.title[currentLang]} <span class="text-gray-400 font-normal">${item.date[currentLang]}</span></p>
-                                    <p class="text-blue-300 text-base flex-shrink-0 sm:ml-4">${item.location[currentLang]}</p>
+                                    <p class="font-semibold text-white text-lg" ${isAr ? 'dir="auto"' : ''}>${item.title[currentLang]} <span class="text-gray-400 font-normal">${item.date[currentLang]}</span></p>
+                                    <p class="text-blue-300 text-base flex-shrink-0 sm:ml-4" ${isAr ? 'dir="auto"' : ''}>${item.location[currentLang]}</p>
                                 </div>
-                                ${item.description ? '<p class="text-gray-400">' + item.description[currentLang] + '</p>' : ''}
+                                ${item.description ? '<p class="text-gray-400" ' + (isAr ? 'dir="auto"' : '') + '>' + item.description[currentLang] + '</p>' : ''}
                             </div>
                         </div>
                     `).join('');
@@ -773,6 +780,7 @@
             window.openModal = (id) => {
                 const p = projectsData.find(p => p.id === id);
                 if (!p) return;
+                const isAr = currentLang === 'ar';
                 const modalContainer = document.getElementById('project-modal');
                 const modalHTML = `
                     <div class="modal-content relative">
@@ -780,9 +788,9 @@
                             <svg class="icon w-6 h-6" aria-hidden="true"><use href="#icon-times"></use></svg>
                         </button>
                         <img src="${p.imageUrl}" alt="Project Image" class="w-full h-64 object-cover rounded-lg mb-4" loading="lazy" decoding="async">
-                        <h3 class="text-3xl font-bold text-white mb-2">${p.title[currentLang]}</h3>
+                        <h3 class="text-3xl font-bold text-white mb-2" ${isAr ? 'dir="auto"' : ''}>${p.title[currentLang]}</h3>
                         <div class="mb-4 flex flex-wrap gap-2">${p.tags.map(tag => '<span class="tag">' + tag + '</span>').join('')}</div>
-                        <p class="text-gray-300 mb-6">${p.longDescription[currentLang]}</p>
+                        <p class="text-gray-300 mb-6" ${isAr ? 'dir="auto"' : ''}>${p.longDescription[currentLang]}</p>
                         <div class="flex flex-wrap gap-4">
                             ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200">
                                 <span>${translations[currentLang].modal_view_code}</span>
