@@ -850,6 +850,12 @@
                 const subtitleEl = document.getElementById('typing-subtitle');
                 const cursorEl = document.querySelector('.typing-cursor');
                 if (!subtitleEl || !cursorEl) return;
+                
+                const subtitleContainer = subtitleEl.parentElement;
+                if (subtitleContainer) {
+                    subtitleContainer.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+                }
+                
                 const text = translations[currentLang].hero_subtitle;
                 let index = 0;
                 subtitleEl.innerHTML = '';
