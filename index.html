@@ -525,7 +525,7 @@
                 currentLang = lang;
                 try { localStorage.setItem('user_preferred_lang', lang); } catch (e) {}
                 document.documentElement.lang = lang;
-                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+                document.documentElement.dir = 'ltr';
 
                 document.querySelectorAll('[data-translate]').forEach(el => {
                     const key = el.dataset.translate;
