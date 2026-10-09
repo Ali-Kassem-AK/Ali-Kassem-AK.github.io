@@ -1,0 +1,14 @@
+{
+  "name": "ali-kassem-portfolio",
+  "version": "2.0.0",
+  "description": "Personal engineering portfolio of Ali Kassem - AI & Data Science Student at E-JUST",
+  "scripts": {
+    "build:css": "npx tailwindcss@3.4.17 -i ./input.css -o ./style.css --minify",
+    "watch:css": "npx tailwindcss@3.4.17 -i ./input.css -o ./style.css --watch",
+    "build": "npm run build:css",
+    "test": "node test.js"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="blueGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#60a5fa" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.3"/>
+    </pattern>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGrad)"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+
+  <!-- Top Banner / Title -->
+  <g transform="translate(60, 45)">
+    <rect x="0" y="0" width="1080" height="70" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5" filter="url(#shadow)"/>
+    <circle cx="35" cy="35" r="14" fill="#3b82f6" fill-opacity="0.2" stroke="#3b82f6" stroke-width="2"/>
+    <circle cx="35" cy="35" r="6" fill="#3b82f6"/>
+    <text x="65" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#f8fafc">Supply Chain Management Simulation</text>
+    <text x="560" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#94a3b8">|</text>
+    <text x="580" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#60a5fa">Python OOP • Tkinter GUI • SQLite • Local LLM Subsystem</text>
+    <rect x="910" y="18" width="145" height="34" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+    <text x="982" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#60a5fa" text-anchor="middle">E-JUST PROJECT</text>
+  </g>
+
+  <!-- Section 1: Presentation Layer (Tkinter UI) -->
+  <g transform="translate(60, 145)" filter="url(#shadow)">
+    <rect width="320" height="460" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 308 0 Q 320 0 320 12 L 320 48 L 0 48 Z" fill="#1e293b"/>
+    <text x="24" y="32" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#38bdf8">Presentation Layer</text>
+    <text x="24" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#e2e8f0">Tkinter Desktop Interface</text>
+    <text x="24" y="105" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#94a3b8">Interactive GUI Dashboard</text>
+
+    <!-- Component Cards inside GUI -->
+    <rect x="20" y="130" width="280" height="70" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+    <text x="36" y="158" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#f1f5f9">Inventory Control View</text>
+    <text x="36" y="182" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#64748b">Real-time stock level &amp; reorder signals</text>
+
+    <rect x="20" y="215" width="280" height="70" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+    <text x="36" y="243" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#f1f5f9">Order Pipeline Monitor</text>
+    <text x="36" y="267" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#64748b">Queue dispatch, fulfillment &amp; tracking</text>
+
+    <rect x="20" y="300" width="280" height="70" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+    <text x="36" y="328" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#f1f5f9">AI Insights &amp; Analytics View</text>
+    <text x="36" y="352" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#64748b">Sentiment charts &amp; generated copy</text>
+
+    <!-- Bottom Metric -->
+    <rect x="20" y="388" width="280" height="52" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="36" y="418" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#93c5fd">User Event Dispatcher</text>
+    <text x="285" y="418" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#10b981" text-anchor="end">Tkinter Event Loop</text>
+  </g>
+
+  <!-- Connectors: UI to Core Engine -->
+  <path d="M 380 280 L 440 280" stroke="#3b82f6" stroke-width="2.5" stroke-dasharray="6,4"/>
+  <polygon points="440,280 430,274 430,286" fill="#3b82f6"/>
+  <text x="410" y="268" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#60a5fa" text-anchor="middle">Events</text>
+
+  <!-- Section 2: Core Simulation Engine & OOP Domain Models -->
+  <g transform="translate(440, 145)" filter="url(#shadow)">
+    <rect width="360" height="460" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 348 0 Q 360 0 360 12 L 360 48 L 0 48 Z" fill="#1e293b"/>
+    <text x="24" y="32" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#60a5fa">Domain &amp; Simulation Logic</text>
+    <text x="24" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#e2e8f0">Object-Oriented Architecture</text>
+    <text x="24" y="105" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#94a3b8">Modular Classes &amp; Proxy Pattern</text>
+
+    <!-- Class Models -->
+    <rect x="20" y="130" width="320" height="60" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+    <text x="36" y="156" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#f8fafc">Inventory &amp; Warehouse Classes</text>
+    <text x="36" y="176" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#64748b">SKU tracking, reorder thresholds, batch valuation</text>
+
+    <rect x="20" y="200" width="320" height="60" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+    <text x="36" y="226" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#f8fafc">Order &amp; Supplier Management</text>
+    <text x="36" y="246" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#64748b">Lead-time calculations, status pipelines, logistics</text>
+
+    <rect x="20" y="270" width="320" height="60" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+    <text x="36" y="296" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#f8fafc">Proxy Pattern Data Access Layer</text>
+    <text x="36" y="316" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#64748b">Virtual proxy caching &amp; transactional validation</text>
+
+    <!-- Lead contribution badge -->
+    <rect x="20" y="348" width="320" height="92" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+    <text x="36" y="375" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#38bdf8">Engineering Leadership</text>
+    <text x="36" y="398" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#cbd5e1">• Team Lead &amp; Core Class Architect</text>
+    <text x="36" y="422" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#cbd5e1">• Implemented ~60% of foundational codebase</text>
+  </g>
+
+  <!-- Connectors: Core to Backend / DB / LLM -->
+  <path d="M 800 240 L 860 240" stroke="#3b82f6" stroke-width="2.5" stroke-dasharray="6,4"/>
+  <polygon points="860,240 850,234 850,246" fill="#3b82f6"/>
+  <text x="830" y="230" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#60a5fa" text-anchor="middle">SQL</text>
+
+  <path d="M 800 450 L 860 450" stroke="#a855f7" stroke-width="2.5" stroke-dasharray="6,4"/>
+  <polygon points="860,450 850,444 850,456" fill="#a855f7"/>
+  <text x="830" y="440" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#c084fc" text-anchor="middle">Prompt</text>
+
+  <!-- Section 3: Persistence & AI Intelligence Subsystems -->
+  <g transform="translate(860, 145)" filter="url(#shadow)">
+    <!-- SQLite Database Card -->
+    <rect width="280" height="215" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5"/>
+    <path d="M 0 12 Q 0 0 12 0 L 268 0 Q 280 0 280 12 L 280 44 L 0 44 Z" fill="#1e293b"/>
+    <text x="20" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#38bdf8">SQLite Persistence Layer</text>
+    <text x="20" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">Relational Data Engine</text>
+    <text x="20" y="95" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#94a3b8">• Transactional ACID guarantees</text>
+    <text x="20" y="118" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#94a3b8">• Normalized tables: Products, Orders, Logs</text>
+    <text x="20" y="141" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#94a3b8">• History tracking &amp; audit records</text>
+    <rect x="20" y="165" width="240" height="34" rx="6" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+    <text x="140" y="187" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#10b981" text-anchor="middle">Zero-overhead local storage</text>
+
+    <!-- Local LLM Intelligence Card -->
+    <g transform="translate(0, 235)">
+      <rect width="280" height="225" rx="12" fill="url(#cardGrad)" stroke="#6b21a8" stroke-width="1.5"/>
+      <path d="M 0 12 Q 0 0 12 0 L 268 0 Q 280 0 280 12 L 280 44 L 0 44 Z" fill="#2e1065"/>
+      <text x="20" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#c084fc">Local LLM Subsystem</text>
+      <text x="20" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">Offline AI Intelligence</text>
+      <text x="20" y="95" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#94a3b8">• Customer review sentiment scoring</text>
+      <text x="20" y="118" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#94a3b8">• Automated marketing copy generation</text>
+      <text x="20" y="141" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#94a3b8">• Operational bottleneck recommendations</text>
+      <rect x="20" y="170" width="240" height="38" rx="6" fill="#0f172a" stroke="#581c87" stroke-width="1"/>
+      <text x="140" y="194" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#e879f9" text-anchor="middle">100% Offline • Local Inference</text>
+    </g>
+  </g>
+
+  <!-- Bottom Info Bar -->
+  <g transform="translate(60, 622)">
+    <text x="0" y="20" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#64748b">Architecture Overview: Discrete-event supply chain simulation built at E-JUST University</text>
+    <text x="1080" y="20" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#60a5fa" text-anchor="end">Lead Developer: Ali Kassem</text>
+  </g>
+</svg>
