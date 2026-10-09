@@ -32,6 +32,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- html2pdf.js for full page screenshot PDF exports -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgJ/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Progressive Enhancement Fallback for Non-JS / Search Engine Crawlers -->
     <noscript>
@@ -116,6 +118,7 @@
             <symbol id="icon-copy" viewBox="0 0 448 512"><path fill="currentColor" d="M384 336H192c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16l140.1 0L384 99.9V320c0 8.8-7.2 16-16 16zM192 0C156.7 0 128 28.7 128 64V320c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-17-6.7-33.3-18.7-45.3L381.3 18.7C369.3 6.7 353 0 336 0H192zM64 128c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H256c35.3 0 64-28.7 64-64V416H272v32c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192c0-8.8 7.2-16 16-16H96V128H64z"/></symbol>
             <symbol id="icon-check" viewBox="0 0 448 512"><path fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></symbol>
             <symbol id="icon-chevron-up" viewBox="0 0 384 512"><path fill="currentColor" d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 109.3 329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></symbol>
+            <symbol id="icon-file-pdf" viewBox="0 0 512 512"><path fill="currentColor" d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V288H336c-26.5 0-48 21.5-48 48v80H64c-35.3 0-64-28.7-64-64V64zm384 103.5V64c0-8.5-3.4-16.6-9.4-22.6l-73.4-73.4c-6-6-14.1-9.4-22.6-9.4H256V128h128v39.5zM384 368c0-8.8-7.2-16-16-16H320c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16h48c8.8 0 16-7.2 16-16V368zm80-32h-48c-8.8 0-16 7.2-16 16v112c0 8.8 7.2 16 16 16s16-7.2 16-16V432h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H432V368h32c8.8 0 16-7.2 16-16s-7.2-16-16-16z"/></symbol>
         </defs>
     </svg>
 
@@ -140,6 +143,10 @@
                         <span data-translate="nav_cv">Resume</span>
                         <svg class="icon text-xs" aria-hidden="true"><use href="#icon-download"></use></svg>
                     </a>
+                    <button onclick="downloadPortfolioPDF()" id="export-pdf-btn" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-slate-800/80 border border-slate-700/80 text-slate-300 hover:text-white hover:border-slate-500 hover:bg-slate-700 transition-all text-xs font-semibold" aria-label="Download Full Portfolio as PDF Screenshots">
+                        <svg class="icon text-xs text-red-400" aria-hidden="true"><use href="#icon-file-pdf"></use></svg>
+                        <span data-translate="nav_pdf_export">Export PDF</span>
+                    </button>
                 </div>
 
                 <!-- Language Selector Dropdown -->
@@ -186,6 +193,10 @@
                 <svg class="icon text-xs" aria-hidden="true"><use href="#icon-download"></use></svg>
                 <span data-translate="download_cv">Download Resume</span>
             </a>
+            <button onclick="downloadPortfolioPDF()" class="flex items-center gap-2 py-2 text-sm text-slate-300 hover:text-white font-semibold w-full text-left" aria-label="Export Full Portfolio as PDF Screenshots">
+                <svg class="icon text-xs text-red-400" aria-hidden="true"><use href="#icon-file-pdf"></use></svg>
+                <span data-translate="nav_pdf_export">Export Portfolio (PDF)</span>
+            </button>
             <div class="border-t border-slate-800 pt-3">
                 <div class="text-xs text-slate-400 mb-2 font-medium" data-translate="language_select_label">Language</div>
                 <div class="flex gap-2">
@@ -255,6 +266,10 @@
                     <svg class="icon text-sm text-blue-400" aria-hidden="true"><use href="#icon-download"></use></svg>
                     <span data-translate="download_cv">Download Resume</span>
                 </a>
+                <button onclick="downloadPortfolioPDF()" id="hero-export-pdf-btn" class="inline-flex items-center gap-2 bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-slate-500 font-semibold px-5 py-3 rounded-lg transition-all text-sm" aria-label="Download Full Portfolio as PDF Screenshots">
+                    <svg class="icon text-sm text-red-400" aria-hidden="true"><use href="#icon-file-pdf"></use></svg>
+                    <span data-translate="hero_btn_pdf">Download Portfolio (PDF)</span>
+                </button>
                 <a href="#contact" class="inline-flex items-center gap-2 bg-slate-900/80 hover:bg-slate-800 text-slate-300 border border-slate-800 hover:border-slate-700 font-medium px-5 py-3 rounded-lg transition-all text-sm">
                     <svg class="icon text-sm text-slate-400" aria-hidden="true"><use href="#icon-envelope"></use></svg>
                     <span data-translate="contact_btn">Get In Touch</span>
@@ -963,7 +978,9 @@
                 modal_view_live: "Open Live Application",
                 modal_preview_live: "Live Web App",
                 modal_preview_code: "GitHub Repository",
-                modal_close: "Close dialog"
+                modal_close: "Close dialog",
+                nav_pdf_export: "Export PDF",
+                hero_btn_pdf: "Download Portfolio (PDF)"
             },
             ar: {
                 name_logo: "علي قاسم",
@@ -1031,7 +1048,9 @@
                 modal_view_live: "فتح التطبيق المباشر",
                 modal_preview_live: "معاينة مباشرة",
                 modal_preview_code: "مستودع GitHub",
-                modal_close: "إغلاق النافذة"
+                modal_close: "إغلاق النافذة",
+                nav_pdf_export: "تصدير PDF",
+                hero_btn_pdf: "تحميل الموقع (PDF)"
             },
             ja: {
                 name_logo: "アリ・カセム",
@@ -1099,7 +1118,9 @@
                 modal_view_live: "ライブアプリを開く",
                 modal_preview_live: "ライブアプリ",
                 modal_preview_code: "GitHubリポジトリ",
-                modal_close: "モーダルを閉じる"
+                modal_close: "モーダルを閉じる",
+                nav_pdf_export: "PDF出力",
+                hero_btn_pdf: "ポートフォリオPDF出力"
             }
         };
 
@@ -1829,6 +1850,75 @@
             if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
                 lastFocusedElement.focus();
                 lastFocusedElement = null;
+            }
+        };
+
+        // --- FULL PORTFOLIO SCREENSHOTS PDF EXPORT CONTROLLER ---
+        window.downloadPortfolioPDF = () => {
+            const btn = document.getElementById('export-pdf-btn');
+            const heroBtn = document.getElementById('hero-export-pdf-btn');
+            const originalBtnHtml = btn ? btn.innerHTML : '';
+            const originalHeroHtml = heroBtn ? heroBtn.innerHTML : '';
+
+            const setGenerating = () => {
+                if (btn) {
+                    btn.innerHTML = '<span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-ping"></span><span>Capturing...</span></span>';
+                    btn.disabled = true;
+                }
+                if (heroBtn) {
+                    heroBtn.innerHTML = '<span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-ping"></span><span>Generating PDF...</span></span>';
+                    heroBtn.disabled = true;
+                }
+            };
+
+            const resetButtons = () => {
+                if (btn) {
+                    btn.innerHTML = originalBtnHtml;
+                    btn.disabled = false;
+                }
+                if (heroBtn) {
+                    heroBtn.innerHTML = originalHeroHtml;
+                    heroBtn.disabled = false;
+                }
+            };
+
+            setGenerating();
+
+            // Ensure all reveal elements are fully visible and expanded for capture
+            document.querySelectorAll('.reveal-element').forEach(el => {
+                el.classList.add('visible');
+                el.style.opacity = '1';
+                el.style.transform = 'none';
+            });
+
+            const element = document.getElementById('main-content') || document.body;
+
+            const opt = {
+                margin: [8, 8, 8, 8],
+                filename: 'Ali_Kassem_Portfolio_Screenshots.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: {
+                    scale: 1.5,
+                    useCORS: true,
+                    logging: false,
+                    backgroundColor: '#020617',
+                    windowWidth: 1200
+                },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+                pagebreak: { mode: ['css', 'legacy'] }
+            };
+
+            if (typeof html2pdf !== 'undefined') {
+                html2pdf().set(opt).from(element).save().then(() => {
+                    resetButtons();
+                }).catch(err => {
+                    console.warn('html2pdf capture notice, falling back to window.print():', err);
+                    resetButtons();
+                    window.print();
+                });
+            } else {
+                resetButtons();
+                window.print();
             }
         };
 

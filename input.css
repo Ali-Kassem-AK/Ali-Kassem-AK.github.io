@@ -541,3 +541,23 @@ html[dir="rtl"] #language-panel {
   color: #64748b;
 }
 
+/* Print / PDF Export Optimization */
+@media print {
+  header, #mobile-menu, #language-panel, #project-modal, #back-to-top, .skip-link, .ambient-glow, .bg-grid-pattern, #export-pdf-btn, #hero-export-pdf-btn {
+    display: none !important;
+  }
+  body {
+    background: #020617 !important;
+    color: #f8fafc !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .engineering-card {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  .reveal-element {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
