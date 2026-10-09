@@ -1,10 +1,15 @@
 # Ali Kassem — Personal Engineering Portfolio
 
+[![GitHub Pages](https://img.shields.io/badge/Live_Site-GitHub_Pages-2ea44f?logo=github)](https://ali-kassem-ak.github.io/)
+[![Vercel Mirror](https://img.shields.io/badge/Live_Mirror-Vercel-black?logo=vercel)](https://ali-kassem-portfolio-io.vercel.app/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v3.4.17-blue?logo=tailwind-css)](https://tailwindcss.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Verification Suite](https://img.shields.io/badge/Tests-92%20Passed-emerald)](test_portfolio.py)
+[![Verification Suite](https://img.shields.io/badge/Tests-94%20Passed-emerald)](test_portfolio.py)
 
 The personal engineering portfolio of **Ali Kassem**, Computer Science student at E-JUST (Egypt-Japan University of Science and Technology) specializing in Artificial Intelligence and Data Science, Microsoft Data Engineer track trainee at DEPI, and creator of Xare AI.
+
+- 🌐 **Live GitHub Pages URL:** [https://ali-kassem-ak.github.io/](https://ali-kassem-ak.github.io/)
+- ⚡ **Live Vercel Deployment:** [https://ali-kassem-portfolio-io.vercel.app/](https://ali-kassem-portfolio-io.vercel.app/)
 
 ---
 

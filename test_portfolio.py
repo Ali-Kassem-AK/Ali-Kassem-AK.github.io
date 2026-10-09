@@ -52,7 +52,7 @@ class PortfolioTest:
         expected_files = [
             'index.html', 'input.css', 'style.css', 'tailwind.config.js',
             'package.json', 'Ali_Ahmed_Kassem_Resume_Data_AI_Engineer.pdf',
-            'robots.txt', 'sitemap.xml'
+            'robots.txt', 'sitemap.xml', 'LICENSE', '.nojekyll'
         ]
         for f in expected_files:
             path = os.path.join(self.root, f)
