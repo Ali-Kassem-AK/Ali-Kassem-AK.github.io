@@ -5,7 +5,7 @@
   "scripts": {
     "build:css": "npx tailwindcss@3.4.17 -i ./input.css -o ./style.css --minify",
     "watch:css": "npx tailwindcss@3.4.17 -i ./input.css -o ./style.css --watch",
-    "build": "npm run build:css",
+    "build": "node -e \"console.log('Static site prebuilt')\"",
     "test": "node test.js"
   },
   "devDependencies": {
