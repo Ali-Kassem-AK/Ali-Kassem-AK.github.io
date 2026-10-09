@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://ali-kassem-portfolio-io.vercel.app/sitemap.xml

@@ -1,30 +1,20 @@
-/** @type {import('tailwindcss').Config} */
+
 module.exports = {
-  content: [
-    "./index.html",
-    "./**/*.js"
+  content: ["./index.html"],
+  safelist: [
+    'bg-blue-600', 'hover:bg-blue-700', 'bg-green-600', 'hover:bg-green-700',
+    'bg-blue-500', 'hover:bg-blue-500', 'text-blue-400', 'text-blue-300',
+    'text-gray-400', 'text-white', 'tag', 'interactive-card', 'glass-effect',
+    'reveal-element', 'visible'
   ],
   theme: {
     extend: {
       colors: {
         brand: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
-          950: '#172554',
+          blue: '#3b82f6'
         }
-      },
-      fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
       }
     },
   },
   plugins: [],
-};
+}
